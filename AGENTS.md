@@ -22,7 +22,7 @@ node .opencode/skills/kanban/scripts/kanban.js archive --days 7 --apply
 - **Board**: `docu/kanban/` (columns: backlog, todo, in-progress, review, done)
 - **Tasks**: `docu/kanban/tasks/DOM-NNN.md` with YAML frontmatter
 - **Templates**: `docu/kanban/templates/{task,bug,epic,milestone}.md`
-- **ID format**: `DOM-NNN` where DOM ∈ {FUN,UX,UI,WEB,CSS,PUB,CLI,CRE,ADM,CRM,INS,DOC,KAN,TST-F,TST-P,TST-S}
+- **ID format**: `DOM-NNN` where DOM ∈ {FUN,UX,UI,WEB,CSS,PUB,CLI,CRE,ADM,CRM,INS,DOC,KAN,TST-F,TST-P,TST-S,SEC}
 - **Required frontmatter**: tags (kanban/, type/, domain/, priority/), parent, children, depends_on, blocks, status, assignee, created, updated
 
 ## Commit Patterns (auto-sync)

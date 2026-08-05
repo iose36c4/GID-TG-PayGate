@@ -6,8 +6,7 @@ tags:
   - "version/2.0"
 parent: "null"
 children:
-  - "[[version-1.1]]"
-  - "[[version-2.0]]"
+
 status: "backlog"
 created: "2026-08-04"
 updated: "2026-08-05"

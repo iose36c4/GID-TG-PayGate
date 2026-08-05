@@ -51,7 +51,7 @@ Proporciono **operaciones programáticas completas** para el tablero Kanban de T
 tags:
   - kanban/{backlog|todo|in-progress|review|done}
   - type/{task|bug|epic|milestone}
-  - domain/{FUN|UX|UI|WEB|CSS|PUB|CLI|CRE|ADM|CRM|INS|DOC|KAN|TST-F|TST-P|TST-S}
+  - domain/{FUN|UX|UI|WEB|CSS|PUB|CLI|CRE|ADM|CRM|INS|DOC|KAN|TST-F|TST-P|TST-S|SEC}
   - priority/P{0-3}
 parent: "[[PARENT-ID]]"  # null si root
 children: ["[[CHILD-ID]]"]
@@ -63,8 +63,8 @@ created: "YYYY-MM-DD"
 updated: "YYYY-MM-DD"
 ```
 
-## Dominios Soportados (16)
-`FUN` `UX` `UI` `WEB` `CSS` `PUB` `CLI` `CRE` `ADM` `CRM` `INS` `DOC` `KAN` `TST-F` `TST-P` `TST-S`
+## Dominios Soportados (17)
+`FUN` `UX` `UI` `WEB` `CSS` `PUB` `CLI` `CRE` `ADM` `CRM` `INS` `DOC` `KAN` `TST-F` `TST-P` `TST-S` `SEC`
 
 ## Patrones de Commit para Auto-Sync
 ```bash

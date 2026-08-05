@@ -13,7 +13,7 @@ const TASKS_PATH = 'docu/kanban/tasks';
 const TEMPLATES_PATH = 'docu/kanban/templates';
 
 const COLUMNS = ['backlog', 'todo', 'in-progress', 'review', 'done'];
-const DOMAINS = ['FUN', 'UX', 'UI', 'WEB', 'CSS', 'PUB', 'CLI', 'CRE', 'ADM', 'CRM', 'INS', 'DOC', 'KAN', 'TST-F', 'TST-P', 'TST-S'];
+const DOMAINS = ['FUN', 'UX', 'UI', 'WEB', 'CSS', 'PUB', 'CLI', 'CRE', 'ADM', 'CRM', 'INS', 'DOC', 'KAN', 'TST-F', 'TST-P', 'TST-S', 'SEC'];
 const PRIORITIES = ['P0', 'P1', 'P2', 'P3'];
 const TYPES = ['task', 'bug', 'epic', 'milestone'];
 

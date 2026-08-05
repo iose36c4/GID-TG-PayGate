@@ -8,7 +8,9 @@ parent: "[[desarrollo]]"
 children: []
 depends_on:
   - "[[TST-F-013]]"
-blocks: []
+blocks:
+  - "[[TST-P-001]]"
+  - "[[TST-S-001]]"
 status: todo
 assignee: "@dev"
 created: 2026-08-04

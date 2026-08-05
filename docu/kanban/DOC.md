@@ -22,6 +22,11 @@ children:
   - "[[DOC-014]]"
   - "[[DOC-015]]"
   - "[[DOC-016]]"
+  - "[[DOC-017]]"
+  - "[[DOC-018]]"
+  - "[[DOC-019]]"
+  - "[[DOC-020]]"
+  - "[[DOC-021]]"
 depends_on: []
 blocks: []
 status: active
@@ -32,9 +37,9 @@ updated: 2026-08-04
 
 # 1️⃣2️⃣ DOC - Documentación
 
-**Objetivo**: Estructura docu/, ADRs (5), Specs (3), Guías deployment (3), Guías usuario (3), Runbook, Changelog.
+**Objetivo**: Estructura docu/, ADRs (10), Specs (3), Guías deployment (3), Guías usuario (3), Runbook, Changelog.
 
-**Owner**: @docs | **Tareas**: 16 | **Progreso**: 0/16 (0%)
+**Owner**: @docs | **Tareas**: 21 | **Progreso**: 0/21 (0%)
 
 ## 📋 Tareas
 
@@ -54,6 +59,11 @@ updated: 2026-08-04
 - [ ] [[DOC-014]] Guía usuario: Admin (config, staff, métricas, feature flags)
 - [ ] [[DOC-015]] Runbook: Incident response, rollback, scaling, backup/restore
 - [ ] [[DOC-016]] Changelog + Versioning (SemVer + Conventional Commits)
+- [ ] [[DOC-017]] ADR-006: Núcleo Transaccional — Money (integer cents) + Ledger doble entrada
+- [ ] [[DOC-018]] ADR-007: Máquinas de estado de Pagos, Reembolsos y Retiros
+- [ ] [[DOC-019]] ADR-008: Idempotencia + Eventos de Dominio
+- [ ] [[DOC-020]] ADR-009: Autorización — RBAC + Policies + ABAC/Tenancy
+- [ ] [[DOC-021]] ADR-010: Seguridad de Webhooks y Telegram (firma, replay, DLQ)
 
 ## 🔗 Enlaces
 - [[desarrollo]] — Índice maestro

@@ -11,7 +11,8 @@ depends_on:
   - "[[TST-P-002]]"
   - "[[TST-P-003]]"
   - "[[TST-P-004]]"
-blocks: []
+blocks:
+  - "[[TST-P-011]]"
 status: todo
 assignee: "@dev"
 created: 2026-08-04

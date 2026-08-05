@@ -6,7 +6,140 @@ tags:
   - "milestone/beta"
 parent: "null"
 children:
-  - "[[version-1.0]]"
+  - "[[CSS-019]]"
+  - "[[DOC-017]]"
+  - "[[DOC-018]]"
+  - "[[DOC-019]]"
+  - "[[DOC-020]]"
+  - "[[DOC-021]]"
+  - "[[PUB-002]]"
+  - "[[PUB-003]]"
+  - "[[PUB-004]]"
+  - "[[PUB-005]]"
+  - "[[PUB-006]]"
+  - "[[PUB-007]]"
+  - "[[PUB-008]]"
+  - "[[PUB-009]]"
+  - "[[PUB-010]]"
+  - "[[PUB-011]]"
+  - "[[PUB-012]]"
+  - "[[PUB-013]]"
+  - "[[PUB-014]]"
+  - "[[PUB-015]]"
+  - "[[PUB-016]]"
+  - "[[PUB-017]]"
+  - "[[PUB-018]]"
+  - "[[PUB-019]]"
+  - "[[SEC-001]]"
+  - "[[SEC-002]]"
+  - "[[SEC-003]]"
+  - "[[SEC-004]]"
+  - "[[SEC-005]]"
+  - "[[SEC-006]]"
+  - "[[SEC-007]]"
+  - "[[SEC-008]]"
+  - "[[SEC-009]]"
+  - "[[SEC-010]]"
+  - "[[SEC-011]]"
+  - "[[SEC-012]]"
+  - "[[SEC-013]]"
+  - "[[SEC-014]]"
+  - "[[SEC-015]]"
+  - "[[SEC-016]]"
+  - "[[SEC-017]]"
+  - "[[SEC-018]]"
+  - "[[SEC-019]]"
+  - "[[SEC-020]]"
+  - "[[SEC-021]]"
+  - "[[SEC-022]]"
+  - "[[SEC-023]]"
+  - "[[SEC-024]]"
+  - "[[SEC-025]]"
+  - "[[SEC-026]]"
+  - "[[SEC-027]]"
+  - "[[SEC-028]]"
+  - "[[SEC-029]]"
+  - "[[SEC-030]]"
+  - "[[SEC-031]]"
+  - "[[SEC-032]]"
+  - "[[SEC-033]]"
+  - "[[SEC-034]]"
+  - "[[SEC-035]]"
+  - "[[SEC-036]]"
+  - "[[SEC-037]]"
+  - "[[SEC-038]]"
+  - "[[SEC-039]]"
+  - "[[SEC-040]]"
+  - "[[SEC-041]]"
+  - "[[SEC-042]]"
+  - "[[SEC-043]]"
+  - "[[SEC-044]]"
+  - "[[SEC-045]]"
+  - "[[SEC-046]]"
+  - "[[SEC-047]]"
+  - "[[SEC-048]]"
+  - "[[SEC-049]]"
+  - "[[SEC-050]]"
+  - "[[TST-F-001]]"
+  - "[[TST-F-002]]"
+  - "[[TST-F-003]]"
+  - "[[TST-F-004]]"
+  - "[[TST-F-005]]"
+  - "[[TST-F-006]]"
+  - "[[TST-F-007]]"
+  - "[[TST-F-008]]"
+  - "[[TST-F-009]]"
+  - "[[TST-F-010]]"
+  - "[[TST-F-011]]"
+  - "[[TST-F-012]]"
+  - "[[TST-F-013]]"
+  - "[[TST-F-014]]"
+  - "[[TST-P-001]]"
+  - "[[TST-P-002]]"
+  - "[[TST-P-003]]"
+  - "[[TST-P-004]]"
+  - "[[TST-P-005]]"
+  - "[[TST-P-006]]"
+  - "[[TST-P-007]]"
+  - "[[TST-P-008]]"
+  - "[[TST-P-009]]"
+  - "[[TST-P-010]]"
+  - "[[TST-P-011]]"
+  - "[[TST-S-001]]"
+  - "[[TST-S-002]]"
+  - "[[TST-S-003]]"
+  - "[[TST-S-004]]"
+  - "[[TST-S-005]]"
+  - "[[TST-S-006]]"
+  - "[[TST-S-007]]"
+  - "[[TST-S-008]]"
+  - "[[TST-S-009]]"
+  - "[[TST-S-010]]"
+  - "[[TST-S-011]]"
+  - "[[TST-S-012]]"
+  - "[[UI-001]]"
+  - "[[UI-002]]"
+  - "[[UI-003]]"
+  - "[[UI-004]]"
+  - "[[UI-005]]"
+  - "[[UI-006]]"
+  - "[[UI-007]]"
+  - "[[UI-008]]"
+  - "[[UI-009]]"
+  - "[[UX-001]]"
+  - "[[UX-002]]"
+  - "[[UX-003]]"
+  - "[[UX-004]]"
+  - "[[UX-005]]"
+  - "[[UX-006]]"
+  - "[[UX-007]]"
+  - "[[UX-008]]"
+  - "[[WEB-001]]"
+  - "[[WEB-002]]"
+  - "[[WEB-003]]"
+  - "[[WEB-004]]"
+  - "[[WEB-005]]"
+  - "[[WEB-006]]"
 status: "todo"
 created: "2026-08-04"
 updated: "2026-08-05"
@@ -23,7 +156,7 @@ updated: "2026-08-05"
 #### 🔬 [[alfa]] Alfa - Feature Complete
 **Criterio**: Todo el código escrito, migraciones, seeders, instalador, 4 dominios navegables, framework CSS funcional.
 
-##### 🛠️ [[desarrollo]] Desarrollo - 16 Áreas Atómicas
+##### 🛠️ [[desarrollo]] Desarrollo - 17 Áreas Atómicas
 
 ###### 1️⃣ FUN - Fundación Laravel + Arquitectura
 - [[FUN-001]] Inicializar proyecto Laravel 11 + dependencias core
@@ -215,6 +348,11 @@ updated: "2026-08-05"
 - [[DOC-014]] Guía usuario: Admin (config, staff, métricas, feature flags)
 - [[DOC-015]] Runbook: Incident response, rollback, scaling, backup/restore
 - [[DOC-016]] Changelog + Versioning (SemVer + Conventional Commits)
+- [[DOC-017]] ADR-006: Núcleo Transaccional — Money (integer cents) + Ledger doble entrada
+- [[DOC-018]] ADR-007: Máquinas de estado de Pagos, Reembolsos y Retiros
+- [[DOC-019]] ADR-008: Idempotencia + Eventos de Dominio
+- [[DOC-020]] ADR-009: Autorización — RBAC + Policies + ABAC/Tenancy
+- [[DOC-021]] ADR-010: Seguridad de Webhooks y Telegram (firma, replay, DLQ)
 
 ###### 1️⃣3️⃣ KAN - Mantenimiento Kanban
 - [[KAN-001]] Setup inicial: crear 5 columnas + templates + convención frontmatter
@@ -269,6 +407,58 @@ updated: "2026-08-05"
 - [[TST-S-010]] Headers: CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy
 - [[TST-S-011]] Logging: No PII/secrets en logs, structured JSON, retention, alerting
 - [[TST-S-012]] Compliance: GDPR (right to delete, export, consent), PCI-DSS (no card storage)
+
+###### 1️⃣7️⃣ SEC - Seguridad y Arquitectura del Dominio (50 Tareas - Fase 0)
+- [[SEC-001]] Threat Modeling STRIDE global (P0)
+- [[SEC-002]] Trust Boundaries + Data Flow Diagrams (P0)
+- [[SEC-003]] Security Risk Register + mitigaciones (P0)
+- [[SEC-004]] Security Baseline transversal (P0)
+- [[SEC-005]] Money Value Object (integer cents, nunca float) (P0)
+- [[SEC-006]] Currency + multi-moneda ISO 4217 (P0)
+- [[SEC-007]] Entidades dominio financiero: Invoice, Balance, Withdrawal, Refund, Settlement, Fee, Transfer (P0)
+- [[SEC-008]] Ledger de doble entrada inmutable (P0)
+- [[SEC-009]] Ledger entries + reconstrucción de balances (P0)
+- [[SEC-010]] Invariantes de balance + auditoría de consistencia (P0)
+- [[SEC-011]] Máquina de estados del Payment (P0)
+- [[SEC-012]] Máquina de estados del Refund (P1)
+- [[SEC-013]] Máquina de estados del Withdrawal (P0)
+- [[SEC-014]] Máquina de estados del Invoice (P0)
+- [[SEC-015]] Disputas/Chargeback + congelamiento de fondos (P1)
+- [[SEC-016]] Idempotencia con Idempotency-Key (P0)
+- [[SEC-017]] Eventos de dominio financieros (P1)
+- [[SEC-018]] Event store ligero + reprocesamiento (P1)
+- [[SEC-019]] Reconciliación sistema ↔ proveedor ↔ banco ↔ ledger (P1)
+- [[SEC-020]] Concurrencia: SELECT FOR UPDATE + optimistic locking (P0)
+- [[SEC-021]] Distributed locks + deadlock retry + updates atómicos (P1)
+- [[SEC-022]] Arquitectura de autorización (separada de auth) (P0)
+- [[SEC-023]] Laravel Policies por entidad financiera (P0)
+- [[SEC-024]] RBAC escalable: roles + permisos + contextos (P1)
+- [[SEC-025]] ABAC + tenant scoping creador→recursos propios (P1)
+- [[SEC-026]] Scopes API + service tokens (P1)
+- [[SEC-027]] Matriz de acceso + tests de autorización (P1)
+- [[SEC-028]] Webhook verification: firma, timestamp, nonce, replay (P0)
+- [[SEC-029]] Webhook retry + backoff + dead letter queue (P0)
+- [[SEC-030]] Webhook delivery log + rotación de claves de firma (P1)
+- [[SEC-031]] Seguridad Telegram: firma, replay, origen (P0)
+- [[SEC-032]] Telegram flood control + rate limit + expiración (P1)
+- [[SEC-033]] Rate limiting por área (P0)
+- [[SEC-034]] Scheduler: expirar invoices, retry webhooks, orphans (P0)
+- [[SEC-035]] Job retry pipeline + dead letter queue (P1)
+- [[SEC-036]] Audit log completo (actor, IP, payload hash, correlation id) (P0)
+- [[SEC-037]] Correlation IDs X-Correlation-ID (P0)
+- [[SEC-038]] Observabilidad: OpenTelemetry, metrics, alerting (P1)
+- [[SEC-039]] Structured logging sin PII/secretos (P0)
+- [[SEC-040]] Secret Management: rotación + key versioning (P0)
+- [[SEC-041]] Sesiones: fixation, rotation, refresh, revocación (P1)
+- [[SEC-042]] Backups, DR, PITR y restore tests (P1)
+- [[SEC-043]] Tests de concurrencia y race conditions (P1)
+- [[SEC-044]] Fault injection + chaos testing en pagos (P2)
+- [[SEC-045]] Replay testing + fuzzing de inputs (P1)
+- [[SEC-046]] Property-based testing del dominio financiero (P2)
+- [[SEC-047]] Pentest ofensivo I: SSRF, XXE, IDOR, Mass Assignment, Host Header (P0)
+- [[SEC-048]] Pentest ofensivo II: Smuggling, Cache Poisoning, Zip Bomb, Timing (P1)
+- [[SEC-049]] Pentest ofensivo III: JWT/OAuth, CSRF/CSP bypass, Unicode, Prototype Pollution (P1)
+- [[SEC-050]] Cadencia de revisión de seguridad (Security Review) (P1)
 
 ---
 

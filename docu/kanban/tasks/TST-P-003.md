@@ -9,7 +9,11 @@ children: []
 depends_on:
   - "[[TST-P-001]]"
   - "[[TST-P-002]]"
-blocks: []
+blocks:
+  - "[[TST-P-004]]"
+  - "[[TST-P-005]]"
+  - "[[TST-P-006]]"
+  - "[[TST-P-009]]"
 status: todo
 assignee: "@dev"
 created: 2026-08-04

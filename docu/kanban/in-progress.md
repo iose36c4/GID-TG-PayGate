@@ -3,7 +3,8 @@ tags:
   - "kanban/in-progress"
   - "type/container"
 parent: "null"
-children: []
+children:
+  - "[[PUB-001]]"
 status: "in-progress"
 created: "2026-08-04"
 updated: "2026-08-05"

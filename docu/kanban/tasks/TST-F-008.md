@@ -16,6 +16,8 @@ depends_on:
   - "[[ADM-006]]"
 blocks:
   - "[[TST-F-009]]"
+  - "[[TST-F-006]]"
+  - "[[TST-F-010]]"
 status: todo
 assignee: "@dev"
 created: 2026-08-04

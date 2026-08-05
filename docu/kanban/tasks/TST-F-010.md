@@ -18,6 +18,7 @@ depends_on:
   - "[[CRE-011]]"
 blocks:
   - "[[TST-F-012]]"
+  - "[[TST-F-011]]"
 status: todo
 assignee: "@dev"
 created: 2026-08-04

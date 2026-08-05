@@ -10,7 +10,8 @@ depends_on:
   - "[[TST-P-001]]"
   - "[[TST-P-002]]"
   - "[[TST-P-003]]"
-blocks: []
+blocks:
+  - "[[TST-P-009]]"
 status: todo
 assignee: "@dev"
 created: 2026-08-04

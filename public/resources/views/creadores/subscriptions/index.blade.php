@@ -39,7 +39,7 @@
                 <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">
                     Filtrar
                 </button>
-                <a href="{{ route('creadores.subscriptions.index') }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors">
+                <a href="{{ route('creador.subscriptions.index') }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors">
                     Limpiar
                 </a>
             </div>
@@ -55,7 +55,7 @@
             </svg>
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No hay suscripciones</h2>
             <p class="text-gray-500 dark:text-gray-400 mb-6">No se encontraron suscripciones con los filtros actuales.</p>
-            <a href="{{ route('creadores.channels.index') }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-lg transition-colors inline-block">
+            <a href="{{ route('creador.channels.index') }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-lg transition-colors inline-block">
                 Ver mis canales
             </a>
         </div>
@@ -91,7 +91,7 @@
                             </div>
                         </td>
                         <td class="p-4 text-center text-sm text-gray-500 dark:text-gray-400">
-                            <a href="{{ route('creadores.channels.show', $subscription->channel) }}" class="hover:underline text-primary-600 dark:text-primary-400">
+                            <a href="{{ route('creador.channels.show', $subscription->channel) }}" class="hover:underline text-primary-600 dark:text-primary-400">
                                 {{ $subscription->channel->name }}
                             </a>
                         </td>
@@ -107,11 +107,11 @@
                         <td class="p-4 text-center text-sm text-gray-500 dark:text-gray-400">{{ $subscription->created_at->format('d/m/Y') }}</td>
                         <td class="p-4 text-center text-sm text-gray-500 dark:text-gray-400">{{ $subscription->renews_at?->format('d/m/Y') ?? '—' }}</td>
                         <td class="p-4 text-center space-x-2">
-                            <a href="{{ route('creadores.subscriptions.show', $subscription) }}" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium" title="Ver detalle">
+                            <a href="{{ route('creador.subscriptions.show', $subscription) }}" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 text-sm font-medium" title="Ver detalle">
                                 Ver
                             </a>
                             @if($subscription->status === 'active')
-                            <form action="{{ route('creadores.subscriptions.cancel', $subscription) }}" method="POST" class="inline" onsubmit="return confirm('¿Cancelar esta suscripción?')">
+                            <form action="{{ route('creador.subscriptions.cancel', $subscription) }}" method="POST" class="inline" onsubmit="return confirm('¿Cancelar esta suscripción?')">
                                 @csrf
                                 @method('PUT')
                                 <button type="submit" class="text-yellow-600 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300 text-sm font-medium" title="Cancelar">
@@ -120,7 +120,7 @@
                             </form>
                             @endif
                             @if($subscription->status === 'cancelled' || $subscription->status === 'expired')
-                            <form action="{{ route('creadores.subscriptions.renew', $subscription) }}" method="POST" class="inline">
+                            <form action="{{ route('creador.subscriptions.renew', $subscription) }}" method="POST" class="inline">
                                 @csrf
                                 @method('PUT')
                                 <button type="submit" class="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 text-sm font-medium" title="Renovar">

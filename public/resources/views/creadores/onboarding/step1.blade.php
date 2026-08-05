@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <form action="{{ route('creadores.onboarding.step1.store') }}" method="POST" class="space-y-6">
+        <form action="{{ route('creador.onboarding.step1.store') }}" method="POST" class="space-y-6">
             @csrf
 
             <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">

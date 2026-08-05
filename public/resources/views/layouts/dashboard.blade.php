@@ -59,21 +59,16 @@
                     <nav class="hidden md:flex items-center gap-6">
                         @auth
                             @if(auth()->user()->isCreador())
-                                <a href="{{ route('creadores.dashboard') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                <a href="{{ route('creador.dashboard') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                                     Dashboard
                                 </a>
-                                <a href="{{ route('creadores.channels.index') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                <a href="{{ route('creador.channels.index') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                                     Mis Canales
                                 </a>
                             @endif
                             @if(auth()->user()->isStaff())
                                 <a href="{{ route('staff.dashboard') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                                     Panel Staff
-                                </a>
-                            @endif
-                            @if(auth()->user()->isAdmin())
-                                <a href="{{ route('admin.dashboard') }}" class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                    Admin
                                 </a>
                             @endif
                         @else
@@ -112,9 +107,6 @@
                                     <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
                                         Perfil
                                     </a>
-                                    <a href="{{ route('password.edit') }}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        Contraseña
-                                    </a>
                                     <hr class="my-1 border-gray-200 dark:border-gray-700">
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
@@ -132,7 +124,7 @@
 
         <!-- Main Content -->
         <main class="flex-1">
-            {{ $slot }}
+            @yield('content')
         </main>
 
         <!-- Footer -->

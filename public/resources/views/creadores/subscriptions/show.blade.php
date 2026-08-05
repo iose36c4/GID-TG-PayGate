@@ -8,7 +8,7 @@
             <p class="text-gray-600 dark:text-gray-400 mt-1">{{ $subscription->user->name }} • {{ $subscription->channel->name }}</p>
         </div>
         <div class="flex items-center gap-2">
-            <a href="{{ route('creadores.subscriptions.index') }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors">
+            <a href="{{ route('creador.subscriptions.index') }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors">
                 Volver
             </a>
         </div>
@@ -32,7 +32,7 @@
                         <div>
                             <dt class="text-sm text-gray-500 dark:text-gray-400">Canal</dt>
                             <dd class="text-gray-900 dark:text-white">
-                                <a href="{{ route('creadores.channels.show', $subscription->channel) }}" class="text-primary-600 hover:underline">
+                                <a href="{{ route('creador.channels.show', $subscription->channel) }}" class="text-primary-600 hover:underline">
                                     {{ $subscription->channel->name }}
                                 </a>
                             </dd>
@@ -193,7 +193,7 @@
                 <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Acciones</h2>
                 <div class="space-y-3">
                     @if($subscription->status === 'active')
-                    <form action="{{ route('creadores.subscriptions.cancel', $subscription) }}" method="POST" class="w-full" onsubmit="return confirm('¿Estás seguro de cancelar esta suscripción? El usuario perderá acceso al canal.')">
+                    <form action="{{ route('creador.subscriptions.cancel', $subscription) }}" method="POST" class="w-full" onsubmit="return confirm('¿Estás seguro de cancelar esta suscripción? El usuario perderá acceso al canal.')">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
@@ -205,7 +205,7 @@
                         </button>
                     </form>
                     @elseif($subscription->status === 'cancelled' || $subscription->status === 'expired')
-                    <form action="{{ route('creadores.subscriptions.renew', $subscription) }}" method="POST" class="w-full">
+                    <form action="{{ route('creador.subscriptions.renew', $subscription) }}" method="POST" class="w-full">
                         @csrf
                         @method('PUT')
                         <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">

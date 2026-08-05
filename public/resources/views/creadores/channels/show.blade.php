@@ -8,11 +8,11 @@
             <p class="text-gray-600 dark:text-gray-400 mt-1">{{ $channel->slug }} • {{ $channel->currency }} {{ number_format($channel->price, 2) }}/{{ $channel->billing_cycle }}</p>
         </div>
         <div class="flex items-center gap-2">
-            <a href="{{ route('creadores.channels.edit', $channel) }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors">
+            <a href="{{ route('creador.channels.edit', $channel) }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-colors">
                 Editar
             </a>
             @if($channel->status === 'active')
-            <form action="{{ route('creadores.channels.update', $channel) }}" method="POST" class="inline">
+            <form action="{{ route('creador.channels.update', $channel) }}" method="POST" class="inline">
                 @csrf
                 @method('PATCH')
                 <input type="hidden" name="status" value="paused">
@@ -21,7 +21,7 @@
                 </button>
             </form>
             @elseif($channel->status === 'paused')
-            <form action="{{ route('creadores.channels.update', $channel) }}" method="POST" class="inline">
+            <form action="{{ route('creador.channels.update', $channel) }}" method="POST" class="inline">
                 @csrf
                 @method('PATCH')
                 <input type="hidden" name="status" value="active">
@@ -186,8 +186,8 @@
                     <div class="flex items-center justify-between py-2">
                         <span class="text-gray-600 dark:text-gray-400">Próximo pago</span>
                         <span class="text-gray-900 dark:text-white font-medium">
-                            @if($channel->activePayoutSchedule && $channel->activePayoutSchedule->next_payout_at)
-                                {{ $channel->activePayoutSchedule->next_payout_at->format('d/m/Y') }}
+                            @if($channel->getActivePayoutSchedule() && $channel->getActivePayoutSchedule()->next_payout_at)
+                                {{ $channel->getActivePayoutSchedule()->next_payout_at->format('d/m/Y') }}
                             @else
                                 No programado
                             @endif
@@ -198,27 +198,27 @@
 
             <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
                 <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Payout Schedule</h2>
-                @if($channel->activePayoutSchedule)
+                @if($channel->getActivePayoutSchedule())
                     <dl class="space-y-3">
                         <div class="flex justify-between">
                             <dt class="text-gray-600 dark:text-gray-400">Frecuencia</dt>
-                            <dd class="text-gray-900 dark:text-white capitalize">{{ $channel->activePayoutSchedule->frequency }}</dd>
+                            <dd class="text-gray-900 dark:text-white capitalize">{{ $channel->getActivePayoutSchedule()->frequency }}</dd>
                         </div>
                         <div class="flex justify-between">
                             <dt class="text-gray-600 dark:text-gray-400">Mínimo para retiro</dt>
-                            <dd class="text-gray-900 dark:text-white">${{ number_format($channel->activePayoutSchedule->minimum_amount, 2) }}</dd>
+                            <dd class="text-gray-900 dark:text-white">${{ number_format($channel->getActivePayoutSchedule()->minimum_amount, 2) }}</dd>
                         </div>
                         <div class="flex justify-between">
                             <dt class="text-gray-600 dark:text-gray-400">Comisión plataforma</dt>
-                            <dd class="text-gray-900 dark:text-white">{{ ($channel->activePayoutSchedule->platform_fee_percentage * 100) }}%</dd>
+                            <dd class="text-gray-900 dark:text-white">{{ ($channel->getActivePayoutSchedule()->platform_fee_percentage * 100) }}%</dd>
                         </div>
                         <div class="flex justify-between">
                             <dt class="text-gray-600 dark:text-gray-400">Comisión pasarela</dt>
-                            <dd class="text-gray-900 dark:text-white">{{ ($channel->activePayoutSchedule->gateway_fee_percentage * 100) }}%</dd>
+                            <dd class="text-gray-900 dark:text-white">{{ ($channel->getActivePayoutSchedule()->gateway_fee_percentage * 100) }}%</dd>
                         </div>
                         <div class="flex justify-between">
                             <dt class="text-gray-600 dark:text-gray-400">Fee fijo</dt>
-                            <dd class="text-gray-900 dark:text-white">${{ number_format($channel->activePayoutSchedule->fixed_fee, 2) }}</dd>
+                            <dd class="text-gray-900 dark:text-white">${{ number_format($channel->getActivePayoutSchedule()->fixed_fee, 2) }}</dd>
                         </div>
                     </dl>
                 @else

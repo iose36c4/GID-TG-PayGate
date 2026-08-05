@@ -48,7 +48,7 @@ class ChannelPago extends Model
         return $this->hasMany(Subscription::class);
     }
 
-    public function activePayoutSchedule()
+    public function getActivePayoutSchedule(): ?PayoutSchedule
     {
         return $this->payoutSchedules()->where('is_active', true)->latest()->first();
     }

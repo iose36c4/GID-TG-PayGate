@@ -26,7 +26,7 @@ return new class extends Migration
             $table->ipAddress('last_login_ip')->nullable();
 
             // Onboarding
-            $table->tinyInteger('onboarding_step')->default(1);
+            $table->tinyInteger('onboarding_step')->nullable()->default(null)->comment('null = no aplica (comprador)');
             $table->timestamp('onboarding_completed_at')->nullable();
 
             // Fiscal (Argentina)

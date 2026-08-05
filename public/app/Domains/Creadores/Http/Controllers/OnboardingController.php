@@ -26,7 +26,7 @@ class OnboardingController extends Controller
         $step = $user->onboarding_step ?? 1;
 
         if ($step >= 5) {
-            return redirect()->route('creadores.dashboard');
+            return redirect()->route('creador.dashboard');
         }
 
         return redirect()->route("creadores.onboarding.step{$step}");
@@ -80,7 +80,7 @@ class OnboardingController extends Controller
         $user->update($validated);
         $user->update(['onboarding_step' => 2]);
 
-        return redirect()->route('creadores.onboarding.step2');
+        return redirect()->route('creador.onboarding.step2');
     }
 
     public function step2()
@@ -138,7 +138,7 @@ class OnboardingController extends Controller
 
         $user->update(['onboarding_step' => 3]);
 
-        return redirect()->route('creadores.onboarding.step3', $channel);
+        return redirect()->route('creador.onboarding.step3', $channel);
     }
 
     public function step3(ChannelPago $channel)
@@ -183,7 +183,7 @@ class OnboardingController extends Controller
 
         $user->update(['onboarding_step' => 4]);
 
-        return redirect()->route('creadores.onboarding.step4', $channel);
+        return redirect()->route('creador.onboarding.step4', $channel);
     }
 
     public function step4(ChannelPago $channel)
@@ -238,7 +238,7 @@ class OnboardingController extends Controller
             'is_active' => true,
         ]);
 
-        return redirect()->route('creadores.dashboard')
+        return redirect()->route('creador.dashboard')
             ->with('success', '¡Onboarding completado! Tu canal está listo para recibir suscriptores.');
     }
 }

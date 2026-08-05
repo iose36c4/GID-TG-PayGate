@@ -70,7 +70,7 @@ class ChannelController extends Controller
             $channel->update(['cover_image' => $path]);
         }
 
-        return redirect()->route('creadores.channels.show', $channel)
+        return redirect()->route('creador.channels.show', $channel)
             ->with('success', 'Canal creado correctamente. Configura el bot y precios para activarlo.');
     }
 
@@ -156,7 +156,7 @@ class ChannelController extends Controller
             $channel->update(['cover_image' => $path]);
         }
 
-        return redirect()->route('creadores.channels.show', $channel)
+        return redirect()->route('creador.channels.show', $channel)
             ->with('success', 'Canal actualizado correctamente.');
     }
 
@@ -170,7 +170,7 @@ class ChannelController extends Controller
 
         $channel->delete();
 
-        return redirect()->route('creadores.channels.index')
+        return redirect()->route('creador.channels.index')
             ->with('success', 'Canal eliminado correctamente.');
     }
 }

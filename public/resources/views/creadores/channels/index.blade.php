@@ -7,7 +7,7 @@
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Mis Canales</h1>
             <p class="text-gray-600 dark:text-gray-400 mt-1">Gestiona tus canales de pago exclusivos</p>
         </div>
-        <a href="{{ route('creadores.channels.create') }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
+        <a href="{{ route('creador.channels.create') }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
             </svg>
@@ -22,7 +22,7 @@
             </svg>
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No tienes canales creados</h2>
             <p class="text-gray-500 dark:text-gray-400 mb-6">Crea tu primer canal de pago para empezar a monetizar tu contenido.</p>
-            <a href="{{ route('creadores.channels.create') }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors inline-block">
+            <a href="{{ route('creador.channels.create') }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors inline-block">
                 Crear tu primer canal
             </a>
         </div>
@@ -102,24 +102,24 @@
                             <td class="py-4 px-6 text-gray-900 dark:text-white">${{ number_format($channel->revenue_total, 2) }}</td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-2">
-                                    <a href="{{ route('creadores.channels.show', $channel) }}" class="text-primary-600 hover:text-primary-700 text-sm font-medium">Ver</a>
-                                    <a href="{{ route('creadores.channels.edit', $channel) }}" class="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 text-sm font-medium">Editar</a>
+                                    <a href="{{ route('creador.channels.show', $channel) }}" class="text-primary-600 hover:text-primary-700 text-sm font-medium">Ver</a>
+                                    <a href="{{ route('creador.channels.edit', $channel) }}" class="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 text-sm font-medium">Editar</a>
                                     @if($channel->status === 'active')
-                                    <form action="{{ route('creadores.channels.update', $channel) }}" method="POST" class="inline">
+                                    <form action="{{ route('creador.channels.update', $channel) }}" method="POST" class="inline">
                                         @csrf
                                         @method('PATCH')
                                         <input type="hidden" name="status" value="paused">
                                         <button type="submit" class="text-yellow-600 hover:text-yellow-700 text-sm font-medium">Pausar</button>
                                     </form>
                                     @elseif($channel->status === 'paused')
-                                    <form action="{{ route('creadores.channels.update', $channel) }}" method="POST" class="inline">
+                                    <form action="{{ route('creador.channels.update', $channel) }}" method="POST" class="inline">
                                         @csrf
                                         @method('PATCH')
                                         <input type="hidden" name="status" value="active">
                                         <button type="submit" class="text-green-600 hover:text-green-700 text-sm font-medium">Activar</button>
                                     </form>
                                     @endif
-                                    <form action="{{ route('creadores.channels.destroy', $channel) }}" method="POST" class="inline" onsubmit="return confirm('¿Estás seguro de eliminar este canal?')">
+                                    <form action="{{ route('creador.channels.destroy', $channel) }}" method="POST" class="inline" onsubmit="return confirm('¿Estás seguro de eliminar este canal?')">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="text-red-600 hover:text-red-700 text-sm font-medium">Eliminar</button>

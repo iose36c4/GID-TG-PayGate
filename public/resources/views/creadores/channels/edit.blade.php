@@ -7,7 +7,7 @@
         <p class="text-gray-600 dark:text-gray-400 mt-1">{{ $channel->name }}</p>
     </div>
 
-    <form action="{{ route('creadores.channels.update', $channel) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+    <form action="{{ route('creador.channels.update', $channel) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
         @method('PATCH')
 
@@ -143,7 +143,7 @@
         </div>
 
         <div class="flex justify-between gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
-            <a href="{{ route('creadores.channels.show', $channel) }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
+            <a href="{{ route('creador.channels.show', $channel) }}" class="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-medium py-3 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>

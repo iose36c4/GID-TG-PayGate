@@ -137,6 +137,8 @@ children:
   - "[[KAN-007]]"
   - "[[KAN-008]]"
   - "[[KAN-009]]"
+  - "[[PUB-005]]"
+  - "[[SEC-022]]"
 status: "done"
 created: "2026-08-04"
 updated: "2026-08-05"

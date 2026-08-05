@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "skill": {
+      "kanban": "allow"
+    },
+    "bash": {
+      "git *": "allow",
+      "gh *": "allow",
+      "node .opencode/skills/kanban/scripts/*": "allow"
+    }
+  }
+}

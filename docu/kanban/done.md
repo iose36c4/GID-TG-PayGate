@@ -1,0 +1,156 @@
+---
+tags:
+  - "kanban/done"
+  - "type/container"
+parent: "null"
+children:
+  - "[[FUN-001]]"
+  - "[[FUN-005]]"
+  - "[[FUN-006]]"
+  - "[[INS-001]]"
+  - "[[INS-002]]"
+  - "[[INS-003]]"
+  - "[[INS-004]]"
+  - "[[INS-005]]"
+  - "[[INS-006]]"
+  - "[[INS-007]]"
+  - "[[INS-008]]"
+  - "[[INS-009]]"
+  - "[[FUN-002]]"
+  - "[[FUN-003]]"
+  - "[[FUN-004]]"
+  - "[[CSS-001]]"
+  - "[[CRE-001]]"
+  - "[[CRE-002]]"
+  - "[[CRE-003]]"
+  - "[[CRE-004]]"
+  - "[[CRE-005]]"
+  - "[[CRE-006]]"
+  - "[[CRE-007]]"
+  - "[[CRE-008]]"
+  - "[[CRE-009]]"
+  - "[[CRE-010]]"
+  - "[[CRE-011]]"
+  - "[[CRE-012]]"
+  - "[[CRE-013]]"
+  - "[[CRE-014]]"
+  - "[[CRE-015]]"
+  - "[[CRE-016]]"
+  - "[[CRE-017]]"
+  - "[[ADM-001]]"
+  - "[[ADM-002]]"
+  - "[[ADM-003]]"
+  - "[[ADM-004]]"
+  - "[[ADM-005]]"
+  - "[[ADM-006]]"
+  - "[[ADM-007]]"
+  - "[[ADM-008]]"
+  - "[[ADM-009]]"
+  - "[[ADM-010]]"
+  - "[[ADM-011]]"
+  - "[[ADM-012]]"
+  - "[[ADM-013]]"
+  - "[[CLI-001]]"
+  - "[[CLI-002]]"
+  - "[[CLI-003]]"
+  - "[[CLI-004]]"
+  - "[[CLI-005]]"
+  - "[[CLI-006]]"
+  - "[[CLI-007]]"
+  - "[[CRM-001]]"
+  - "[[CRM-002]]"
+  - "[[CRM-003]]"
+  - "[[CRM-004]]"
+  - "[[CRM-005]]"
+  - "[[CRM-006]]"
+  - "[[CRM-007]]"
+  - "[[CRM-008]]"
+  - "[[CRM-009]]"
+  - "[[CRM-010]]"
+  - "[[CRM-011]]"
+  - "[[CRM-012]]"
+  - "[[CRM-013]]"
+  - "[[CSS-002]]"
+  - "[[CSS-003]]"
+  - "[[CSS-004]]"
+  - "[[CSS-005]]"
+  - "[[CSS-006]]"
+  - "[[CSS-007]]"
+  - "[[CSS-008]]"
+  - "[[CSS-009]]"
+  - "[[CSS-010]]"
+  - "[[CSS-011]]"
+  - "[[CSS-012]]"
+  - "[[CSS-013]]"
+  - "[[CSS-014]]"
+  - "[[CSS-015]]"
+  - "[[CSS-016]]"
+  - "[[CSS-017]]"
+  - "[[CSS-018]]"
+  - "[[CSS-020]]"
+  - "[[CSS-021]]"
+  - "[[CSS-022]]"
+  - "[[CSS-023]]"
+  - "[[CSS-024]]"
+  - "[[CSS-025]]"
+  - "[[CSS-026]]"
+  - "[[CSS-027]]"
+  - "[[CSS-028]]"
+  - "[[CSS-029]]"
+  - "[[CSS-030]]"
+  - "[[CSS-031]]"
+  - "[[CSS-032]]"
+  - "[[CSS-033]]"
+  - "[[CSS-034]]"
+  - "[[CSS-035]]"
+  - "[[CSS-036]]"
+  - "[[CSS-037]]"
+  - "[[CSS-038]]"
+  - "[[DOC-001]]"
+  - "[[DOC-002]]"
+  - "[[DOC-003]]"
+  - "[[DOC-004]]"
+  - "[[DOC-005]]"
+  - "[[DOC-006]]"
+  - "[[DOC-007]]"
+  - "[[DOC-008]]"
+  - "[[DOC-009]]"
+  - "[[DOC-010]]"
+  - "[[DOC-011]]"
+  - "[[DOC-012]]"
+  - "[[DOC-013]]"
+  - "[[DOC-014]]"
+  - "[[DOC-015]]"
+  - "[[DOC-016]]"
+  - "[[FUN-007]]"
+status: "done"
+created: "2026-08-04"
+updated: "2026-08-05"
+---
+
+# Completado
+
+## Formato de Registro
+```markdown
+- [[task-XXX]] Título - `commit: abc123` - `date: 2026-08-XX` - `branch: feat/xxx`
+```
+
+## Historial
+> Se poblara automáticamente al mover tareas desde `review.md`
+
+---
+
+## Métricas Acumuladas
+| Métrica | Valor |
+|---------|-------|
+| Tareas completadas | 0 |
+| Lead time promedio | - |
+| Cycle time promedio | - |
+| Throughput semanal | - |
+| Bugs escapados | 0 |
+
+## Releases
+| Versión | Fecha | Commit | Notas |
+|---------|-------|--------|-------|
+| v1.0.0-beta | - | - | Release Candidate |
+| v1.0.0 | - | - | Producción |

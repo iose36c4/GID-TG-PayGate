@@ -19,6 +19,14 @@ class ChannelController
             $query->where('category_id', $request->category);
         }
 
+        if ($request->filled('price_min')) {
+            $query->where('price', '>=', $request->price_min);
+        }
+
+        if ($request->filled('price_max')) {
+            $query->where('price', '<=', $request->price_max);
+        }
+
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function ($q) use ($search) {
@@ -27,10 +35,44 @@ class ChannelController
             });
         }
 
-        $channels = $query->latest()->paginate(12)->withQueryString();
+        $sort = $request->get('sort', 'popular');
+        match ($sort) {
+            'newest' => $query->latest(),
+            'price_asc' => $query->orderBy('price', 'asc'),
+            'price_desc' => $query->orderBy('price', 'desc'),
+            'rating' => $query->orderBy('subscribers_count', 'desc'), // Using subscribers as proxy for rating
+            default => $query->orderBy('subscribers_count', 'desc'),
+        };
+
+        $channels = $query->paginate(12)->withQueryString();
         $categories = Category::active()->get();
 
-        return view('public.channels.index', compact('channels', 'categories'));
+        // Build JSON-LD ItemList for SEO
+        $itemList = [
+            '@context' => 'https://schema.org',
+            '@type' => 'ItemList',
+            'itemListElement' => $channels->map(function ($channel, $index) {
+                return [
+                    '@type' => 'ListItem',
+                    'position' => $index + 1 + ($channels->currentPage() - 1) * $channels->perPage(),
+                    'item' => [
+                        '@type' => 'Product',
+                        'name' => $channel->name,
+                        'description' => $channel->description,
+                        'url' => route('channels.show', $channel),
+                        'image' => $channel->cover_image ? asset('storage/'.$channel->cover_image) : null,
+                        'offers' => [
+                            '@type' => 'Offer',
+                            'price' => $channel->price,
+                            'priceCurrency' => $channel->currency,
+                            'availability' => 'https://schema.org/InStock',
+                        ],
+                    ],
+                ];
+            })->toArray(),
+        ];
+
+        return view('public.channels.index', compact('channels', 'categories', 'itemList'));
     }
 
     public function show(ChannelPago $channel): View

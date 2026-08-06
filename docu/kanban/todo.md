@@ -12,10 +12,8 @@ children:
   - "[[DOC-019]]"
   - "[[DOC-020]]"
   - "[[DOC-021]]"
-  - "[[PUB-002]]"
   - "[[PUB-003]]"
   - "[[PUB-004]]"
-  - "[[PUB-006]]"
   - "[[PUB-007]]"
   - "[[PUB-008]]"
   - "[[PUB-009]]"
@@ -139,7 +137,7 @@ children:
   - "[[WEB-006]]"
 status: "todo"
 created: "2026-08-04"
-updated: "2026-08-05"
+updated: "2026-08-06"
 ---
 
 # TODO - TG-PayGate v1.0 "Fundación"

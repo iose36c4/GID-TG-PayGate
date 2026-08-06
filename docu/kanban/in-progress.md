@@ -3,8 +3,7 @@ tags:
   - "kanban/in-progress"
   - "type/container"
 parent: "null"
-children:
-  - "[[UI-003]]"
+children: []
 status: "in-progress"
 created: "2026-08-04"
 updated: "2026-08-06"

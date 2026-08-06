@@ -3,7 +3,7 @@
 ## Project Overview
 Laravel 13+ SaaS for selling access to private Telegram channels/groups. Stack: PHP 8.3+ (8.4 local), MySQL 8, Redis, Tailwind CSS 4 + Vite, Alpine.js. Active development: a working Laravel app plus Kanban planning in `docu/kanban/`.
 
-See also: [README.md](README.md) (project overview, in Spanish).
+See also: [README.md](README.md) (project overview, in Spanish; notes Laravel 11+ but codebase uses 13+).
 
 ## Layout Gotcha (CRITICAL)
 - The **entire Laravel app lives inside `public/`** (composer.json, artisan, app/, routes/, tests/), NOT at the repo root.
@@ -58,10 +58,11 @@ done(FUN-001): merged           # PR merged → done
 ```
 
 ## Architecture (implemented in `public/app/`)
-- **DDD**: `app/Domains/{Public,Creadores,Staff}` — each has a ServiceProvider that loads its own `Routes/web.php` and registers a view namespace (e.g. `public.*`, `creadores.*`). The domain `Views/` dirs don't exist; actual Blade views live in `resources/views/`.
+- **DDD**: `app/Domains/{Public,Creadores,Staff,Financiero}` — each has a ServiceProvider that loads its own `Routes/web.php` (and `webhooks.php` for Public) and registers a view namespace (e.g. `public.*`, `creadores.*`). The domain `Views/` dirs don't exist; actual Blade views live in `resources/views/`.
 - **Root routes**: `routes/web.php` holds `/` + `/install/*`; domain routes are in `app/Domains/*/Routes/web.php`. Note `/` is defined in both the root and Public domain route files.
 - **Auth/RBAC**: spatie/laravel-permission; roles `user, creador, staff, admin` seeded by `database/seeders/RolePermissionSeeder.php`; guard `web`. Creador routes use `role:creador` middleware.
 - **Subdomain routing / `EnsureCorrectSubdomain`**: planned only — NOT implemented.
+- **Financiero domain**: Services (BalanceService, LedgerService), ValueObjects (Money), Entities (PaymentState, InvoiceState), Exceptions — no ServiceProvider yet.
 
 ## Installer (implemented)
 - WordPress-style installer at `/install/*` (requirements → database → migrate → admin → complete), throttled.
@@ -85,5 +86,5 @@ done(FUN-001): merged           # PR merged → done
 - Must validate after kanban changes: `node .opencode/skills/kanban/scripts/kanban.js validate`.
 
 ## Current State
-- Laravel 13.24 app in `public/`: DDD scaffold, installer, Creadores onboarding/CRUD controllers + Blade views, migrations for channels/categories/subscriptions/payments/invoices/payouts/permissions.
+- Laravel 13.24 app in `public/`: DDD scaffold (4 domains), installer, Creadores onboarding/CRUD controllers + Blade views, migrations for channels/categories/subscriptions/payments/invoices/payouts/permissions, payment gateway interfaces (MercadoPago, Stripe, PayPal).
 - In-progress: PUB-001 (see `docu/kanban/in-progress.md`). Full roadmap: `docu/kanban/todo.md`.

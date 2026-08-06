@@ -10,8 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Subscription extends Model
 {
     protected $fillable = [
-        'user_id', 'channel_pago_id', 'price', 'currency', 'billing_cycle',
+        'user_id', 'channel_pago_id', 'external_reference',
+        'price', 'currency', 'billing_cycle',
         'status', 'trial_ends_at', 'starts_at', 'renews_at',
+        'activated_at', 'telegram_invite_link', 'invite_expires_at',
         'cancelled_at', 'cancelled_by', 'cancellation_reason',
         'auto_renew', 'failed_payments',
     ];
@@ -21,6 +23,8 @@ class Subscription extends Model
         'trial_ends_at' => 'datetime',
         'starts_at' => 'datetime',
         'renews_at' => 'datetime',
+        'activated_at' => 'datetime',
+        'invite_expires_at' => 'datetime',
         'cancelled_at' => 'datetime',
         'auto_renew' => 'boolean',
         'failed_payments' => 'integer',
@@ -108,6 +112,32 @@ class Subscription extends Model
             'cancellation_reason' => null,
             'renews_at' => $nextRenewal,
             'failed_payments' => 0,
+        ]);
+    }
+
+    public function activate(): void
+    {
+        $nextRenewal = match ($this->billing_cycle) {
+            'monthly' => now()->addMonth(),
+            'quarterly' => now()->addMonths(3),
+            'yearly' => now()->addYear(),
+            'lifetime' => now()->addYears(100),
+        };
+
+        $this->update([
+            'status' => 'active',
+            'activated_at' => now(),
+            'starts_at' => $this->starts_at ?? now(),
+            'renews_at' => $nextRenewal,
+            'failed_payments' => 0,
+        ]);
+    }
+
+    public function storeInviteLink(string $link, ?\Illuminate\Support\Carbon $expiresAt = null): void
+    {
+        $this->update([
+            'telegram_invite_link' => $link,
+            'invite_expires_at' => $expiresAt ?? now()->addHours(24),
         ]);
     }
 

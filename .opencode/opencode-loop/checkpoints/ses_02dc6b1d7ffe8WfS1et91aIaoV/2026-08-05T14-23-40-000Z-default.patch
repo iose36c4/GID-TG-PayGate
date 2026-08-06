@@ -1,0 +1,1881 @@
+diff --git a/.obsidian/graph.json b/.obsidian/graph.json
+index 537e311..ca379cc 100644
+--- a/.obsidian/graph.json
++++ b/.obsidian/graph.json
+@@ -27,6 +27,13 @@
+         "a": 1,
+         "rgb": 16711680
+       }
++    },
++    {
++      "query": "",
++      "color": {
++        "a": 1,
++        "rgb": 5431378
++      }
+     }
+   ],
+   "collapse-display": true,
+@@ -39,6 +46,6 @@
+   "repelStrength": 20,
+   "linkStrength": 1,
+   "linkDistance": 500,
+-  "scale": 0.0889892578125,
++  "scale": 0.03955078125,
+   "close": false
+ }
+\ No newline at end of file
+diff --git a/.obsidian/workspace.json b/.obsidian/workspace.json
+index 55d40f8..f1b3491 100644
+--- a/.obsidian/workspace.json
++++ b/.obsidian/workspace.json
+@@ -16,23 +16,8 @@
+               "icon": "lucide-git-fork",
+               "title": "Vista gráfica"
+             }
+-          },
+-          {
+-            "id": "e3f15eb31c0e1d3b",
+-            "type": "leaf",
+-            "state": {
+-              "type": "markdown",
+-              "state": {
+-                "file": "public/vendor/guzzlehttp/psr7/README.md",
+-                "mode": "source",
+-                "source": false
+-              },
+-              "icon": "lucide-file",
+-              "title": "README"
+-            }
+           }
+-        ],
+-        "currentTab": 1
++        ]
+       }
+     ],
+     "direction": "vertical"
+@@ -193,13 +178,40 @@
+       "daily-notes:Abrir la nota de hoy": false,
+       "templates:Insertar plantilla": false,
+       "command-palette:Abrir paleta de comandos": false,
+-      "bases:Crear nueva base": false
++      "bases:Crear nueva base": false,
++      "templater-obsidian:Templater": false
+     }
+   },
+-  "active": "e3f15eb31c0e1d3b",
++  "active": "5606d5854bfb545f",
+   "lastOpenFiles": [
+-    "docu/kanban/tasks/DOC-016.md",
+-    "docu/kanban/KAN.md",
++    "public/vendor/symfony/dom-crawler/CHANGELOG.md",
++    "docu/kanban/tasks/DOC-021.md",
++    "docu/kanban/tasks/DOC-020.md",
++    "docu/kanban/tasks/DOC-019.md",
++    "docu/kanban/tasks/DOC-018.md",
++    "docu/kanban/tasks/DOC-017.md",
++    "public/vendor/guzzlehttp/psr7/README.md",
++    "docu/kanban.zip",
++    "docu/kanban/tasks/SEC-050.md",
++    "docu/kanban/tasks/SEC-049.md",
++    "docu/kanban/tasks/SEC-048.md",
++    "docu/kanban/tasks/SEC-047.md",
++    "docu/kanban/tasks/SEC-046.md",
++    "docu/kanban/tasks/SEC-045.md",
++    "docu/kanban/tasks/SEC-044.md",
++    "docu/kanban/tasks/SEC-043.md",
++    "docu/kanban/tasks/SEC-042.md",
++    "docu/kanban/tasks/SEC-041.md",
++    "docu/kanban/tasks/SEC-040.md",
++    "docu/kanban/tasks/SEC-039.md",
++    "docu/kanban/tasks/SEC-038.md",
++    "docu/kanban/tasks/SEC-037.md",
++    "docu/kanban/tasks/SEC-036.md",
++    "docu/kanban/tasks/SEC-035.md",
++    "docu/kanban/tasks/SEC-034.md",
++    "docu/kanban/tasks/SEC-033.md",
++    "docu/kanban/tasks/SEC-032.md",
++    "public/resources/views/layouts/public.blade.php",
+     "public/public/robots.txt",
+     "public/public/index.php",
+     "public/public/favicon.ico",
+@@ -207,32 +219,6 @@
+     "vendor/composer/98a57f9a/laravel-laravel-e196bfd/resources",
+     "vendor/composer/98a57f9a/laravel-laravel-e196bfd/public",
+     "vendor/composer/98a57f9a/laravel-laravel-e196bfd/phpunit.xml",
+-    "vendor/composer/98a57f9a/laravel-laravel-e196bfd/package.json",
+-    "vendor/composer/98a57f9a/laravel-laravel-e196bfd/database",
+-    "vendor/composer/98a57f9a/laravel-laravel-e196bfd/config",
+-    "vendor/composer/98a57f9a/laravel-laravel-e196bfd/README.md",
+-    "docu/kanban/todo.md",
+-    "DOC-016.md",
+-    "docu/kanban/tasks/DOC-015.md",
+-    "docu/kanban/tasks/DOC-001.md",
+-    "docu/kanban/tasks/DOC-014.md",
+-    "README.md",
+-    "AGENTS.md",
+-    "docu/kanban/tasks/DOC-013.md",
+-    "docu/kanban/tasks/DOC-012.md",
+-    "docu/kanban/tasks/DOC-011.md",
+-    "docu/kanban/tasks/CLI-007.md",
+-    "docu/kanban/tasks/KAN-009.md",
+-    "docu/kanban/tasks/DOC-010.md",
+-    "docu/kanban/tasks/TST-S-012.md",
+-    "docu/kanban/tasks/DOC-002.md",
+-    "docu/kanban/tasks/TST-S-011.md",
+-    "docu/kanban/tasks/TST-S-010.md",
+-    "docu/kanban/tasks/TST-S-009.md",
+-    "docu/kanban/tasks/TST-S-008.md",
+-    "docu/kanban/tasks/TST-S-007.md",
+-    "docu/kanban/tasks/TST-S-006.md",
+-    "docu/kanban/tasks/TST-S-005.md",
+-    "docu/kanban/tasks/TST-S-004.md"
++    "vendor/composer/98a57f9a/laravel-laravel-e196bfd/package.json"
+   ]
+ }
+\ No newline at end of file
+diff --git a/.opencode/opencode-loop/loop.log b/.opencode/opencode-loop/loop.log
+index 8a71c9a..3aa5e08 100644
+--- a/.opencode/opencode-loop/loop.log
++++ b/.opencode/opencode-loop/loop.log
+@@ -228,3 +228,20 @@
+ {"time":"2026-08-05T13:35:00.710Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":33}
+ {"time":"2026-08-05T13:36:31.971Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785936900844}
+ {"time":"2026-08-05T13:41:10.761Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":34}
++{"time":"2026-08-05T13:42:41.813Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785937270772}
++{"time":"2026-08-05T13:46:10.747Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":35}
++{"time":"2026-08-05T13:47:41.962Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785937570750}
++{"time":"2026-08-05T13:54:04.546Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":36}
++{"time":"2026-08-05T13:55:38.807Z","line":"add","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","label":"default: 5m -> Hice una primera revisión de la planificación (242 documentos, 213 tareas atómicas distribuidas en 16 áreas). La estructura está bien organizada y es muy superior a la de muchos proyectos que he revisado, pero, siendo extremadamente crítico, veo varios problemas importantes de arquitectura, seguridad y planificación. # Valoración general **Planificación:** 8,5/10 **Seguridad:** 5,5/10 **Escalabilidad:** 7/10 **Mantenibilidad:** 9/10 Lo que más me preocupa no es el código (todavía no existe), sino las **omisiones**. Hay muchas tareas de implementación, UI y documentación, pero faltan componentes fundamentales para un sistema de pagos. --- # Problema 1 (CRÍTICO) ## No existe un modelo de amenazas No encontré ninguna tarea equivalente a: - Threat Modeling - STRIDE - Attack Surface - Trust Boundaries - Data Flow Diagram Esto debería hacerse **antes** de escribir una línea de código. De lo contrario es muy fácil terminar con: - endpoints inseguros - webhooks vulnerables - tokens filtrados - escalamiento de privilegios Yo agregaría una épica completa. Ejemplo: ``` SEC-001 Threat Modeling SEC-002 Trust Boundaries SEC-003 DFD SEC-004 STRIDE SEC-005 Riesgos SEC-006 Mitigaciones SEC-007 Revisión ``` --- # Problema 2 (CRÍTICO) ## No existe una arquitectura de autorización Veo autenticación. No veo autorización. Son cosas distintas. Un sistema de pagos necesita reglas como: ``` Creator ↓ Project ↓ Invoice ↓ Payment ↓ Refund ↓ Webhook ``` Cada operación necesita políticas. Laravel Policies o Authorization Services. No aparecen en el plan. --- # Problema 3 (CRÍTICO) ## No hay diseño del dominio financiero No veo una planificación del dominio. Por ejemplo: ``` Money Currency Invoice Balance Ledger Withdrawal Refund Settlement Commission Fee Transfer ``` Todo eso debería existir como entidades del dominio. Nunca mezclar dinero con modelos Laravel genéricos. --- # Problema 4 (CRÍTICO) ## No aparece un Ledger Esto probablemente sea el problema más grave. Nunca confiar únicamente en: ``` payments ``` Necesitás algo parecido a: ``` ledger_entries balance_transactions account_movements ``` Cada movimiento: ``` +100 -50 +2 comisión -1 devolución etc ``` Nunca modificar balances directamente. Siempre reconstruibles. --- # Problema 5 ## No aparece idempotencia No encontré tareas sobre: ``` Idempotency-Key Duplicate Requests Retry Webhook replay ``` Un gateway recibe: ``` POST POST POST POST ``` Si no existe idempotencia: podés cobrar cuatro veces. --- # Problema 6 ## Falta Event Sourcing parcial No hace falta Event Sourcing completo. Pero sí eventos como: ``` InvoiceCreated PaymentSucceeded PaymentFailed RefundCreated RefundCompleted WebhookReceived WithdrawalApproved ``` Eso facilita muchísimo auditoría. --- # Problema 7 ## Estados insuficientemente definidos Todo pago debería tener una máquina de estados. Ejemplo: ``` Created Pending WaitingConfirmation Paid Cancelled Expired RefundRequested Refunded Disputed Chargeback Frozen ``` No vi una tarea específica sobre state machines. --- # Problema 8 ## Telegram Veo bastante Telegram. Pero no veo planificación sobre: - replay attacks - firma webhook - timestamp - nonce - expiración - rate limit por usuario - flood control - validación origen --- # Problema 9 ## Webhooks No encontré una épica específica. Un gateway necesita muchísimo trabajo aquí. Ejemplo: ``` Webhook Verification Retry Backoff Replay detection Dead Letter Queue Delivery Log Signing Rotation Keys ``` --- # Problema 10 ## Secret Management No aparece: - rotación de secretos - API Keys - Encryption Keys - Key Versioning --- # Problema 11 ## Auditoría Necesitás muchísimo más. No solamente logs. Algo parecido a: ``` Audit Log Actor IP Headers Payload Hash Response Hash Changes Timestamp Correlation ID ``` --- # Problema 12 ## Correlation IDs No aparecen. Todos los servicios deberían propagar ``` X-Correlation-ID ``` --- # Problema 13 ## Observabilidad No encontré tareas sobre OpenTelemetry Tracing Metrics Prometheus Grafana Alerting --- # Problema 14 ## Rate Limiting No basta con Laravel. Necesitás distintos límites. ``` login telegram payment invoice withdraw admin api public webhook ``` --- # Problema 15 ## RBAC demasiado simple Vi ``` user creator staff admin ``` Eso no escala. Conviene combinar RBAC Permissions Policies Scopes --- # Problema 16 ## No veo ABAC Hay situaciones donde no alcanza un rol. Ejemplo ``` creator ↓ solo sus propios pagos ``` Eso requiere atributos. --- # Problema 17 ## Concurrencia No encontré tareas sobre ``` SELECT FOR UPDATE Optimistic Lock Version Columns Deadlock Retry Distributed Lock Atomic Updates ``` En pagos esto es obligatorio. --- # Problema 18 ## Dinero No veo una decisión de arquitectura sobre: ``` decimal integer cents Money Value Object ``` Nunca float. --- # Problema 19 ## Multi-moneda Aunque hoy exista una sola. Conviene planificar desde el inicio. --- # Problema 20 ## Cron No veo procesos como: ``` expire invoices retry webhooks clean tokens retry jobs reconciliation orphan payments ``` --- # Problema 21 ## Seguridad de sesión No aparecen tareas sobre: - Session fixation - Token Rotation - Refresh Tokens - Device Management - Session Revocation --- # Problema 22 ## Backups No encontré: - Disaster Recovery - Restore Test - Backup Validation - PITR --- # Problema 23 ## Reconciliación Un gateway necesita reconciliar. ``` Sistema ↓ Proveedor ↓ Banco ↓ Ledger ``` No vi planificación. --- # Problema 24 ## Tests Hay bastantes tareas. Pero faltan suites específicas. Yo agregaría: - Chaos Testing - Fault Injection - Race Condition Testing - Concurrency Testing - Replay Testing - Fuzzing - Mutation Testing - Property Based Testing --- # Problema 25 ## Seguridad ofensiva Hay pruebas de seguridad. Pero faltan tareas específicas para verificar: - SSRF - XXE - IDOR - Mass Assignment - Host Header Injection - HTTP Request Smuggling - Cache Poisoning - Zip Bomb - Billion Laughs - JWT attacks - OAuth attacks - CSRF bypass - CSP bypass - Clickjacking - Timing attacks - Unicode normalization - Path traversal - Prototype pollution (si hay JS) - Dependency confusion --- # Lo que más me preocupa El plan está muy orientado a **construir una aplicación**, cuando un gateway de pagos debe diseñarse primero como un **sistema transaccional**. Eso implica que el centro del proyecto no debería ser Laravel, Telegram o las interfaces, sino un núcleo de dominio compuesto por: - **Ledger** (contabilidad de doble entrada o, como mínimo, libro mayor inmutable). - **Máquinas de estado** para pagos, reembolsos y retiros. - **Value Objects** (`Money`, `Currency`, `Fee`, `Commission`, `PaymentReference`). - **Servicios de autorización** separados de la autenticación. - **Idempotencia** en todas las operaciones que puedan repetirse. - **Auditoría completa** con trazabilidad de extremo a extremo. Si ese núcleo queda bien diseñado, el resto del sistema (Laravel, Telegram, paneles de administración y APIs) se convierte en una capa de presentación relativamente sencilla. Si no, el proyecto corre el riesgo de acumular lógica de negocio dispersa y difícil de asegurar. ## Recomendación principal Antes de comenzar el desarrollo, incorporaría una **17.ª área completa dedicada a Seguridad y Arquitectura del Dominio**, con entre **40 y 60 tareas atómicas**. Esa área debería completarse antes de implementar el resto, porque muchas de sus decisiones (ledger, autorización, estados, idempotencia, auditoría y observabilidad) condicionarán todas las demás áreas del proyecto."}
++{"time":"2026-08-05T13:59:08.292Z","line":"replace","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","label":"default: 5m -> Hice una primera revisión de la planificación (242 documentos, 213 tareas atómicas distribuidas en 16 áreas). La estructura está bien organizada y es muy superior a la de muchos proyectos que he revisado, pero, siendo extremadamente crítico, veo varios problemas importantes de arquitectura, seguridad y planificación. # Valoración general **Planificación:** 8,5/10 **Seguridad:** 5,5/10 **Escalabilidad:** 7/10 **Mantenibilidad:** 9/10 Lo que más me preocupa no es el código (todavía no existe), sino las **omisiones**. Hay muchas tareas de implementación, UI y documentación, pero faltan componentes fundamentales para un sistema de pagos. --- # Problema 1 (CRÍTICO) ## No existe un modelo de amenazas No encontré ninguna tarea equivalente a: - Threat Modeling - STRIDE - Attack Surface - Trust Boundaries - Data Flow Diagram Esto debería hacerse **antes** de escribir una línea de código. De lo contrario es muy fácil terminar con: - endpoints inseguros - webhooks vulnerables - tokens filtrados - escalamiento de privilegios Yo agregaría una épica completa. Ejemplo: ``` SEC-001 Threat Modeling SEC-002 Trust Boundaries SEC-003 DFD SEC-004 STRIDE SEC-005 Riesgos SEC-006 Mitigaciones SEC-007 Revisión ``` --- # Problema 2 (CRÍTICO) ## No existe una arquitectura de autorización Veo autenticación. No veo autorización. Son cosas distintas. Un sistema de pagos necesita reglas como: ``` Creator ↓ Project ↓ Invoice ↓ Payment ↓ Refund ↓ Webhook ``` Cada operación necesita políticas. Laravel Policies o Authorization Services. No aparecen en el plan. --- # Problema 3 (CRÍTICO) ## No hay diseño del dominio financiero No veo una planificación del dominio. Por ejemplo: ``` Money Currency Invoice Balance Ledger Withdrawal Refund Settlement Commission Fee Transfer ``` Todo eso debería existir como entidades del dominio. Nunca mezclar dinero con modelos Laravel genéricos. --- # Problema 4 (CRÍTICO) ## No aparece un Ledger Esto probablemente sea el problema más grave. Nunca confiar únicamente en: ``` payments ``` Necesitás algo parecido a: ``` ledger_entries balance_transactions account_movements ``` Cada movimiento: ``` +100 -50 +2 comisión -1 devolución etc ``` Nunca modificar balances directamente. Siempre reconstruibles. --- # Problema 5 ## No aparece idempotencia No encontré tareas sobre: ``` Idempotency-Key Duplicate Requests Retry Webhook replay ``` Un gateway recibe: ``` POST POST POST POST ``` Si no existe idempotencia: podés cobrar cuatro veces. --- # Problema 6 ## Falta Event Sourcing parcial No hace falta Event Sourcing completo. Pero sí eventos como: ``` InvoiceCreated PaymentSucceeded PaymentFailed RefundCreated RefundCompleted WebhookReceived WithdrawalApproved ``` Eso facilita muchísimo auditoría. --- # Problema 7 ## Estados insuficientemente definidos Todo pago debería tener una máquina de estados. Ejemplo: ``` Created Pending WaitingConfirmation Paid Cancelled Expired RefundRequested Refunded Disputed Chargeback Frozen ``` No vi una tarea específica sobre state machines. --- # Problema 8 ## Telegram Veo bastante Telegram. Pero no veo planificación sobre: - replay attacks - firma webhook - timestamp - nonce - expiración - rate limit por usuario - flood control - validación origen --- # Problema 9 ## Webhooks No encontré una épica específica. Un gateway necesita muchísimo trabajo aquí. Ejemplo: ``` Webhook Verification Retry Backoff Replay detection Dead Letter Queue Delivery Log Signing Rotation Keys ``` --- # Problema 10 ## Secret Management No aparece: - rotación de secretos - API Keys - Encryption Keys - Key Versioning --- # Problema 11 ## Auditoría Necesitás muchísimo más. No solamente logs. Algo parecido a: ``` Audit Log Actor IP Headers Payload Hash Response Hash Changes Timestamp Correlation ID ``` --- # Problema 12 ## Correlation IDs No aparecen. Todos los servicios deberían propagar ``` X-Correlation-ID ``` --- # Problema 13 ## Observabilidad No encontré tareas sobre OpenTelemetry Tracing Metrics Prometheus Grafana Alerting --- # Problema 14 ## Rate Limiting No basta con Laravel. Necesitás distintos límites. ``` login telegram payment invoice withdraw admin api public webhook ``` --- # Problema 15 ## RBAC demasiado simple Vi ``` user creator staff admin ``` Eso no escala. Conviene combinar RBAC Permissions Policies Scopes --- # Problema 16 ## No veo ABAC Hay situaciones donde no alcanza un rol. Ejemplo ``` creator ↓ solo sus propios pagos ``` Eso requiere atributos. --- # Problema 17 ## Concurrencia No encontré tareas sobre ``` SELECT FOR UPDATE Optimistic Lock Version Columns Deadlock Retry Distributed Lock Atomic Updates ``` En pagos esto es obligatorio. --- # Problema 18 ## Dinero No veo una decisión de arquitectura sobre: ``` decimal integer cents Money Value Object ``` Nunca float. --- # Problema 19 ## Multi-moneda Aunque hoy exista una sola. Conviene planificar desde el inicio. --- # Problema 20 ## Cron No veo procesos como: ``` expire invoices retry webhooks clean tokens retry jobs reconciliation orphan payments ``` --- # Problema 21 ## Seguridad de sesión No aparecen tareas sobre: - Session fixation - Token Rotation - Refresh Tokens - Device Management - Session Revocation --- # Problema 22 ## Backups No encontré: - Disaster Recovery - Restore Test - Backup Validation - PITR --- # Problema 23 ## Reconciliación Un gateway necesita reconciliar. ``` Sistema ↓ Proveedor ↓ Banco ↓ Ledger ``` No vi planificación. --- # Problema 24 ## Tests Hay bastantes tareas. Pero faltan suites específicas. Yo agregaría: - Chaos Testing - Fault Injection - Race Condition Testing - Concurrency Testing - Replay Testing - Fuzzing - Mutation Testing - Property Based Testing --- # Problema 25 ## Seguridad ofensiva Hay pruebas de seguridad. Pero faltan tareas específicas para verificar: - SSRF - XXE - IDOR - Mass Assignment - Host Header Injection - HTTP Request Smuggling - Cache Poisoning - Zip Bomb - Billion Laughs - JWT attacks - OAuth attacks - CSRF bypass - CSP bypass - Clickjacking - Timing attacks - Unicode normalization - Path traversal - Prototype pollution (si hay JS) - Dependency confusion --- # Lo que más me preocupa El plan está muy orientado a **construir una aplicación**, cuando un gateway de pagos debe diseñarse primero como un **sistema transaccional**. Eso implica que el centro del proyecto no debería ser Laravel, Telegram o las interfaces, sino un núcleo de dominio compuesto por: - **Ledger** (contabilidad de doble entrada o, como mínimo, libro mayor inmutable). - **Máquinas de estado** para pagos, reembolsos y retiros. - **Value Objects** (`Money`, `Currency`, `Fee`, `Commission`, `PaymentReference`). - **Servicios de autorización** separados de la autenticación. - **Idempotencia** en todas las operaciones que puedan repetirse. - **Auditoría completa** con trazabilidad de extremo a extremo. Si ese núcleo queda bien diseñado, el resto del sistema (Laravel, Telegram, paneles de administración y APIs) se convierte en una capa de presentación relativamente sencilla. Si no, el proyecto corre el riesgo de acumular lógica de negocio dispersa y difícil de asegurar. ## Recomendación principal Antes de comenzar el desarrollo, incorporaría una **17.ª área completa dedicada a Seguridad y Arquitectura del Dominio**, con entre **40 y 60 tareas atómicas**. Esa área debería completarse antes de implementar el resto, porque muchas de sus decisiones (ledger, autorización, estados, idempotencia, auditoría y observabilidad) condicionarán todas las demás áreas del proyecto."}
++{"time":"2026-08-05T13:59:08.536Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":1}
++{"time":"2026-08-05T13:59:58.949Z","line":"add","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","label":"default: every idle -> Hice una primera revisión de la planificación (242 documentos, 213 tareas atómicas distribuidas en 16 áreas). La estructura está bien organizada y es muy superior a la de muchos proyectos que he revisado, pero, siendo extremadamente crítico, veo varios problemas importantes de arquitectura, seguridad y planificación. # Valoración general **Planificación:** 8,5/10 **Seguridad:** 5,5/10 **Escalabilidad:** 7/10 **Mantenibilidad:** 9/10 Lo que más me preocupa no es el código (todavía no existe), sino las **omisiones**. Hay muchas tareas de implementación, UI y documentación, pero faltan componentes fundamentales para un sistema de pagos. --- # Problema 1 (CRÍTICO) ## No existe un modelo de amenazas No encontré ninguna tarea equivalente a: - Threat Modeling - STRIDE - Attack Surface - Trust Boundaries - Data Flow Diagram Esto debería hacerse **antes** de escribir una línea de código. De lo contrario es muy fácil terminar con: - endpoints inseguros - webhooks vulnerables - tokens filtrados - escalamiento de privilegios Yo agregaría una épica completa. Ejemplo: ``` SEC-001 Threat Modeling SEC-002 Trust Boundaries SEC-003 DFD SEC-004 STRIDE SEC-005 Riesgos SEC-006 Mitigaciones SEC-007 Revisión ``` --- # Problema 2 (CRÍTICO) ## No existe una arquitectura de autorización Veo autenticación. No veo autorización. Son cosas distintas. Un sistema de pagos necesita reglas como: ``` Creator ↓ Project ↓ Invoice ↓ Payment ↓ Refund ↓ Webhook ``` Cada operación necesita políticas. Laravel Policies o Authorization Services. No aparecen en el plan. --- # Problema 3 (CRÍTICO) ## No hay diseño del dominio financiero No veo una planificación del dominio. Por ejemplo: ``` Money Currency Invoice Balance Ledger Withdrawal Refund Settlement Commission Fee Transfer ``` Todo eso debería existir como entidades del dominio. Nunca mezclar dinero con modelos Laravel genéricos. --- # Problema 4 (CRÍTICO) ## No aparece un Ledger Esto probablemente sea el problema más grave. Nunca confiar únicamente en: ``` payments ``` Necesitás algo parecido a: ``` ledger_entries balance_transactions account_movements ``` Cada movimiento: ``` +100 -50 +2 comisión -1 devolución etc ``` Nunca modificar balances directamente. Siempre reconstruibles. --- # Problema 5 ## No aparece idempotencia No encontré tareas sobre: ``` Idempotency-Key Duplicate Requests Retry Webhook replay ``` Un gateway recibe: ``` POST POST POST POST ``` Si no existe idempotencia: podés cobrar cuatro veces. --- # Problema 6 ## Falta Event Sourcing parcial No hace falta Event Sourcing completo. Pero sí eventos como: ``` InvoiceCreated PaymentSucceeded PaymentFailed RefundCreated RefundCompleted WebhookReceived WithdrawalApproved ``` Eso facilita muchísimo auditoría. --- # Problema 7 ## Estados insuficientemente definidos Todo pago debería tener una máquina de estados. Ejemplo: ``` Created Pending WaitingConfirmation Paid Cancelled Expired RefundRequested Refunded Disputed Chargeback Frozen ``` No vi una tarea específica sobre state machines. --- # Problema 8 ## Telegram Veo bastante Telegram. Pero no veo planificación sobre: - replay attacks - firma webhook - timestamp - nonce - expiración - rate limit por usuario - flood control - validación origen --- # Problema 9 ## Webhooks No encontré una épica específica. Un gateway necesita muchísimo trabajo aquí. Ejemplo: ``` Webhook Verification Retry Backoff Replay detection Dead Letter Queue Delivery Log Signing Rotation Keys ``` --- # Problema 10 ## Secret Management No aparece: - rotación de secretos - API Keys - Encryption Keys - Key Versioning --- # Problema 11 ## Auditoría Necesitás muchísimo más. No solamente logs. Algo parecido a: ``` Audit Log Actor IP Headers Payload Hash Response Hash Changes Timestamp Correlation ID ``` --- # Problema 12 ## Correlation IDs No aparecen. Todos los servicios deberían propagar ``` X-Correlation-ID ``` --- # Problema 13 ## Observabilidad No encontré tareas sobre OpenTelemetry Tracing Metrics Prometheus Grafana Alerting --- # Problema 14 ## Rate Limiting No basta con Laravel. Necesitás distintos límites. ``` login telegram payment invoice withdraw admin api public webhook ``` --- # Problema 15 ## RBAC demasiado simple Vi ``` user creator staff admin ``` Eso no escala. Conviene combinar RBAC Permissions Policies Scopes --- # Problema 16 ## No veo ABAC Hay situaciones donde no alcanza un rol. Ejemplo ``` creator ↓ solo sus propios pagos ``` Eso requiere atributos. --- # Problema 17 ## Concurrencia No encontré tareas sobre ``` SELECT FOR UPDATE Optimistic Lock Version Columns Deadlock Retry Distributed Lock Atomic Updates ``` En pagos esto es obligatorio. --- # Problema 18 ## Dinero No veo una decisión de arquitectura sobre: ``` decimal integer cents Money Value Object ``` Nunca float. --- # Problema 19 ## Multi-moneda Aunque hoy exista una sola. Conviene planificar desde el inicio. --- # Problema 20 ## Cron No veo procesos como: ``` expire invoices retry webhooks clean tokens retry jobs reconciliation orphan payments ``` --- # Problema 21 ## Seguridad de sesión No aparecen tareas sobre: - Session fixation - Token Rotation - Refresh Tokens - Device Management - Session Revocation --- # Problema 22 ## Backups No encontré: - Disaster Recovery - Restore Test - Backup Validation - PITR --- # Problema 23 ## Reconciliación Un gateway necesita reconciliar. ``` Sistema ↓ Proveedor ↓ Banco ↓ Ledger ``` No vi planificación. --- # Problema 24 ## Tests Hay bastantes tareas. Pero faltan suites específicas. Yo agregaría: - Chaos Testing - Fault Injection - Race Condition Testing - Concurrency Testing - Replay Testing - Fuzzing - Mutation Testing - Property Based Testing --- # Problema 25 ## Seguridad ofensiva Hay pruebas de seguridad. Pero faltan tareas específicas para verificar: - SSRF - XXE - IDOR - Mass Assignment - Host Header Injection - HTTP Request Smuggling - Cache Poisoning - Zip Bomb - Billion Laughs - JWT attacks - OAuth attacks - CSRF bypass - CSP bypass - Clickjacking - Timing attacks - Unicode normalization - Path traversal - Prototype pollution (si hay JS) - Dependency confusion --- # Lo que más me preocupa El plan está muy orientado a **construir una aplicación**, cuando un gateway de pagos debe diseñarse primero como un **sistema transaccional**. Eso implica que el centro del proyecto no debería ser Laravel, Telegram o las interfaces, sino un núcleo de dominio compuesto por: - **Ledger** (contabilidad de doble entrada o, como mínimo, libro mayor inmutable). - **Máquinas de estado** para pagos, reembolsos y retiros. - **Value Objects** (`Money`, `Currency`, `Fee`, `Commission`, `PaymentReference`). - **Servicios de autorización** separados de la autenticación. - **Idempotencia** en todas las operaciones que puedan repetirse. - **Auditoría completa** con trazabilidad de extremo a extremo. Si ese núcleo queda bien diseñado, el resto del sistema (Laravel, Telegram, paneles de administración y APIs) se convierte en una capa de presentación relativamente sencilla. Si no, el proyecto corre el riesgo de acumular lógica de negocio dispersa y difícil de asegurar. ## Recomendación principal Antes de comenzar el desarrollo, incorporaría una **17.ª área completa dedicada a Seguridad y Arquitectura del Dominio**, con entre **40 y 60 tareas atómicas**. Esa área debería completarse antes de implementar el resto, porque muchas de sus decisiones (ledger, autorización, estados, idempotencia, auditoría y observabilidad) condicionarán todas las demás áreas del proyecto."}
++{"time":"2026-08-05T14:00:06.555Z","line":"run","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","runCount":1}
++{"time":"2026-08-05T14:00:52.155Z","line":"active-stale-recovery","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","startedAt":1785938406561}
++{"time":"2026-08-05T14:11:12.261Z","line":"run","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","runCount":2}
++{"time":"2026-08-05T14:11:59.768Z","line":"active-stale-recovery","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","startedAt":1785939072266}
++{"time":"2026-08-05T14:13:16.888Z","line":"run","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","runCount":3}
++{"time":"2026-08-05T14:20:52.381Z","line":"add","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","label":"default: every idle -> You are the permanent Kanban Architect and Quality Guardian for the TG-PayGate project. Your ONLY responsibility is to continuously improve, normalize, audit and maintain the project planning located under: docu/kanban/ You NEVER implement application code. You NEVER modify source code outside docu/kanban unless explicitly requested. Your product is the planning itself. ========================================================== MISSION ========================================================== Continuously evolve the project planning until it reaches production-grade quality comparable to enterprise payment systems. Your objective is to eliminate every ambiguity, missing dependency, architectural flaw, security omission and planning inconsistency. Assume the planning is never finished. Every loop iteration must improve it. ========================================================== GENERAL PRINCIPLES ========================================================== Treat the kanban as the single source of truth. Never simplify the architecture. Prefer explicitness over brevity. Never duplicate responsibilities. Every task must have exactly one responsibility. Every dependency must be explicit. Every deliverable must be testable. Every area must remain internally consistent. Maintain deterministic planning. Never introduce vague TODOs. Never create placeholder tasks. Never create \"future work\". Everything added must be actionable. ========================================================== AREAS TO AUDIT CONTINUOUSLY ========================================================== Repeatedly inspect every planning area searching for omissions. Examples include (not limited to): • Domain Architecture • Financial Domain • Ledger • Money • Currency • Authorization • Authentication • Telegram Integration • API • Admin • Creator Portal • User Portal • Security • Cryptography • Infrastructure • DevOps • CI/CD • Monitoring • Logging • Audit • Observability • Testing • Documentation • Deployment • Operations • Disaster Recovery • Backup • Fraud Prevention • Compliance • UX • Internationalization ========================================================== EACH ITERATION MUST SEARCH FOR ========================================================== Missing tasks Missing epics Missing documentation Missing dependencies Missing acceptance criteria Missing risks Missing validations Missing edge cases Missing security requirements Missing operational procedures Missing maintenance procedures Missing migration strategy Missing rollback strategy Missing monitoring Missing metrics Missing alerts Missing testing Missing threat models Missing architecture decisions Missing state machines Missing domain models Missing workflows Missing diagrams Missing lifecycle definitions Missing ownership definitions ========================================================== SECURITY REVIEW ========================================================== Continuously review planning against modern security practices. Search for missing tasks regarding: Threat Modeling STRIDE Trust Boundaries DFD Risk Register RBAC ABAC Policies Permission Matrix Secrets Management Key Rotation Envelope Encryption Webhook Verification Replay Protection Nonce Validation Timestamp Validation JWT OAuth OIDC Session Management CSRF XSS SSRF SQL Injection IDOR Mass Assignment Rate Limiting DoS DDoS Abuse Prevention Fraud Detection Velocity Checks Audit Logs Correlation IDs Secure Defaults Supply Chain Security Dependency Audits Container Security Infrastructure Hardening Backup Validation Disaster Recovery Chaos Engineering Penetration Testing ========================================================== PAYMENT DOMAIN REVIEW ========================================================== Continuously verify planning includes: Money Value Objects Currency Ledger Double-entry accounting when appropriate Balance reconstruction Idempotency Settlement Refund Withdrawal Transfer Fee Commission Accounting periods Financial reconciliation Provider reconciliation Webhook reconciliation Dispute handling Chargebacks State Machines Expiration Retry policies Consistency guarantees Atomicity Concurrency ========================================================== PLANNING QUALITY RULES ========================================================== Every task must: have one responsibility be atomic be independently completable have measurable completion avoid implementation details unless necessary avoid duplicated scope reference dependent tasks fit naturally into its area Tasks should remain small. Large tasks must be decomposed. Areas should remain cohesive. ========================================================== DEPENDENCY VALIDATION ========================================================== Continuously verify: No circular dependencies. No orphan tasks. No unreachable tasks. No duplicated deliverables. No inconsistent ordering. No missing prerequisites. No hidden assumptions. ========================================================== CONSISTENCY VALIDATION ========================================================== Continuously verify consistency between: Requirements Architecture Database Domain Security API Documentation Testing Deployment Operations Terminology Naming Identifiers Numbering Cross references ========================================================== DOCUMENTATION ========================================================== Improve documentation whenever appropriate. Clarify ambiguous wording. Standardize terminology. Improve readability. Normalize formatting. Keep style consistent. Avoid duplicated explanations. ========================================================== REFACTORING ========================================================== When needed you may: split large tasks merge duplicated tasks rename tasks renumber tasks move tasks between areas rewrite descriptions rewrite acceptance criteria improve checklists update dependencies remove obsolete planning Never reduce planning quality. ========================================================== OUTPUT REQUIREMENTS ========================================================== Work directly inside the repository. Modify only files under docu/kanban unless explicitly instructed otherwise. After every iteration: Validate internal consistency. Review all modified files. Ensure numbering remains correct. Ensure links remain valid. Ensure no duplicate IDs exist. ========================================================== GIT WORKFLOW ========================================================== When meaningful improvements have been completed: Create a clear commit describing the planning improvements. Push the branch. If nothing valuable can be improved, do not invent changes. Instead perform another complete audit until a real improvement is found. Repeat forever."}
++{"time":"2026-08-05T14:22:53.620Z","line":"replace","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","label":"default: every idle -> You are the permanent Kanban Architect and Quality Guardian for the TG-PayGate project. Your ONLY responsibility is to continuously improve, normalize, audit and maintain the project planning located under: docu/kanban/ You NEVER implement application code. You NEVER modify source code outside docu/kanban unless explicitly requested. Your product is the planning itself. ========================================================== MISSION ========================================================== Continuously evolve the project planning until it reaches production-grade quality comparable to enterprise payment systems. Your objective is to eliminate every ambiguity, missing dependency, architectural flaw, security omission and planning inconsistency. Assume the planning is never finished. Every loop iteration must improve it. ========================================================== GENERAL PRINCIPLES ========================================================== Treat the kanban as the single source of truth. Never simplify the architecture. Prefer explicitness over brevity. Never duplicate responsibilities. Every task must have exactly one responsibility. Every dependency must be explicit. Every deliverable must be testable. Every area must remain internally consistent. Maintain deterministic planning. Never introduce vague TODOs. Never create placeholder tasks. Never create \"future work\". Everything added must be actionable. ========================================================== AREAS TO AUDIT CONTINUOUSLY ========================================================== Repeatedly inspect every planning area searching for omissions. Examples include (not limited to): • Domain Architecture • Financial Domain • Ledger • Money • Currency • Authorization • Authentication • Telegram Integration • API • Admin • Creator Portal • User Portal • Security • Cryptography • Infrastructure • DevOps • CI/CD • Monitoring • Logging • Audit • Observability • Testing • Documentation • Deployment • Operations • Disaster Recovery • Backup • Fraud Prevention • Compliance • UX • Internationalization ========================================================== EACH ITERATION MUST SEARCH FOR ========================================================== Missing tasks Missing epics Missing documentation Missing dependencies Missing acceptance criteria Missing risks Missing validations Missing edge cases Missing security requirements Missing operational procedures Missing maintenance procedures Missing migration strategy Missing rollback strategy Missing monitoring Missing metrics Missing alerts Missing testing Missing threat models Missing architecture decisions Missing state machines Missing domain models Missing workflows Missing diagrams Missing lifecycle definitions Missing ownership definitions ========================================================== SECURITY REVIEW ========================================================== Continuously review planning against modern security practices. Search for missing tasks regarding: Threat Modeling STRIDE Trust Boundaries DFD Risk Register RBAC ABAC Policies Permission Matrix Secrets Management Key Rotation Envelope Encryption Webhook Verification Replay Protection Nonce Validation Timestamp Validation JWT OAuth OIDC Session Management CSRF XSS SSRF SQL Injection IDOR Mass Assignment Rate Limiting DoS DDoS Abuse Prevention Fraud Detection Velocity Checks Audit Logs Correlation IDs Secure Defaults Supply Chain Security Dependency Audits Container Security Infrastructure Hardening Backup Validation Disaster Recovery Chaos Engineering Penetration Testing ========================================================== PAYMENT DOMAIN REVIEW ========================================================== Continuously verify planning includes: Money Value Objects Currency Ledger Double-entry accounting when appropriate Balance reconstruction Idempotency Settlement Refund Withdrawal Transfer Fee Commission Accounting periods Financial reconciliation Provider reconciliation Webhook reconciliation Dispute handling Chargebacks State Machines Expiration Retry policies Consistency guarantees Atomicity Concurrency ========================================================== PLANNING QUALITY RULES ========================================================== Every task must: have one responsibility be atomic be independently completable have measurable completion avoid implementation details unless necessary avoid duplicated scope reference dependent tasks fit naturally into its area Tasks should remain small. Large tasks must be decomposed. Areas should remain cohesive. ========================================================== DEPENDENCY VALIDATION ========================================================== Continuously verify: No circular dependencies. No orphan tasks. No unreachable tasks. No duplicated deliverables. No inconsistent ordering. No missing prerequisites. No hidden assumptions. ========================================================== CONSISTENCY VALIDATION ========================================================== Continuously verify consistency between: Requirements Architecture Database Domain Security API Documentation Testing Deployment Operations Terminology Naming Identifiers Numbering Cross references ========================================================== DOCUMENTATION ========================================================== Improve documentation whenever appropriate. Clarify ambiguous wording. Standardize terminology. Improve readability. Normalize formatting. Keep style consistent. Avoid duplicated explanations. ========================================================== REFACTORING ========================================================== When needed you may: split large tasks merge duplicated tasks rename tasks renumber tasks move tasks between areas rewrite descriptions rewrite acceptance criteria improve checklists update dependencies remove obsolete planning Never reduce planning quality. ========================================================== OUTPUT REQUIREMENTS ========================================================== Work directly inside the repository. Modify only files under docu/kanban unless explicitly instructed otherwise. After every iteration: Validate internal consistency. Review all modified files. Ensure numbering remains correct. Ensure links remain valid. Ensure no duplicate IDs exist. ========================================================== GIT WORKFLOW ========================================================== When meaningful improvements have been completed: Create a clear commit describing the planning improvements. Push the branch. If nothing valuable can be improved, do not invent changes. Instead perform another complete audit until a real improvement is found. Repeat forever."}
++{"time":"2026-08-05T14:22:53.884Z","line":"run","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","runCount":1}
++{"time":"2026-08-05T14:23:39.973Z","line":"active-stale-recovery","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","startedAt":1785939773898}
+diff --git a/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json b/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+index 3a140fc..f507810 100644
+--- a/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
++++ b/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+@@ -1,53 +1,4 @@
+ {
+   "version": 4,
+-  "jobs": [
+-    {
+-      "id": "msftuyla-13ecca",
+-      "name": "default",
+-      "action": "procede con el desarrollo siguiendo el kanban. Todo el desarrollo debe estar dentro de public/. Mientras desarrollas deberás ir haciendo actualizaciones al kanban para marcar las tareas que se mueven de columna, si tenés que agregar tareas. No te olvides de ir actualizando la documentación. También tenés que mantener el repositorio bien organizado y con comits con cada implementación grande. De momento trabajamos en la rama \"master\". El objetivo es llevar a cabo todas las tareas y sus pruebas hasta llegar a la fase de pruebas Alfa. Asegurate de que tu principal objetivo sea la seguridad del sitio y la experiencia de usuario, amigable, masculina, privacidad, de fácil uso.",
+-      "intervalMs": 300000,
+-      "immediate": true,
+-      "maxRuns": 0,
+-      "maxRuntimeMs": 0,
+-      "maxFailures": 0,
+-      "timeoutMs": 0,
+-      "includeFiles": [],
+-      "watchPaths": [],
+-      "compactEveryRuns": 0,
+-      "compactEveryMs": 0,
+-      "branchDone": false,
+-      "goalAcceptance": [],
+-      "goalChecks": [],
+-      "goalCompleteWhenChecksPass": false,
+-      "goalSummary": "",
+-      "goalEvidence": "",
+-      "goalBlockedReason": "",
+-      "goalProgress": [],
+-      "noProgressCount": 0,
+-      "lastProgressAt": 0,
+-      "noOverlap": true,
+-      "safe": true,
+-      "quiet": false,
+-      "askNever": true,
+-      "pauseOnVerifyFail": false,
+-      "gitCheckpoint": false,
+-      "checkpointOnly": true,
+-      "dryRun": false,
+-      "multi": false,
+-      "batch": 0,
+-      "runCount": 34,
+-      "failureCount": 0,
+-      "lastRunAt": 1785937270745,
+-      "lastCompactAt": 0,
+-      "lastCompactRunCount": 0,
+-      "watchSnapshot": {},
+-      "watchTriggered": false,
+-      "createdAt": "2026-08-05T08:31:01.535Z",
+-      "enabled": true,
+-      "paused": false,
+-      "agent": "build",
+-      "activeRecoveryMs": 90000,
+-      "lastFinishedAt": 1785936991931
+-    }
+-  ]
++  "jobs": []
+ }
+\ No newline at end of file
+diff --git a/.opencode/skills/kanban/SKILL.md b/.opencode/skills/kanban/SKILL.md
+index 1637ec2..3a11b77 100644
+--- a/.opencode/skills/kanban/SKILL.md
++++ b/.opencode/skills/kanban/SKILL.md
+@@ -51,7 +51,7 @@ Proporciono **operaciones programáticas completas** para el tablero Kanban de T
+ tags:
+   - kanban/{backlog|todo|in-progress|review|done}
+   - type/{task|bug|epic|milestone}
+-  - domain/{FUN|UX|UI|WEB|CSS|PUB|CLI|CRE|ADM|CRM|INS|DOC|KAN|TST-F|TST-P|TST-S}
++  - domain/{FUN|UX|UI|WEB|CSS|PUB|CLI|CRE|ADM|CRM|INS|DOC|KAN|TST-F|TST-P|TST-S|SEC}
+   - priority/P{0-3}
+ parent: "[[PARENT-ID]]"  # null si root
+ children: ["[[CHILD-ID]]"]
+@@ -63,8 +63,8 @@ created: "YYYY-MM-DD"
+ updated: "YYYY-MM-DD"
+ ```
+ 
+-## Dominios Soportados (16)
+-`FUN` `UX` `UI` `WEB` `CSS` `PUB` `CLI` `CRE` `ADM` `CRM` `INS` `DOC` `KAN` `TST-F` `TST-P` `TST-S`
++## Dominios Soportados (17)
++`FUN` `UX` `UI` `WEB` `CSS` `PUB` `CLI` `CRE` `ADM` `CRM` `INS` `DOC` `KAN` `TST-F` `TST-P` `TST-S` `SEC`
+ 
+ ## Patrones de Commit para Auto-Sync
+ ```bash
+diff --git a/.opencode/skills/kanban/scripts/kanban.js b/.opencode/skills/kanban/scripts/kanban.js
+index bc17811..cba6c00 100644
+--- a/.opencode/skills/kanban/scripts/kanban.js
++++ b/.opencode/skills/kanban/scripts/kanban.js
+@@ -13,7 +13,7 @@ const TASKS_PATH = 'docu/kanban/tasks';
+ const TEMPLATES_PATH = 'docu/kanban/templates';
+ 
+ const COLUMNS = ['backlog', 'todo', 'in-progress', 'review', 'done'];
+-const DOMAINS = ['FUN', 'UX', 'UI', 'WEB', 'CSS', 'PUB', 'CLI', 'CRE', 'ADM', 'CRM', 'INS', 'DOC', 'KAN', 'TST-F', 'TST-P', 'TST-S'];
++const DOMAINS = ['FUN', 'UX', 'UI', 'WEB', 'CSS', 'PUB', 'CLI', 'CRE', 'ADM', 'CRM', 'INS', 'DOC', 'KAN', 'TST-F', 'TST-P', 'TST-S', 'SEC'];
+ const PRIORITIES = ['P0', 'P1', 'P2', 'P3'];
+ const TYPES = ['task', 'bug', 'epic', 'milestone'];
+ 
+diff --git a/AGENTS.md b/AGENTS.md
+index 20b6786..9966a10 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -22,7 +22,7 @@ node .opencode/skills/kanban/scripts/kanban.js archive --days 7 --apply
+ - **Board**: `docu/kanban/` (columns: backlog, todo, in-progress, review, done)
+ - **Tasks**: `docu/kanban/tasks/DOM-NNN.md` with YAML frontmatter
+ - **Templates**: `docu/kanban/templates/{task,bug,epic,milestone}.md`
+-- **ID format**: `DOM-NNN` where DOM ∈ {FUN,UX,UI,WEB,CSS,PUB,CLI,CRE,ADM,CRM,INS,DOC,KAN,TST-F,TST-P,TST-S}
++- **ID format**: `DOM-NNN` where DOM ∈ {FUN,UX,UI,WEB,CSS,PUB,CLI,CRE,ADM,CRM,INS,DOC,KAN,TST-F,TST-P,TST-S,SEC}
+ - **Required frontmatter**: tags (kanban/, type/, domain/, priority/), parent, children, depends_on, blocks, status, assignee, created, updated
+ 
+ ## Commit Patterns (auto-sync)
+diff --git a/docu/kanban/DOC.md b/docu/kanban/DOC.md
+index f84a0db..8d87ebb 100644
+--- a/docu/kanban/DOC.md
++++ b/docu/kanban/DOC.md
+@@ -22,6 +22,11 @@ children:
+   - "[[DOC-014]]"
+   - "[[DOC-015]]"
+   - "[[DOC-016]]"
++  - "[[DOC-017]]"
++  - "[[DOC-018]]"
++  - "[[DOC-019]]"
++  - "[[DOC-020]]"
++  - "[[DOC-021]]"
+ depends_on: []
+ blocks: []
+ status: active
+@@ -32,9 +37,9 @@ updated: 2026-08-04
+ 
+ # 1️⃣2️⃣ DOC - Documentación
+ 
+-**Objetivo**: Estructura docu/, ADRs (5), Specs (3), Guías deployment (3), Guías usuario (3), Runbook, Changelog.
++**Objetivo**: Estructura docu/, ADRs (10), Specs (3), Guías deployment (3), Guías usuario (3), Runbook, Changelog.
+ 
+-**Owner**: @docs | **Tareas**: 16 | **Progreso**: 0/16 (0%)
++**Owner**: @docs | **Tareas**: 21 | **Progreso**: 0/21 (0%)
+ 
+ ## 📋 Tareas
+ 
+@@ -54,6 +59,11 @@ updated: 2026-08-04
+ - [ ] [[DOC-014]] Guía usuario: Admin (config, staff, métricas, feature flags)
+ - [ ] [[DOC-015]] Runbook: Incident response, rollback, scaling, backup/restore
+ - [ ] [[DOC-016]] Changelog + Versioning (SemVer + Conventional Commits)
++- [ ] [[DOC-017]] ADR-006: Núcleo Transaccional — Money (integer cents) + Ledger doble entrada
++- [ ] [[DOC-018]] ADR-007: Máquinas de estado de Pagos, Reembolsos y Retiros
++- [ ] [[DOC-019]] ADR-008: Idempotencia + Eventos de Dominio
++- [ ] [[DOC-020]] ADR-009: Autorización — RBAC + Policies + ABAC/Tenancy
++- [ ] [[DOC-021]] ADR-010: Seguridad de Webhooks y Telegram (firma, replay, DLQ)
+ 
+ ## 🔗 Enlaces
+ - [[desarrollo]] — Índice maestro
+diff --git a/docu/kanban/done.md b/docu/kanban/done.md
+index d9b6d6b..0382129 100644
+--- a/docu/kanban/done.md
++++ b/docu/kanban/done.md
+@@ -123,6 +123,20 @@ children:
+   - "[[DOC-015]]"
+   - "[[DOC-016]]"
+   - "[[FUN-007]]"
++  - "[[FUN-008]]"
++  - "[[FUN-009]]"
++  - "[[INS-010]]"
++  - "[[INS-011]]"
++  - "[[INS-012]]"
++  - "[[KAN-001]]"
++  - "[[KAN-002]]"
++  - "[[KAN-003]]"
++  - "[[KAN-004]]"
++  - "[[KAN-005]]"
++  - "[[KAN-006]]"
++  - "[[KAN-007]]"
++  - "[[KAN-008]]"
++  - "[[KAN-009]]"
+ status: "done"
+ created: "2026-08-04"
+ updated: "2026-08-05"
+diff --git a/docu/kanban/in-progress.md b/docu/kanban/in-progress.md
+index 98babdb..2f04c35 100644
+--- a/docu/kanban/in-progress.md
++++ b/docu/kanban/in-progress.md
+@@ -3,7 +3,8 @@ tags:
+   - "kanban/in-progress"
+   - "type/container"
+ parent: "null"
+-children: []
++children:
++  - "[[PUB-001]]"
+ status: "in-progress"
+ created: "2026-08-04"
+ updated: "2026-08-05"
+diff --git a/docu/kanban/tasks/ADM-002.md b/docu/kanban/tasks/ADM-002.md
+index 6bd470b..477dbc6 100644
+--- a/docu/kanban/tasks/ADM-002.md
++++ b/docu/kanban/tasks/ADM-002.md
+@@ -14,6 +14,7 @@ blocks:
+   - "[[ADM-004]]"
+   - "[[ADM-005]]"
+   - "[[ADM-006]]"
++  - "[[ADM-003]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/ADM-003.md b/docu/kanban/tasks/ADM-003.md
+index 7e73032..7b25c0b 100644
+--- a/docu/kanban/tasks/ADM-003.md
++++ b/docu/kanban/tasks/ADM-003.md
+@@ -13,6 +13,7 @@ depends_on:
+ blocks:
+   - "[[ADM-005]]"
+   - "[[ADM-006]]"
++  - "[[ADM-004]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/ADM-004.md b/docu/kanban/tasks/ADM-004.md
+index e367e91..08340e9 100644
+--- a/docu/kanban/tasks/ADM-004.md
++++ b/docu/kanban/tasks/ADM-004.md
+@@ -12,6 +12,7 @@ depends_on:
+   - "[[FUN-006]]"
+ blocks:
+   - "[[ADM-006]]"
++  - "[[ADM-005]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/ADM-005.md b/docu/kanban/tasks/ADM-005.md
+index efcf60a..2a2e965 100644
+--- a/docu/kanban/tasks/ADM-005.md
++++ b/docu/kanban/tasks/ADM-005.md
+@@ -12,6 +12,7 @@ depends_on:
+   - "[[FUN-006]]"
+ blocks:
+   - "[[ADM-007]]"
++  - "[[ADM-006]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/ADM-007.md b/docu/kanban/tasks/ADM-007.md
+index 48f8dba..83d6bd8 100644
+--- a/docu/kanban/tasks/ADM-007.md
++++ b/docu/kanban/tasks/ADM-007.md
+@@ -12,6 +12,7 @@ depends_on:
+   - "[[FUN-006]]"
+ blocks:
+   - "[[ADM-008]]"
++  - "[[ADM-009]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/ADM-010.md b/docu/kanban/tasks/ADM-010.md
+index ee3eb39..1c12375 100644
+--- a/docu/kanban/tasks/ADM-010.md
++++ b/docu/kanban/tasks/ADM-010.md
+@@ -10,7 +10,10 @@ depends_on:
+   - "[[ADM-009]]"
+   - "[[FUN-001]]"
+   - "[[FUN-005]]"
+-blocks: []
++blocks:
++  - "[[ADM-011]]"
++  - "[[ADM-012]]"
++  - "[[ADM-013]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CLI-001.md b/docu/kanban/tasks/CLI-001.md
+index a5c8736..5725207 100644
+--- a/docu/kanban/tasks/CLI-001.md
++++ b/docu/kanban/tasks/CLI-001.md
+@@ -15,6 +15,7 @@ depends_on:
+   - "[[CSS-009]]"
+ blocks:
+   - "[[CLI-002]]"
++  - "[[CLI-003]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CLI-004.md b/docu/kanban/tasks/CLI-004.md
+index 27aa2dd..e9f0449 100644
+--- a/docu/kanban/tasks/CLI-004.md
++++ b/docu/kanban/tasks/CLI-004.md
+@@ -13,6 +13,7 @@ depends_on:
+   - "[[PUB-017]]"
+ blocks:
+   - "[[CLI-005]]"
++  - "[[CLI-006]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CLI-005.md b/docu/kanban/tasks/CLI-005.md
+index 8c22a58..858cda5 100644
+--- a/docu/kanban/tasks/CLI-005.md
++++ b/docu/kanban/tasks/CLI-005.md
+@@ -10,7 +10,8 @@ depends_on:
+   - "[[CLI-004]]"
+   - "[[FUN-006]]"
+   - "[[FUN-008]]"
+-blocks: []
++blocks:
++  - "[[CLI-006]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CLI-006.md b/docu/kanban/tasks/CLI-006.md
+index 291e28d..0b43a23 100644
+--- a/docu/kanban/tasks/CLI-006.md
++++ b/docu/kanban/tasks/CLI-006.md
+@@ -9,7 +9,8 @@ children: []
+ depends_on:
+   - "[[CLI-004]]"
+   - "[[CLI-005]]"
+-blocks: []
++blocks:
++  - "[[CLI-007]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-001.md b/docu/kanban/tasks/CRE-001.md
+index 9e4ffde..b1cdaf5 100644
+--- a/docu/kanban/tasks/CRE-001.md
++++ b/docu/kanban/tasks/CRE-001.md
+@@ -15,6 +15,8 @@ blocks:
+   - "[[CRE-002]]"
+   - "[[CRE-003]]"
+   - "[[CRE-011]]"
++  - "[[CRE-004]]"
++  - "[[CRE-005]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-006.md b/docu/kanban/tasks/CRE-006.md
+index 122d340..af393ef 100644
+--- a/docu/kanban/tasks/CRE-006.md
++++ b/docu/kanban/tasks/CRE-006.md
+@@ -12,6 +12,8 @@ depends_on:
+   - "[[PUB-008]]"
+ blocks:
+   - "[[CRE-007]]"
++  - "[[CRE-011]]"
++  - "[[CRE-012]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-009.md b/docu/kanban/tasks/CRE-009.md
+index b6752df..8a62e5d 100644
+--- a/docu/kanban/tasks/CRE-009.md
++++ b/docu/kanban/tasks/CRE-009.md
+@@ -12,6 +12,7 @@ depends_on:
+   - "[[INS-011]]"
+ blocks:
+   - "[[CRE-013]]"
++  - "[[CRE-010]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-011.md b/docu/kanban/tasks/CRE-011.md
+index 023ed35..416d6a1 100644
+--- a/docu/kanban/tasks/CRE-011.md
++++ b/docu/kanban/tasks/CRE-011.md
+@@ -13,6 +13,15 @@ depends_on:
+   - "[[PUB-014]]"
+ blocks:
+   - "[[CRE-015]]"
++  - "[[CRE-002]]"
++  - "[[CRE-003]]"
++  - "[[CRE-007]]"
++  - "[[CRE-008]]"
++  - "[[CRE-009]]"
++  - "[[CRE-013]]"
++  - "[[CRE-014]]"
++  - "[[CRE-006]]"
++  - "[[CRE-012]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-012.md b/docu/kanban/tasks/CRE-012.md
+index 094cb6d..3087e15 100644
+--- a/docu/kanban/tasks/CRE-012.md
++++ b/docu/kanban/tasks/CRE-012.md
+@@ -12,6 +12,8 @@ depends_on:
+ blocks:
+   - "[[CRE-015]]"
+   - "[[ADM-013]]"
++  - "[[CRE-013]]"
++  - "[[CRE-016]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-013.md b/docu/kanban/tasks/CRE-013.md
+index 608bb06..fbfaae2 100644
+--- a/docu/kanban/tasks/CRE-013.md
++++ b/docu/kanban/tasks/CRE-013.md
+@@ -13,6 +13,11 @@ depends_on:
+   - "[[PUB-019]]"
+ blocks:
+   - "[[ADM-012]]"
++  - "[[ADM-011]]"
++  - "[[CLI-004]]"
++  - "[[CRE-016]]"
++  - "[[CRE-017]]"
++  - "[[PUB-017]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-014.md b/docu/kanban/tasks/CRE-014.md
+index f7354e0..5d25f2c 100644
+--- a/docu/kanban/tasks/CRE-014.md
++++ b/docu/kanban/tasks/CRE-014.md
+@@ -13,6 +13,7 @@ depends_on:
+   - "[[INS-011]]"
+ blocks:
+   - "[[CRE-013]]"
++  - "[[PUB-004]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-015.md b/docu/kanban/tasks/CRE-015.md
+index 4498625..d56cfcc 100644
+--- a/docu/kanban/tasks/CRE-015.md
++++ b/docu/kanban/tasks/CRE-015.md
+@@ -17,6 +17,7 @@ blocks:
+   - "[[CRE-017]]"
+   - "[[ADM-010]]"
+   - "[[CRM-011]]"
++  - "[[ADM-013]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRE-016.md b/docu/kanban/tasks/CRE-016.md
+index 3e5c0d5..bf3dcf3 100644
+--- a/docu/kanban/tasks/CRE-016.md
++++ b/docu/kanban/tasks/CRE-016.md
+@@ -12,6 +12,7 @@ depends_on:
+   - "[[CRE-015]]"
+ blocks:
+   - "[[ADM-012]]"
++  - "[[CRE-017]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRM-001.md b/docu/kanban/tasks/CRM-001.md
+index 55fee8a..0667e23 100644
+--- a/docu/kanban/tasks/CRM-001.md
++++ b/docu/kanban/tasks/CRM-001.md
+@@ -15,6 +15,7 @@ blocks:
+   - "[[CRM-003]]"
+   - "[[CRM-004]]"
+   - "[[CRM-005]]"
++  - "[[CRM-011]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRM-003.md b/docu/kanban/tasks/CRM-003.md
+index c25eb3e..f70360e 100644
+--- a/docu/kanban/tasks/CRM-003.md
++++ b/docu/kanban/tasks/CRM-003.md
+@@ -12,6 +12,7 @@ depends_on:
+   - "[[FUN-006]]"
+ blocks:
+   - "[[CRM-005]]"
++  - "[[CRM-004]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRM-004.md b/docu/kanban/tasks/CRM-004.md
+index 15543f0..2547e62 100644
+--- a/docu/kanban/tasks/CRM-004.md
++++ b/docu/kanban/tasks/CRM-004.md
+@@ -12,6 +12,7 @@ depends_on:
+   - "[[CRM-003]]"
+ blocks:
+   - "[[CRM-005]]"
++  - "[[CRM-006]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRM-007.md b/docu/kanban/tasks/CRM-007.md
+index b0a901b..e229cf6 100644
+--- a/docu/kanban/tasks/CRM-007.md
++++ b/docu/kanban/tasks/CRM-007.md
+@@ -12,6 +12,9 @@ depends_on:
+   - "[[FUN-006]]"
+ blocks:
+   - "[[ADM-012]]"
++  - "[[CRM-008]]"
++  - "[[CRM-009]]"
++  - "[[CRM-010]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRM-011.md b/docu/kanban/tasks/CRM-011.md
+index aa4975c..eea3466 100644
+--- a/docu/kanban/tasks/CRM-011.md
++++ b/docu/kanban/tasks/CRM-011.md
+@@ -14,6 +14,8 @@ depends_on:
+   - "[[PUB-019]]"
+ blocks:
+   - "[[ADM-012]]"
++  - "[[ADM-013]]"
++  - "[[CRM-001]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CRM-012.md b/docu/kanban/tasks/CRM-012.md
+index b74596c..f3308a1 100644
+--- a/docu/kanban/tasks/CRM-012.md
++++ b/docu/kanban/tasks/CRM-012.md
+@@ -10,7 +10,10 @@ depends_on:
+   - "[[CRM-006]]"
+   - "[[FUN-005]]"
+   - "[[FUN-006]]"
+-blocks: []
++blocks:
++  - "[[ADM-011]]"
++  - "[[CRM-013]]"
++  - "[[ADM-012]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-003.md b/docu/kanban/tasks/CSS-003.md
+index b3d2768..90e533e 100644
+--- a/docu/kanban/tasks/CSS-003.md
++++ b/docu/kanban/tasks/CSS-003.md
+@@ -13,6 +13,7 @@ blocks:
+   - "[[CSS-006]]"
+   - "[[CSS-025]]"
+   - "[[UI-001]]"
++  - "[[CSS-034]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-004.md b/docu/kanban/tasks/CSS-004.md
+index cba1296..c868cf9 100644
+--- a/docu/kanban/tasks/CSS-004.md
++++ b/docu/kanban/tasks/CSS-004.md
+@@ -15,6 +15,16 @@ blocks:
+   - "[[CSS-031]]"
+   - "[[UI-005]]"
+   - "[[CSS-034]]"
++  - "[[CSS-022]]"
++  - "[[CSS-023]]"
++  - "[[CSS-024]]"
++  - "[[CSS-025]]"
++  - "[[CSS-026]]"
++  - "[[CSS-027]]"
++  - "[[CSS-028]]"
++  - "[[CSS-029]]"
++  - "[[CSS-030]]"
++  - "[[CSS-032]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-006.md b/docu/kanban/tasks/CSS-006.md
+index b2f5d6b..5003a22 100644
+--- a/docu/kanban/tasks/CSS-006.md
++++ b/docu/kanban/tasks/CSS-006.md
+@@ -36,6 +36,8 @@ blocks:
+   - "[[UI-002]]"
+   - "[[UI-003]]"
+   - "[[CSS-034]]"
++  - "[[CLI-001]]"
++  - "[[PUB-001]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-007.md b/docu/kanban/tasks/CSS-007.md
+index ae2d3e4..52039b2 100644
+--- a/docu/kanban/tasks/CSS-007.md
++++ b/docu/kanban/tasks/CSS-007.md
+@@ -12,6 +12,8 @@ depends_on:
+ blocks:
+   - "[[CSS-008]]"
+   - "[[CSS-034]]"
++  - "[[CLI-001]]"
++  - "[[PUB-001]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-008.md b/docu/kanban/tasks/CSS-008.md
+index 0d58982..edf9d91 100644
+--- a/docu/kanban/tasks/CSS-008.md
++++ b/docu/kanban/tasks/CSS-008.md
+@@ -11,6 +11,8 @@ depends_on:
+   - "[[UI-002]]"
+ blocks:
+   - "[[CSS-034]]"
++  - "[[CSS-030]]"
++  - "[[CSS-033]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-009.md b/docu/kanban/tasks/CSS-009.md
+index f26d574..12a9e6c 100644
+--- a/docu/kanban/tasks/CSS-009.md
++++ b/docu/kanban/tasks/CSS-009.md
+@@ -11,6 +11,8 @@ depends_on:
+   - "[[UI-002]]"
+ blocks:
+   - "[[CSS-034]]"
++  - "[[CLI-001]]"
++  - "[[PUB-001]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-018.md b/docu/kanban/tasks/CSS-018.md
+index f346980..db1f12b 100644
+--- a/docu/kanban/tasks/CSS-018.md
++++ b/docu/kanban/tasks/CSS-018.md
+@@ -11,6 +11,7 @@ depends_on:
+   - "[[UI-002]]"
+ blocks:
+   - "[[CSS-034]]"
++  - "[[PUB-001]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-019.md b/docu/kanban/tasks/CSS-019.md
+index 6b9f2be..64b4170 100644
+--- a/docu/kanban/tasks/CSS-019.md
++++ b/docu/kanban/tasks/CSS-019.md
+@@ -11,6 +11,7 @@ depends_on:
+   - "[[UI-002]]"
+ blocks:
+   - "[[CSS-034]]"
++  - "[[PUB-001]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/CSS-030.md b/docu/kanban/tasks/CSS-030.md
+index b582a8e..f41cad1 100644
+--- a/docu/kanban/tasks/CSS-030.md
++++ b/docu/kanban/tasks/CSS-030.md
+@@ -11,6 +11,7 @@ depends_on:
+   - "[[CSS-008]]"
+ blocks:
+   - "[[CSS-034]]"
++  - "[[CSS-033]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-031.md b/docu/kanban/tasks/CSS-031.md
+index 3ead6b7..fe7a057 100644
+--- a/docu/kanban/tasks/CSS-031.md
++++ b/docu/kanban/tasks/CSS-031.md
+@@ -11,6 +11,7 @@ depends_on:
+   - "[[UI-005]]"
+ blocks:
+   - "[[CSS-034]]"
++  - "[[CSS-033]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-034.md b/docu/kanban/tasks/CSS-034.md
+index def9e9c..dc94b3d 100644
+--- a/docu/kanban/tasks/CSS-034.md
++++ b/docu/kanban/tasks/CSS-034.md
+@@ -40,7 +40,12 @@ depends_on:
+   - "[[CSS-031]]"
+   - "[[CSS-032]]"
+   - "[[CSS-033]]"
+-blocks: []
++blocks:
++  - "[[CSS-038]]"
++  - "[[PUB-013]]"
++  - "[[CSS-035]]"
++  - "[[CSS-036]]"
++  - "[[CSS-037]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-035.md b/docu/kanban/tasks/CSS-035.md
+index b3d46ae..8e178b7 100644
+--- a/docu/kanban/tasks/CSS-035.md
++++ b/docu/kanban/tasks/CSS-035.md
+@@ -8,7 +8,10 @@ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[CSS-034]]"
+-blocks: []
++blocks:
++  - "[[CSS-036]]"
++  - "[[PUB-013]]"
++  - "[[CSS-038]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-036.md b/docu/kanban/tasks/CSS-036.md
+index 8462d16..19b8d98 100644
+--- a/docu/kanban/tasks/CSS-036.md
++++ b/docu/kanban/tasks/CSS-036.md
+@@ -9,7 +9,9 @@ children: []
+ depends_on:
+   - "[[CSS-034]]"
+   - "[[CSS-035]]"
+-blocks: []
++blocks:
++  - "[[CSS-037]]"
++  - "[[CSS-038]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/CSS-037.md b/docu/kanban/tasks/CSS-037.md
+index 6997740..60e2827 100644
+--- a/docu/kanban/tasks/CSS-037.md
++++ b/docu/kanban/tasks/CSS-037.md
+@@ -9,7 +9,8 @@ children: []
+ depends_on:
+   - "[[CSS-034]]"
+   - "[[CSS-036]]"
+-blocks: []
++blocks:
++  - "[[CSS-038]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/DOC-001.md b/docu/kanban/tasks/DOC-001.md
+index dd1546e..c237960 100644
+--- a/docu/kanban/tasks/DOC-001.md
++++ b/docu/kanban/tasks/DOC-001.md
+@@ -8,7 +8,22 @@ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[FUN-001]]"
+-blocks: []
++blocks:
++  - "[[DOC-003]]"
++  - "[[DOC-004]]"
++  - "[[DOC-005]]"
++  - "[[DOC-006]]"
++  - "[[DOC-007]]"
++  - "[[DOC-008]]"
++  - "[[DOC-009]]"
++  - "[[DOC-010]]"
++  - "[[DOC-011]]"
++  - "[[DOC-012]]"
++  - "[[DOC-013]]"
++  - "[[DOC-014]]"
++  - "[[DOC-015]]"
++  - "[[DOC-016]]"
++  - "[[DOC-002]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/FUN-001.md b/docu/kanban/tasks/FUN-001.md
+index d13674f..6cda3d1 100644
+--- a/docu/kanban/tasks/FUN-001.md
++++ b/docu/kanban/tasks/FUN-001.md
+@@ -13,6 +13,17 @@ blocks:
+   - "[[FUN-005]]"
+   - "[[CSS-001]]"
+   - "[[UX-001]]"
++  - "[[ADM-001]]"
++  - "[[ADM-002]]"
++  - "[[ADM-008]]"
++  - "[[ADM-010]]"
++  - "[[DOC-001]]"
++  - "[[FUN-008]]"
++  - "[[INS-001]]"
++  - "[[KAN-001]]"
++  - "[[PUB-011]]"
++  - "[[PUB-012]]"
++  - "[[PUB-013]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/FUN-005.md b/docu/kanban/tasks/FUN-005.md
+index 41f49ab..d9e2462 100644
+--- a/docu/kanban/tasks/FUN-005.md
++++ b/docu/kanban/tasks/FUN-005.md
+@@ -15,6 +15,39 @@ blocks:
+   - "[[ADM-003]]"
+   - "[[CRM-001]]"
+   - "[[TST-F-004]]"
++  - "[[ADM-001]]"
++  - "[[ADM-002]]"
++  - "[[ADM-004]]"
++  - "[[ADM-005]]"
++  - "[[ADM-006]]"
++  - "[[ADM-007]]"
++  - "[[ADM-008]]"
++  - "[[ADM-010]]"
++  - "[[CLI-002]]"
++  - "[[CRE-010]]"
++  - "[[CRM-002]]"
++  - "[[CRM-003]]"
++  - "[[CRM-005]]"
++  - "[[CRM-006]]"
++  - "[[CRM-007]]"
++  - "[[CRM-008]]"
++  - "[[CRM-009]]"
++  - "[[CRM-010]]"
++  - "[[CRM-012]]"
++  - "[[CRM-013]]"
++  - "[[INS-001]]"
++  - "[[PUB-002]]"
++  - "[[PUB-003]]"
++  - "[[PUB-004]]"
++  - "[[PUB-005]]"
++  - "[[PUB-006]]"
++  - "[[PUB-007]]"
++  - "[[PUB-008]]"
++  - "[[PUB-009]]"
++  - "[[PUB-010]]"
++  - "[[PUB-011]]"
++  - "[[PUB-012]]"
++  - "[[PUB-013]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/FUN-006.md b/docu/kanban/tasks/FUN-006.md
+index a88986e..ebdfd22 100644
+--- a/docu/kanban/tasks/FUN-006.md
++++ b/docu/kanban/tasks/FUN-006.md
+@@ -14,6 +14,40 @@ blocks:
+   - "[[PUB-004]]"
+   - "[[PUB-007]]"
+   - "[[INS-006]]"
++  - "[[ADM-003]]"
++  - "[[ADM-004]]"
++  - "[[ADM-005]]"
++  - "[[ADM-006]]"
++  - "[[ADM-007]]"
++  - "[[CLI-001]]"
++  - "[[CLI-002]]"
++  - "[[CLI-003]]"
++  - "[[CLI-004]]"
++  - "[[CLI-005]]"
++  - "[[CRE-001]]"
++  - "[[CRE-010]]"
++  - "[[CRE-015]]"
++  - "[[CRM-001]]"
++  - "[[CRM-002]]"
++  - "[[CRM-003]]"
++  - "[[CRM-005]]"
++  - "[[CRM-006]]"
++  - "[[CRM-007]]"
++  - "[[CRM-008]]"
++  - "[[CRM-009]]"
++  - "[[CRM-010]]"
++  - "[[CRM-011]]"
++  - "[[CRM-012]]"
++  - "[[CRM-013]]"
++  - "[[INS-001]]"
++  - "[[PUB-002]]"
++  - "[[PUB-003]]"
++  - "[[PUB-005]]"
++  - "[[PUB-006]]"
++  - "[[PUB-008]]"
++  - "[[PUB-009]]"
++  - "[[PUB-010]]"
++  - "[[PUB-019]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/FUN-008.md b/docu/kanban/tasks/FUN-008.md
+index 09f8f32..70411d3 100644
+--- a/docu/kanban/tasks/FUN-008.md
++++ b/docu/kanban/tasks/FUN-008.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/FUN
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/FUN"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -14,10 +14,20 @@ blocks:
+   - "[[INS-005]]"
+   - "[[CSS-034]]"
+   - "[[TST-F-001]]"
+-status: todo
++  - "[[ADM-002]]"
++  - "[[CLI-001]]"
++  - "[[CLI-003]]"
++  - "[[CLI-005]]"
++  - "[[CRE-001]]"
++  - "[[CRE-011]]"
++  - "[[CRE-015]]"
++  - "[[CRM-011]]"
++  - "[[PUB-011]]"
++  - "[[PUB-019]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[FUN-008]] Configurar .env.example Portable + Config Multi-dominio
+diff --git a/docu/kanban/tasks/FUN-009.md b/docu/kanban/tasks/FUN-009.md
+index ced1a3d..d02a149 100644
+--- a/docu/kanban/tasks/FUN-009.md
++++ b/docu/kanban/tasks/FUN-009.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/FUN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/FUN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -14,10 +14,11 @@ blocks:
+   - "[[ADM-001]]"
+   - "[[CRM-001]]"
+   - "[[TST-F-001]]"
+-status: todo
++  - "[[PUB-003]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[FUN-009]] BaseService, BaseController, ApiResponse, Exception Handler Global
+diff --git a/docu/kanban/tasks/INS-008.md b/docu/kanban/tasks/INS-008.md
+index 58e1ade..82cc6ce 100644
+--- a/docu/kanban/tasks/INS-008.md
++++ b/docu/kanban/tasks/INS-008.md
+@@ -11,6 +11,7 @@ depends_on:
+ blocks:
+   - "[[INS-011]]"
+   - "[[INS-012]]"
++  - "[[INS-009]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/INS-009.md b/docu/kanban/tasks/INS-009.md
+index 6ecae24..4f7ed68 100644
+--- a/docu/kanban/tasks/INS-009.md
++++ b/docu/kanban/tasks/INS-009.md
+@@ -10,6 +10,7 @@ depends_on:
+   - "[[INS-008]]"
+ blocks:
+   - "[[INS-012]]"
++  - "[[INS-010]]"
+ status: "done"
+ assignee: "@dev"
+ created: "2026-08-04"
+diff --git a/docu/kanban/tasks/INS-010.md b/docu/kanban/tasks/INS-010.md
+index 7df602c..814df84 100644
+--- a/docu/kanban/tasks/INS-010.md
++++ b/docu/kanban/tasks/INS-010.md
+@@ -1,18 +1,19 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/INS
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/INS"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[INS-009]]"
+-blocks: []
+-status: todo
++blocks:
++  - "[[INS-012]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[INS-010]] Seguridad Instalador: Anti-Reinstall, Honeypot, CSP, HSTS
+diff --git a/docu/kanban/tasks/INS-011.md b/docu/kanban/tasks/INS-011.md
+index d9ad081..6604c05 100644
+--- a/docu/kanban/tasks/INS-011.md
++++ b/docu/kanban/tasks/INS-011.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/INS
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/INS"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -12,10 +12,17 @@ blocks:
+   - "[[INS-008]]"
+   - "[[INS-011]]"
+   - "[[INS-012]]"
+-status: todo
++  - "[[CRE-001]]"
++  - "[[CRE-009]]"
++  - "[[CRE-011]]"
++  - "[[CRE-014]]"
++  - "[[PUB-018]]"
++  - "[[PUB-014]]"
++  - "[[PUB-015]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[INS-008]] Paso 2.5: Configuración Pasarelas de Pago (MercadoPago, Stripe, Transferencias, Test Mode)
+diff --git a/docu/kanban/tasks/INS-012.md b/docu/kanban/tasks/INS-012.md
+index e33a2c0..5960914 100644
+--- a/docu/kanban/tasks/INS-012.md
++++ b/docu/kanban/tasks/INS-012.md
+@@ -1,20 +1,22 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/INS
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/INS"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[INS-007]]"
+   - "[[INS-010]]"
+   - "[[INS-011]]"
+-blocks: []
+-status: todo
++blocks:
++  - "[[CRE-015]]"
++  - "[[PUB-019]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[INS-012]] Paso 2.6: Configuración Fiscal Argentina (IVA, Ganancias, IIBB, AFIP CAE, Factura A/B/C)
+diff --git a/docu/kanban/tasks/KAN-001.md b/docu/kanban/tasks/KAN-001.md
+index 9c67e16..3641eed 100644
+--- a/docu/kanban/tasks/KAN-001.md
++++ b/docu/kanban/tasks/KAN-001.md
+@@ -1,19 +1,19 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[FUN-001]]"
+ blocks:
+   - "[[KAN-002]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-001]] Setup Inicial: Crear 5 Columnas + Templates + Convención Frontmatter
+diff --git a/docu/kanban/tasks/KAN-002.md b/docu/kanban/tasks/KAN-002.md
+index 27fa6a0..5caf65f 100644
+--- a/docu/kanban/tasks/KAN-002.md
++++ b/docu/kanban/tasks/KAN-002.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -16,10 +16,10 @@ blocks:
+   - "[[KAN-007]]"
+   - "[[KAN-008]]"
+   - "[[KAN-009]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-002]] Poblar todo.md con Jerarquía Completa (Esta Planificación)
+diff --git a/docu/kanban/tasks/KAN-003.md b/docu/kanban/tasks/KAN-003.md
+index 5a41821..6d3e295 100644
+--- a/docu/kanban/tasks/KAN-003.md
++++ b/docu/kanban/tasks/KAN-003.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-002]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-003]] Daily Standup Sync: Mover Tareas, Actualizar Status, Blockers
+diff --git a/docu/kanban/tasks/KAN-004.md b/docu/kanban/tasks/KAN-004.md
+index d7cfc3c..17b8540 100644
+--- a/docu/kanban/tasks/KAN-004.md
++++ b/docu/kanban/tasks/KAN-004.md
+@@ -1,18 +1,20 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-002]]"
+-blocks: []
+-status: todo
++blocks:
++  - "[[KAN-006]]"
++  - "[[KAN-007]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-004]] Weekly Refinement: Groom Backlog, Estimar, Dividir Tareas >8pts
+diff --git a/docu/kanban/tasks/KAN-005.md b/docu/kanban/tasks/KAN-005.md
+index b18c223..d38a00c 100644
+--- a/docu/kanban/tasks/KAN-005.md
++++ b/docu/kanban/tasks/KAN-005.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-002]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-005]] Sprint Planning (si aplica): Seleccionar, Commit, Capacity
+diff --git a/docu/kanban/tasks/KAN-006.md b/docu/kanban/tasks/KAN-006.md
+index 1fbf2f3..06b9fa7 100644
+--- a/docu/kanban/tasks/KAN-006.md
++++ b/docu/kanban/tasks/KAN-006.md
+@@ -1,18 +1,19 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-004]]"
+-blocks: []
+-status: todo
++blocks:
++  - "[[KAN-008]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-006]] Retrospectiva: Métricas (Lead Time, Cycle Time, Throughput, WIP)
+diff --git a/docu/kanban/tasks/KAN-007.md b/docu/kanban/tasks/KAN-007.md
+index 721326d..9d76c4d 100644
+--- a/docu/kanban/tasks/KAN-007.md
++++ b/docu/kanban/tasks/KAN-007.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-004]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-007]] Métricas Kanban: CFD, Aging WIP, Blocked Time, Rework Rate
+diff --git a/docu/kanban/tasks/KAN-008.md b/docu/kanban/tasks/KAN-008.md
+index 1337d45..9a186c5 100644
+--- a/docu/kanban/tasks/KAN-008.md
++++ b/docu/kanban/tasks/KAN-008.md
+@@ -1,18 +1,19 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-006]]"
+-blocks: []
+-status: todo
++blocks:
++  - "[[KAN-009]]"
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-008]] Archive Done: Mover a done.md Semanal, Limpiar In-Progress/Review
+diff --git a/docu/kanban/tasks/KAN-009.md b/docu/kanban/tasks/KAN-009.md
+index 3f8d459..6e80015 100644
+--- a/docu/kanban/tasks/KAN-009.md
++++ b/docu/kanban/tasks/KAN-009.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-008]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-009]] Automation: Git Hooks (Commit Msg → Mover Tarea), GitHub Actions (PR → Review)
+diff --git a/docu/kanban/tasks/PUB-001.md b/docu/kanban/tasks/PUB-001.md
+index d33462d..89f21d6 100644
+--- a/docu/kanban/tasks/PUB-001.md
++++ b/docu/kanban/tasks/PUB-001.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/PUB
+-  - priority/P0
++  - "kanban/in-progress"
++  - "type/task"
++  - "domain/PUB"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -21,10 +21,10 @@ blocks:
+   - "[[PUB-004]]"
+   - "[[CLI-001]]"
+   - "[[CRE-001]]"
+-status: todo
++status: "in-progress"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[PUB-001]] Landing Page SSR: Hero, Features, Social Proof, Pricing, CTA, Footer
+diff --git a/docu/kanban/tasks/PUB-005.md b/docu/kanban/tasks/PUB-005.md
+index 845a999..6f3b2c1 100644
+--- a/docu/kanban/tasks/PUB-005.md
++++ b/docu/kanban/tasks/PUB-005.md
+@@ -13,6 +13,9 @@ depends_on:
+ blocks:
+   - "[[PUB-005]]"
+   - "[[CRE-001]]"
++  - "[[PUB-006]]"
++  - "[[PUB-009]]"
++  - "[[CLI-001]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-006.md b/docu/kanban/tasks/PUB-006.md
+index 0960991..49d863f 100644
+--- a/docu/kanban/tasks/PUB-006.md
++++ b/docu/kanban/tasks/PUB-006.md
+@@ -12,6 +12,12 @@ depends_on:
+   - "[[FUN-006]]"
+ blocks:
+   - "[[PUB-007]]"
++  - "[[CRE-008]]"
++  - "[[PUB-015]]"
++  - "[[PUB-016]]"
++  - "[[PUB-017]]"
++  - "[[PUB-018]]"
++  - "[[PUB-019]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-007.md b/docu/kanban/tasks/PUB-007.md
+index 4a31dd7..0f869d1 100644
+--- a/docu/kanban/tasks/PUB-007.md
++++ b/docu/kanban/tasks/PUB-007.md
+@@ -13,6 +13,7 @@ depends_on:
+ blocks:
+   - "[[PUB-005]]"
+   - "[[CRE-013]]"
++  - "[[PUB-008]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-008.md b/docu/kanban/tasks/PUB-008.md
+index e14124d..11c2184 100644
+--- a/docu/kanban/tasks/PUB-008.md
++++ b/docu/kanban/tasks/PUB-008.md
+@@ -13,6 +13,9 @@ depends_on:
+ blocks:
+   - "[[CRE-011]]"
+   - "[[CRM-011]]"
++  - "[[CRE-006]]"
++  - "[[CRE-007]]"
++  - "[[CRE-009]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-009.md b/docu/kanban/tasks/PUB-009.md
+index 50d70f6..0d3ed76 100644
+--- a/docu/kanban/tasks/PUB-009.md
++++ b/docu/kanban/tasks/PUB-009.md
+@@ -13,6 +13,7 @@ depends_on:
+ blocks:
+   - "[[CLI-001]]"
+   - "[[CRE-001]]"
++  - "[[PUB-010]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-014.md b/docu/kanban/tasks/PUB-014.md
+index 9233472..1a831b4 100644
+--- a/docu/kanban/tasks/PUB-014.md
++++ b/docu/kanban/tasks/PUB-014.md
+@@ -11,6 +11,8 @@ depends_on:
+   - "[[INS-011]]"
+ blocks:
+   - "[[CRE-011]]"
++  - "[[CRE-014]]"
++  - "[[PUB-018]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-015.md b/docu/kanban/tasks/PUB-015.md
+index 754370f..2187912 100644
+--- a/docu/kanban/tasks/PUB-015.md
++++ b/docu/kanban/tasks/PUB-015.md
+@@ -11,6 +11,9 @@ depends_on:
+   - "[[INS-011]]"
+ blocks:
+   - "[[CRE-011]]"
++  - "[[PUB-004]]"
++  - "[[PUB-014]]"
++  - "[[PUB-018]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-017.md b/docu/kanban/tasks/PUB-017.md
+index 553f001..f4cf9f7 100644
+--- a/docu/kanban/tasks/PUB-017.md
++++ b/docu/kanban/tasks/PUB-017.md
+@@ -12,6 +12,10 @@ depends_on:
+   - "[[PUB-019]]"
+ blocks:
+   - "[[CRE-011]]"
++  - "[[CLI-004]]"
++  - "[[CRM-011]]"
++  - "[[ADM-012]]"
++  - "[[CRE-013]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/PUB-019.md b/docu/kanban/tasks/PUB-019.md
+index 2ae8b1d..2d2c7eb 100644
+--- a/docu/kanban/tasks/PUB-019.md
++++ b/docu/kanban/tasks/PUB-019.md
+@@ -15,6 +15,12 @@ blocks:
+   - "[[CRE-015]]"
+   - "[[ADM-010]]"
+   - "[[CRM-011]]"
++  - "[[CRE-013]]"
++  - "[[CRE-014]]"
++  - "[[ADM-011]]"
++  - "[[ADM-013]]"
++  - "[[CRE-017]]"
++  - "[[PUB-017]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UI-001.md b/docu/kanban/tasks/UI-001.md
+index dece3f0..3e2983d 100644
+--- a/docu/kanban/tasks/UI-001.md
++++ b/docu/kanban/tasks/UI-001.md
+@@ -19,6 +19,11 @@ blocks:
+   - "[[CSS-002]]"
+   - "[[CSS-003]]"
+   - "[[CSS-004]]"
++  - "[[UI-006]]"
++  - "[[UI-007]]"
++  - "[[UI-008]]"
++  - "[[UI-009]]"
++  - "[[WEB-001]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UI-002.md b/docu/kanban/tasks/UI-002.md
+index 6a73d65..55dac4f 100644
+--- a/docu/kanban/tasks/UI-002.md
++++ b/docu/kanban/tasks/UI-002.md
+@@ -26,6 +26,9 @@ blocks:
+   - "[[CSS-019]]"
+   - "[[CSS-020]]"
+   - "[[CSS-021]]"
++  - "[[UI-008]]"
++  - "[[UI-009]]"
++  - "[[UX-008]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UI-003.md b/docu/kanban/tasks/UI-003.md
+index 92f2024..f662959 100644
+--- a/docu/kanban/tasks/UI-003.md
++++ b/docu/kanban/tasks/UI-003.md
+@@ -15,6 +15,7 @@ blocks:
+   - "[[CRE-001]]"
+   - "[[ADM-001]]"
+   - "[[CRM-001]]"
++  - "[[UI-004]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UI-005.md b/docu/kanban/tasks/UI-005.md
+index a58294b..273304c 100644
+--- a/docu/kanban/tasks/UI-005.md
++++ b/docu/kanban/tasks/UI-005.md
+@@ -12,6 +12,7 @@ blocks:
+   - "[[CSS-004]]"
+   - "[[CSS-031]]"
+   - "[[CSS-033]]"
++  - "[[WEB-001]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UX-001.md b/docu/kanban/tasks/UX-001.md
+index b0a3745..2526072 100644
+--- a/docu/kanban/tasks/UX-001.md
++++ b/docu/kanban/tasks/UX-001.md
+@@ -13,6 +13,8 @@ blocks:
+   - "[[UX-003]]"
+   - "[[UX-004]]"
+   - "[[UI-001]]"
++  - "[[UX-005]]"
++  - "[[UX-007]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UX-004.md b/docu/kanban/tasks/UX-004.md
+index 70ee8ec..0e9defb 100644
+--- a/docu/kanban/tasks/UX-004.md
++++ b/docu/kanban/tasks/UX-004.md
+@@ -15,6 +15,11 @@ blocks:
+   - "[[CRE-001]]"
+   - "[[ADM-001]]"
+   - "[[CRM-001]]"
++  - "[[UI-007]]"
++  - "[[UX-006]]"
++  - "[[UX-008]]"
++  - "[[WEB-001]]"
++  - "[[WEB-004]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UX-005.md b/docu/kanban/tasks/UX-005.md
+index 494b75e..1febc7b 100644
+--- a/docu/kanban/tasks/UX-005.md
++++ b/docu/kanban/tasks/UX-005.md
+@@ -11,6 +11,8 @@ depends_on:
+ blocks:
+   - "[[UI-001]]"
+   - "[[UI-005]]"
++  - "[[WEB-006]]"
++  - "[[UI-003]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UX-006.md b/docu/kanban/tasks/UX-006.md
+index e45c842..c582f56 100644
+--- a/docu/kanban/tasks/UX-006.md
++++ b/docu/kanban/tasks/UX-006.md
+@@ -12,6 +12,7 @@ blocks:
+   - "[[UI-001]]"
+   - "[[UI-003]]"
+   - "[[TST-S-005]]"
++  - "[[CSS-033]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/UX-007.md b/docu/kanban/tasks/UX-007.md
+index c83ff04..f55f14d 100644
+--- a/docu/kanban/tasks/UX-007.md
++++ b/docu/kanban/tasks/UX-007.md
+@@ -11,6 +11,8 @@ depends_on:
+ blocks:
+   - "[[UI-001]]"
+   - "[[WEB-003]]"
++  - "[[WEB-001]]"
++  - "[[WEB-005]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/tasks/WEB-001.md b/docu/kanban/tasks/WEB-001.md
+index 6bb5bbf..ca0ee03 100644
+--- a/docu/kanban/tasks/WEB-001.md
++++ b/docu/kanban/tasks/WEB-001.md
+@@ -16,6 +16,10 @@ blocks:
+   - "[[WEB-003]]"
+   - "[[WEB-004]]"
+   - "[[PUB-001]]"
++  - "[[CSS-001]]"
++  - "[[WEB-005]]"
++  - "[[WEB-006]]"
++  - "[[CSS-002]]"
+ status: todo
+ assignee: "@dev"
+ created: 2026-08-04
+diff --git a/docu/kanban/todo.md b/docu/kanban/todo.md
+index 99ee927..1dca379 100644
+--- a/docu/kanban/todo.md
++++ b/docu/kanban/todo.md
+@@ -23,7 +23,7 @@ updated: "2026-08-05"
+ #### 🔬 [[alfa]] Alfa - Feature Complete
+ **Criterio**: Todo el código escrito, migraciones, seeders, instalador, 4 dominios navegables, framework CSS funcional.
+ 
+-##### 🛠️ [[desarrollo]] Desarrollo - 16 Áreas Atómicas
++##### 🛠️ [[desarrollo]] Desarrollo - 17 Áreas Atómicas
+ 
+ ###### 1️⃣ FUN - Fundación Laravel + Arquitectura
+ - [[FUN-001]] Inicializar proyecto Laravel 11 + dependencias core
+@@ -215,6 +215,11 @@ updated: "2026-08-05"
+ - [[DOC-014]] Guía usuario: Admin (config, staff, métricas, feature flags)
+ - [[DOC-015]] Runbook: Incident response, rollback, scaling, backup/restore
+ - [[DOC-016]] Changelog + Versioning (SemVer + Conventional Commits)
++- [[DOC-017]] ADR-006: Núcleo Transaccional — Money (integer cents) + Ledger doble entrada
++- [[DOC-018]] ADR-007: Máquinas de estado de Pagos, Reembolsos y Retiros
++- [[DOC-019]] ADR-008: Idempotencia + Eventos de Dominio
++- [[DOC-020]] ADR-009: Autorización — RBAC + Policies + ABAC/Tenancy
++- [[DOC-021]] ADR-010: Seguridad de Webhooks y Telegram (firma, replay, DLQ)
+ 
+ ###### 1️⃣3️⃣ KAN - Mantenimiento Kanban
+ - [[KAN-001]] Setup inicial: crear 5 columnas + templates + convención frontmatter
+@@ -270,6 +275,58 @@ updated: "2026-08-05"
+ - [[TST-S-011]] Logging: No PII/secrets en logs, structured JSON, retention, alerting
+ - [[TST-S-012]] Compliance: GDPR (right to delete, export, consent), PCI-DSS (no card storage)
+ 
++###### 1️⃣7️⃣ SEC - Seguridad y Arquitectura del Dominio (50 Tareas - Fase 0)
++- [[SEC-001]] Threat Modeling STRIDE global (P0)
++- [[SEC-002]] Trust Boundaries + Data Flow Diagrams (P0)
++- [[SEC-003]] Security Risk Register + mitigaciones (P0)
++- [[SEC-004]] Security Baseline transversal (P0)
++- [[SEC-005]] Money Value Object (integer cents, nunca float) (P0)
++- [[SEC-006]] Currency + multi-moneda ISO 4217 (P0)
++- [[SEC-007]] Entidades dominio financiero: Invoice, Balance, Withdrawal, Refund, Settlement, Fee, Transfer (P0)
++- [[SEC-008]] Ledger de doble entrada inmutable (P0)
++- [[SEC-009]] Ledger entries + reconstrucción de balances (P0)
++- [[SEC-010]] Invariantes de balance + auditoría de consistencia (P0)
++- [[SEC-011]] Máquina de estados del Payment (P0)
++- [[SEC-012]] Máquina de estados del Refund (P1)
++- [[SEC-013]] Máquina de estados del Withdrawal (P0)
++- [[SEC-014]] Máquina de estados del Invoice (P0)
++- [[SEC-015]] Disputas/Chargeback + congelamiento de fondos (P1)
++- [[SEC-016]] Idempotencia con Idempotency-Key (P0)
++- [[SEC-017]] Eventos de dominio financieros (P1)
++- [[SEC-018]] Event store ligero + reprocesamiento (P1)
++- [[SEC-019]] Reconciliación sistema ↔ proveedor ↔ banco ↔ ledger (P1)
++- [[SEC-020]] Concurrencia: SELECT FOR UPDATE + optimistic locking (P0)
++- [[SEC-021]] Distributed locks + deadlock retry + updates atómicos (P1)
++- [[SEC-022]] Arquitectura de autorización (separada de auth) (P0)
++- [[SEC-023]] Laravel Policies por entidad financiera (P0)
++- [[SEC-024]] RBAC escalable: roles + permisos + contextos (P1)
++- [[SEC-025]] ABAC + tenant scoping creador→recursos propios (P1)
++- [[SEC-026]] Scopes API + service tokens (P1)
++- [[SEC-027]] Matriz de acceso + tests de autorización (P1)
++- [[SEC-028]] Webhook verification: firma, timestamp, nonce, replay (P0)
++- [[SEC-029]] Webhook retry + backoff + dead letter queue (P0)
++- [[SEC-030]] Webhook delivery log + rotación de claves de firma (P1)
++- [[SEC-031]] Seguridad Telegram: firma, replay, origen (P0)
++- [[SEC-032]] Telegram flood control + rate limit + expiración (P1)
++- [[SEC-033]] Rate limiting por área (P0)
++- [[SEC-034]] Scheduler: expirar invoices, retry webhooks, orphans (P0)
++- [[SEC-035]] Job retry pipeline + dead letter queue (P1)
++- [[SEC-036]] Audit log completo (actor, IP, payload hash, correlation id) (P0)
++- [[SEC-037]] Correlation IDs X-Correlation-ID (P0)
++- [[SEC-038]] Observabilidad: OpenTelemetry, metrics, alerting (P1)
++- [[SEC-039]] Structured logging sin PII/secretos (P0)
++- [[SEC-040]] Secret Management: rotación + key versioning (P0)
++- [[SEC-041]] Sesiones: fixation, rotation, refresh, revocación (P1)
++- [[SEC-042]] Backups, DR, PITR y restore tests (P1)
++- [[SEC-043]] Tests de concurrencia y race conditions (P1)
++- [[SEC-044]] Fault injection + chaos testing en pagos (P2)
++- [[SEC-045]] Replay testing + fuzzing de inputs (P1)
++- [[SEC-046]] Property-based testing del dominio financiero (P2)
++- [[SEC-047]] Pentest ofensivo I: SSRF, XXE, IDOR, Mass Assignment, Host Header (P0)
++- [[SEC-048]] Pentest ofensivo II: Smuggling, Cache Poisoning, Zip Bomb, Timing (P1)
++- [[SEC-049]] Pentest ofensivo III: JWT/OAuth, CSRF/CSP bypass, Unicode, Prototype Pollution (P1)
++- [[SEC-050]] Cadencia de revisión de seguridad (Security Review) (P1)
++
+ ---
+ 
+ ### 🔗 Enlaces Relacionados
+

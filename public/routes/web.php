@@ -1,11 +1,10 @@
 <?php
 
+use App\Domains\Public\Http\Controllers\ChannelController;
 use App\Http\Controllers\InstallController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [ChannelController::class, 'landing'])->name('home');
 
 Route::prefix('install')->name('install.')->middleware(['throttle:30,1'])->group(function () {
     Route::get('requirements', [InstallController::class, 'requirements'])->name('requirements');

@@ -84,7 +84,7 @@
 
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
+        "@@context": "https://schema.org",
         "@type": "Organization",
         "name": "{{ config('app.name') }}",
         "url": "{{ url('/') }}",
@@ -94,7 +94,7 @@
     </script>
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
+        "@@context": "https://schema.org",
         "@type": "WebSite",
         "name": "{{ config('app.name') }}",
         "url": "{{ url('/') }}"
@@ -136,7 +136,7 @@
                             </svg>
                         </button>
 
-                        @auth
+                        @if(auth()->check())
                             <a href="{{ auth()->user()->isCreador() ? route('creador.dashboard') : route('creador.dashboard') }}" class="text-sm font-medium text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                                 Mi Panel
                             </a>
@@ -149,7 +149,7 @@
                             <a href="{{ Route::has('register') ? route('register') : route('home').'#pricing' }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
                                 Registrarse
                             </a>
-                        @endauth
+                        @endif
                     </div>
 
                     <button type="button" class="md:hidden p-2 rounded-lg text-secondary-600 dark:text-secondary-300 hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
@@ -169,7 +169,7 @@
                     <a href="#faq" class="py-2 text-sm font-medium text-secondary-700 dark:text-secondary-300">FAQ</a>
                     <a href="{{ route('contact') }}" class="py-2 text-sm font-medium text-secondary-700 dark:text-secondary-300">Contacto</a>
                     <div class="pt-2 border-t border-secondary-200 dark:border-secondary-800 flex items-center gap-3">
-                        @auth
+                        @if(auth()->check())
                             <a href="{{ route('creador.dashboard') }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
                                 Mi Panel
                             </a>
@@ -180,7 +180,7 @@
                             <a href="{{ Route::has('register') ? route('register') : route('home').'#pricing' }}" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
                                 Registrarse
                             </a>
-                        @endauth
+                        @endif
                     </div>
                 </div>
             </div>

@@ -1,0 +1,115 @@
+diff --git a/.opencode/opencode-loop/loop.log b/.opencode/opencode-loop/loop.log
+index 8a71c9a..8f75fce 100644
+--- a/.opencode/opencode-loop/loop.log
++++ b/.opencode/opencode-loop/loop.log
+@@ -228,3 +228,6 @@
+ {"time":"2026-08-05T13:35:00.710Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":33}
+ {"time":"2026-08-05T13:36:31.971Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785936900844}
+ {"time":"2026-08-05T13:41:10.761Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":34}
++{"time":"2026-08-05T13:42:41.813Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785937270772}
++{"time":"2026-08-05T13:46:10.747Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":35}
++{"time":"2026-08-05T13:47:41.962Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785937570750}
+diff --git a/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json b/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+index 3a140fc..f00d6ff 100644
+--- a/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
++++ b/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+@@ -35,9 +35,9 @@
+       "dryRun": false,
+       "multi": false,
+       "batch": 0,
+-      "runCount": 34,
++      "runCount": 35,
+       "failureCount": 0,
+-      "lastRunAt": 1785937270745,
++      "lastRunAt": 1785937570746,
+       "lastCompactAt": 0,
+       "lastCompactRunCount": 0,
+       "watchSnapshot": {},
+@@ -47,7 +47,7 @@
+       "paused": false,
+       "agent": "build",
+       "activeRecoveryMs": 90000,
+-      "lastFinishedAt": 1785936991931
++      "lastFinishedAt": 1785937661962
+     }
+   ]
+ }
+\ No newline at end of file
+diff --git a/docu/kanban/done.md b/docu/kanban/done.md
+index d9b6d6b..afea04f 100644
+--- a/docu/kanban/done.md
++++ b/docu/kanban/done.md
+@@ -123,6 +123,8 @@ children:
+   - "[[DOC-015]]"
+   - "[[DOC-016]]"
+   - "[[FUN-007]]"
++  - "[[FUN-008]]"
++  - "[[FUN-009]]"
+ status: "done"
+ created: "2026-08-04"
+ updated: "2026-08-05"
+diff --git a/docu/kanban/tasks/FUN-008.md b/docu/kanban/tasks/FUN-008.md
+index 09f8f32..fd23ef6 100644
+--- a/docu/kanban/tasks/FUN-008.md
++++ b/docu/kanban/tasks/FUN-008.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/FUN
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/FUN"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -14,10 +14,10 @@ blocks:
+   - "[[INS-005]]"
+   - "[[CSS-034]]"
+   - "[[TST-F-001]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[FUN-008]] Configurar .env.example Portable + Config Multi-dominio
+diff --git a/docu/kanban/tasks/FUN-009.md b/docu/kanban/tasks/FUN-009.md
+index ced1a3d..511f9c5 100644
+--- a/docu/kanban/tasks/FUN-009.md
++++ b/docu/kanban/tasks/FUN-009.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/FUN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/FUN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -14,10 +14,10 @@ blocks:
+   - "[[ADM-001]]"
+   - "[[CRM-001]]"
+   - "[[TST-F-001]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[FUN-009]] BaseService, BaseController, ApiResponse, Exception Handler Global
+

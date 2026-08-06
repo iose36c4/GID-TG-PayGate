@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use App\Domains\Financiero\Entities\InvoiceState;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use LogicException;
 
 class Invoice extends Model
 {
     protected $fillable = [
         'payment_id', 'subscription_id', 'user_id', 'channel_pago_id',
-        'invoice_number', 'issuer_data', 'receiver_data', 'items',
+        'invoice_number', 'status', 'issuer_data', 'receiver_data', 'items',
         'subtotal', 'tax_amount', 'total', 'currency',
         'afip_status', 'cae', 'cae_expires_at', 'afip_qr', 'pdf_path',
     ];
@@ -44,6 +46,24 @@ class Invoice extends Model
         return $this->belongsTo(ChannelPago::class, 'channel_pago_id');
     }
 
+    public function state(): InvoiceState
+    {
+        return InvoiceState::from($this->status);
+    }
+
+    public function transitionTo(InvoiceState $to): void
+    {
+        $from = $this->state();
+
+        if (! $from->canTransitionTo($to)) {
+            throw new LogicException(
+                sprintf('Invalid invoice state transition: %s → %s', $from->value, $to->value),
+            );
+        }
+
+        $this->update(['status' => $to->value]);
+    }
+
     public function isAuthorized(): bool
     {
         return $this->afip_status === 'authorized';
@@ -52,5 +72,10 @@ class Invoice extends Model
     public function isPending(): bool
     {
         return $this->afip_status === 'pending';
+    }
+
+    public function isPaid(): bool
+    {
+        return $this->state()->isPaid();
     }
 }

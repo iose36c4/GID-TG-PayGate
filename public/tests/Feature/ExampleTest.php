@@ -2,10 +2,13 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Tests\TestCase;
+
+uses(RefreshDatabase::class);
 
 class ExampleTest extends TestCase
 {
@@ -25,19 +28,8 @@ class ExampleTest extends TestCase
             $this->refreshApplication();
         }
 
-        // Ensure DB_DATABASE is set for SQLite
-        $env = File::get(base_path('.env'));
-        if (! preg_match('/^DB_DATABASE=.+/m', $env)) {
-            $env = preg_replace('/^DB_DATABASE=.*/m', 'DB_DATABASE='.base_path('database/database.sqlite'), $env);
-            File::put(base_path('.env'), $env);
-        }
-
-        // Ensure DB_USERNAME is set (required by check)
-        $env = File::get(base_path('.env'));
-        if (! preg_match('/^DB_USERNAME=.+/m', $env)) {
-            $env = preg_replace('/^DB_USERNAME=.*/m', 'DB_USERNAME=sqlite', $env);
-            File::put(base_path('.env'), $env);
-        }
+        // Run migrations explicitly for this test
+        Artisan::call('migrate', ['--force' => true]);
     }
 
     /**

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(RolePermissionSeeder::class);
+        $this->call(LedgerAccountSeeder::class);
 
         $categories = [
             ['name' => 'Finanzas', 'slug' => 'finanzas', 'description' => 'Mercados, inversiones y economía', 'color' => '#0284c7', 'sort_order' => 1],

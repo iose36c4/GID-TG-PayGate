@@ -14,6 +14,7 @@ class PublicServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadRoutesFrom(__DIR__.'/../Routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../Routes/webhooks.php');
         $this->loadViewsFrom(__DIR__.'/../Views', 'public');
         $this->loadMigrationsFrom(__DIR__.'/../Migrations');
     }

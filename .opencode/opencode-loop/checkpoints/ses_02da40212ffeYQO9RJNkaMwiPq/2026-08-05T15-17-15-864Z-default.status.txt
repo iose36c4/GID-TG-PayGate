@@ -1,0 +1,15 @@
+ M .obsidian/graph.json
+ M .obsidian/workspace.json
+ M .opencode/opencode-loop/loop.log
+ M .opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+?? .opencode/opencode-loop/checkpoints/ses_02da40212ffeYQO9RJNkaMwiPq/
+?? .opencode/opencode-loop/checkpoints/ses_02dc6b1d7ffe8WfS1et91aIaoV/
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.status.txt
+?? .opencode/opencode-loop/ses_02da40212ffeYQO9RJNkaMwiPq.json
+?? .opencode/opencode-loop/ses_02dc6b1d7ffe8WfS1et91aIaoV.json
+?? docu/kanban.zip

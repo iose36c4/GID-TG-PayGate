@@ -1,0 +1,156 @@
+ M .obsidian/graph.json
+ M .obsidian/workspace.json
+ M .opencode/opencode-loop/loop.log
+ M .opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+ M .opencode/skills/kanban/SKILL.md
+ M .opencode/skills/kanban/scripts/kanban.js
+ M AGENTS.md
+ M docu/kanban/DOC.md
+ M docu/kanban/done.md
+ M docu/kanban/in-progress.md
+ M docu/kanban/tasks/ADM-002.md
+ M docu/kanban/tasks/ADM-003.md
+ M docu/kanban/tasks/ADM-004.md
+ M docu/kanban/tasks/ADM-005.md
+ M docu/kanban/tasks/ADM-007.md
+ M docu/kanban/tasks/ADM-010.md
+ M docu/kanban/tasks/CLI-001.md
+ M docu/kanban/tasks/CLI-004.md
+ M docu/kanban/tasks/CLI-005.md
+ M docu/kanban/tasks/CLI-006.md
+ M docu/kanban/tasks/CRE-001.md
+ M docu/kanban/tasks/CRE-006.md
+ M docu/kanban/tasks/CRE-009.md
+ M docu/kanban/tasks/CRE-011.md
+ M docu/kanban/tasks/CRE-012.md
+ M docu/kanban/tasks/CRE-013.md
+ M docu/kanban/tasks/CRE-014.md
+ M docu/kanban/tasks/CRE-015.md
+ M docu/kanban/tasks/CRE-016.md
+ M docu/kanban/tasks/CRM-001.md
+ M docu/kanban/tasks/CRM-003.md
+ M docu/kanban/tasks/CRM-004.md
+ M docu/kanban/tasks/CRM-007.md
+ M docu/kanban/tasks/CRM-011.md
+ M docu/kanban/tasks/CRM-012.md
+ M docu/kanban/tasks/CSS-003.md
+ M docu/kanban/tasks/CSS-004.md
+ M docu/kanban/tasks/CSS-006.md
+ M docu/kanban/tasks/CSS-007.md
+ M docu/kanban/tasks/CSS-008.md
+ M docu/kanban/tasks/CSS-009.md
+ M docu/kanban/tasks/CSS-018.md
+ M docu/kanban/tasks/CSS-019.md
+ M docu/kanban/tasks/CSS-030.md
+ M docu/kanban/tasks/CSS-031.md
+ M docu/kanban/tasks/CSS-034.md
+ M docu/kanban/tasks/CSS-035.md
+ M docu/kanban/tasks/CSS-036.md
+ M docu/kanban/tasks/CSS-037.md
+ M docu/kanban/tasks/DOC-001.md
+ M docu/kanban/tasks/FUN-001.md
+ M docu/kanban/tasks/FUN-005.md
+ M docu/kanban/tasks/FUN-006.md
+ M docu/kanban/tasks/FUN-008.md
+ M docu/kanban/tasks/FUN-009.md
+ M docu/kanban/tasks/INS-008.md
+ M docu/kanban/tasks/INS-009.md
+ M docu/kanban/tasks/INS-010.md
+ M docu/kanban/tasks/INS-011.md
+ M docu/kanban/tasks/INS-012.md
+ M docu/kanban/tasks/KAN-001.md
+ M docu/kanban/tasks/KAN-002.md
+ M docu/kanban/tasks/KAN-003.md
+ M docu/kanban/tasks/KAN-004.md
+ M docu/kanban/tasks/KAN-005.md
+ M docu/kanban/tasks/KAN-006.md
+ M docu/kanban/tasks/KAN-007.md
+ M docu/kanban/tasks/KAN-008.md
+ M docu/kanban/tasks/KAN-009.md
+ M docu/kanban/tasks/PUB-001.md
+ M docu/kanban/tasks/PUB-005.md
+ M docu/kanban/tasks/PUB-006.md
+ M docu/kanban/tasks/PUB-007.md
+ M docu/kanban/tasks/PUB-008.md
+ M docu/kanban/tasks/PUB-009.md
+ M docu/kanban/tasks/PUB-014.md
+ M docu/kanban/tasks/PUB-015.md
+ M docu/kanban/tasks/PUB-017.md
+ M docu/kanban/tasks/PUB-019.md
+ M docu/kanban/tasks/UI-001.md
+ M docu/kanban/tasks/UI-002.md
+ M docu/kanban/tasks/UI-003.md
+ M docu/kanban/tasks/UI-005.md
+ M docu/kanban/tasks/UX-001.md
+ M docu/kanban/tasks/UX-004.md
+ M docu/kanban/tasks/UX-005.md
+ M docu/kanban/tasks/UX-006.md
+ M docu/kanban/tasks/UX-007.md
+ M docu/kanban/tasks/WEB-001.md
+ M docu/kanban/todo.md
+?? .opencode/opencode-loop/checkpoints/ses_02dc6b1d7ffe8WfS1et91aIaoV/
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.status.txt
+?? .opencode/opencode-loop/ses_02dc6b1d7ffe8WfS1et91aIaoV.json
+?? docu/kanban.zip
+?? docu/kanban/SEC.md
+?? docu/kanban/tasks/DOC-017.md
+?? docu/kanban/tasks/DOC-018.md
+?? docu/kanban/tasks/DOC-019.md
+?? docu/kanban/tasks/DOC-020.md
+?? docu/kanban/tasks/DOC-021.md
+?? docu/kanban/tasks/SEC-001.md
+?? docu/kanban/tasks/SEC-002.md
+?? docu/kanban/tasks/SEC-003.md
+?? docu/kanban/tasks/SEC-004.md
+?? docu/kanban/tasks/SEC-005.md
+?? docu/kanban/tasks/SEC-006.md
+?? docu/kanban/tasks/SEC-007.md
+?? docu/kanban/tasks/SEC-008.md
+?? docu/kanban/tasks/SEC-009.md
+?? docu/kanban/tasks/SEC-010.md
+?? docu/kanban/tasks/SEC-011.md
+?? docu/kanban/tasks/SEC-012.md
+?? docu/kanban/tasks/SEC-013.md
+?? docu/kanban/tasks/SEC-014.md
+?? docu/kanban/tasks/SEC-015.md
+?? docu/kanban/tasks/SEC-016.md
+?? docu/kanban/tasks/SEC-017.md
+?? docu/kanban/tasks/SEC-018.md
+?? docu/kanban/tasks/SEC-019.md
+?? docu/kanban/tasks/SEC-020.md
+?? docu/kanban/tasks/SEC-021.md
+?? docu/kanban/tasks/SEC-022.md
+?? docu/kanban/tasks/SEC-023.md
+?? docu/kanban/tasks/SEC-024.md
+?? docu/kanban/tasks/SEC-025.md
+?? docu/kanban/tasks/SEC-026.md
+?? docu/kanban/tasks/SEC-027.md
+?? docu/kanban/tasks/SEC-028.md
+?? docu/kanban/tasks/SEC-029.md
+?? docu/kanban/tasks/SEC-030.md
+?? docu/kanban/tasks/SEC-031.md
+?? docu/kanban/tasks/SEC-032.md
+?? docu/kanban/tasks/SEC-033.md
+?? docu/kanban/tasks/SEC-034.md
+?? docu/kanban/tasks/SEC-035.md
+?? docu/kanban/tasks/SEC-036.md
+?? docu/kanban/tasks/SEC-037.md
+?? docu/kanban/tasks/SEC-038.md
+?? docu/kanban/tasks/SEC-039.md
+?? docu/kanban/tasks/SEC-040.md
+?? docu/kanban/tasks/SEC-041.md
+?? docu/kanban/tasks/SEC-042.md
+?? docu/kanban/tasks/SEC-043.md
+?? docu/kanban/tasks/SEC-044.md
+?? docu/kanban/tasks/SEC-045.md
+?? docu/kanban/tasks/SEC-046.md
+?? docu/kanban/tasks/SEC-047.md
+?? docu/kanban/tasks/SEC-048.md
+?? docu/kanban/tasks/SEC-049.md
+?? docu/kanban/tasks/SEC-050.md
+?? public/resources/views/layouts/public.blade.php

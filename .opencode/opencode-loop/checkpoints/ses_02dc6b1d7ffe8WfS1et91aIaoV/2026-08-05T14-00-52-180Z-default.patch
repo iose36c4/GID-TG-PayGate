@@ -1,0 +1,620 @@
+diff --git a/.obsidian/workspace.json b/.obsidian/workspace.json
+index 55d40f8..274ad4b 100644
+--- a/.obsidian/workspace.json
++++ b/.obsidian/workspace.json
+@@ -193,11 +193,14 @@
+       "daily-notes:Abrir la nota de hoy": false,
+       "templates:Insertar plantilla": false,
+       "command-palette:Abrir paleta de comandos": false,
+-      "bases:Crear nueva base": false
++      "bases:Crear nueva base": false,
++      "templater-obsidian:Templater": false
+     }
+   },
+-  "active": "e3f15eb31c0e1d3b",
++  "active": "8e49b8cf27bea0fe",
+   "lastOpenFiles": [
++    "public/resources/views/layouts/public.blade.php",
++    "docu/kanban.zip",
+     "docu/kanban/tasks/DOC-016.md",
+     "docu/kanban/KAN.md",
+     "public/public/robots.txt",
+@@ -209,7 +212,6 @@
+     "vendor/composer/98a57f9a/laravel-laravel-e196bfd/phpunit.xml",
+     "vendor/composer/98a57f9a/laravel-laravel-e196bfd/package.json",
+     "vendor/composer/98a57f9a/laravel-laravel-e196bfd/database",
+-    "vendor/composer/98a57f9a/laravel-laravel-e196bfd/config",
+     "vendor/composer/98a57f9a/laravel-laravel-e196bfd/README.md",
+     "docu/kanban/todo.md",
+     "DOC-016.md",
+@@ -232,7 +234,6 @@
+     "docu/kanban/tasks/TST-S-008.md",
+     "docu/kanban/tasks/TST-S-007.md",
+     "docu/kanban/tasks/TST-S-006.md",
+-    "docu/kanban/tasks/TST-S-005.md",
+-    "docu/kanban/tasks/TST-S-004.md"
++    "docu/kanban/tasks/TST-S-005.md"
+   ]
+ }
+\ No newline at end of file
+diff --git a/.opencode/opencode-loop/loop.log b/.opencode/opencode-loop/loop.log
+index 8a71c9a..d62e7f7 100644
+--- a/.opencode/opencode-loop/loop.log
++++ b/.opencode/opencode-loop/loop.log
+@@ -228,3 +228,13 @@
+ {"time":"2026-08-05T13:35:00.710Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":33}
+ {"time":"2026-08-05T13:36:31.971Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785936900844}
+ {"time":"2026-08-05T13:41:10.761Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":34}
++{"time":"2026-08-05T13:42:41.813Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785937270772}
++{"time":"2026-08-05T13:46:10.747Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":35}
++{"time":"2026-08-05T13:47:41.962Z","line":"active-stale-recovery","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","startedAt":1785937570750}
++{"time":"2026-08-05T13:54:04.546Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":36}
++{"time":"2026-08-05T13:55:38.807Z","line":"add","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","label":"default: 5m -> Hice una primera revisión de la planificación (242 documentos, 213 tareas atómicas distribuidas en 16 áreas). La estructura está bien organizada y es muy superior a la de muchos proyectos que he revisado, pero, siendo extremadamente crítico, veo varios problemas importantes de arquitectura, seguridad y planificación. # Valoración general **Planificación:** 8,5/10 **Seguridad:** 5,5/10 **Escalabilidad:** 7/10 **Mantenibilidad:** 9/10 Lo que más me preocupa no es el código (todavía no existe), sino las **omisiones**. Hay muchas tareas de implementación, UI y documentación, pero faltan componentes fundamentales para un sistema de pagos. --- # Problema 1 (CRÍTICO) ## No existe un modelo de amenazas No encontré ninguna tarea equivalente a: - Threat Modeling - STRIDE - Attack Surface - Trust Boundaries - Data Flow Diagram Esto debería hacerse **antes** de escribir una línea de código. De lo contrario es muy fácil terminar con: - endpoints inseguros - webhooks vulnerables - tokens filtrados - escalamiento de privilegios Yo agregaría una épica completa. Ejemplo: ``` SEC-001 Threat Modeling SEC-002 Trust Boundaries SEC-003 DFD SEC-004 STRIDE SEC-005 Riesgos SEC-006 Mitigaciones SEC-007 Revisión ``` --- # Problema 2 (CRÍTICO) ## No existe una arquitectura de autorización Veo autenticación. No veo autorización. Son cosas distintas. Un sistema de pagos necesita reglas como: ``` Creator ↓ Project ↓ Invoice ↓ Payment ↓ Refund ↓ Webhook ``` Cada operación necesita políticas. Laravel Policies o Authorization Services. No aparecen en el plan. --- # Problema 3 (CRÍTICO) ## No hay diseño del dominio financiero No veo una planificación del dominio. Por ejemplo: ``` Money Currency Invoice Balance Ledger Withdrawal Refund Settlement Commission Fee Transfer ``` Todo eso debería existir como entidades del dominio. Nunca mezclar dinero con modelos Laravel genéricos. --- # Problema 4 (CRÍTICO) ## No aparece un Ledger Esto probablemente sea el problema más grave. Nunca confiar únicamente en: ``` payments ``` Necesitás algo parecido a: ``` ledger_entries balance_transactions account_movements ``` Cada movimiento: ``` +100 -50 +2 comisión -1 devolución etc ``` Nunca modificar balances directamente. Siempre reconstruibles. --- # Problema 5 ## No aparece idempotencia No encontré tareas sobre: ``` Idempotency-Key Duplicate Requests Retry Webhook replay ``` Un gateway recibe: ``` POST POST POST POST ``` Si no existe idempotencia: podés cobrar cuatro veces. --- # Problema 6 ## Falta Event Sourcing parcial No hace falta Event Sourcing completo. Pero sí eventos como: ``` InvoiceCreated PaymentSucceeded PaymentFailed RefundCreated RefundCompleted WebhookReceived WithdrawalApproved ``` Eso facilita muchísimo auditoría. --- # Problema 7 ## Estados insuficientemente definidos Todo pago debería tener una máquina de estados. Ejemplo: ``` Created Pending WaitingConfirmation Paid Cancelled Expired RefundRequested Refunded Disputed Chargeback Frozen ``` No vi una tarea específica sobre state machines. --- # Problema 8 ## Telegram Veo bastante Telegram. Pero no veo planificación sobre: - replay attacks - firma webhook - timestamp - nonce - expiración - rate limit por usuario - flood control - validación origen --- # Problema 9 ## Webhooks No encontré una épica específica. Un gateway necesita muchísimo trabajo aquí. Ejemplo: ``` Webhook Verification Retry Backoff Replay detection Dead Letter Queue Delivery Log Signing Rotation Keys ``` --- # Problema 10 ## Secret Management No aparece: - rotación de secretos - API Keys - Encryption Keys - Key Versioning --- # Problema 11 ## Auditoría Necesitás muchísimo más. No solamente logs. Algo parecido a: ``` Audit Log Actor IP Headers Payload Hash Response Hash Changes Timestamp Correlation ID ``` --- # Problema 12 ## Correlation IDs No aparecen. Todos los servicios deberían propagar ``` X-Correlation-ID ``` --- # Problema 13 ## Observabilidad No encontré tareas sobre OpenTelemetry Tracing Metrics Prometheus Grafana Alerting --- # Problema 14 ## Rate Limiting No basta con Laravel. Necesitás distintos límites. ``` login telegram payment invoice withdraw admin api public webhook ``` --- # Problema 15 ## RBAC demasiado simple Vi ``` user creator staff admin ``` Eso no escala. Conviene combinar RBAC Permissions Policies Scopes --- # Problema 16 ## No veo ABAC Hay situaciones donde no alcanza un rol. Ejemplo ``` creator ↓ solo sus propios pagos ``` Eso requiere atributos. --- # Problema 17 ## Concurrencia No encontré tareas sobre ``` SELECT FOR UPDATE Optimistic Lock Version Columns Deadlock Retry Distributed Lock Atomic Updates ``` En pagos esto es obligatorio. --- # Problema 18 ## Dinero No veo una decisión de arquitectura sobre: ``` decimal integer cents Money Value Object ``` Nunca float. --- # Problema 19 ## Multi-moneda Aunque hoy exista una sola. Conviene planificar desde el inicio. --- # Problema 20 ## Cron No veo procesos como: ``` expire invoices retry webhooks clean tokens retry jobs reconciliation orphan payments ``` --- # Problema 21 ## Seguridad de sesión No aparecen tareas sobre: - Session fixation - Token Rotation - Refresh Tokens - Device Management - Session Revocation --- # Problema 22 ## Backups No encontré: - Disaster Recovery - Restore Test - Backup Validation - PITR --- # Problema 23 ## Reconciliación Un gateway necesita reconciliar. ``` Sistema ↓ Proveedor ↓ Banco ↓ Ledger ``` No vi planificación. --- # Problema 24 ## Tests Hay bastantes tareas. Pero faltan suites específicas. Yo agregaría: - Chaos Testing - Fault Injection - Race Condition Testing - Concurrency Testing - Replay Testing - Fuzzing - Mutation Testing - Property Based Testing --- # Problema 25 ## Seguridad ofensiva Hay pruebas de seguridad. Pero faltan tareas específicas para verificar: - SSRF - XXE - IDOR - Mass Assignment - Host Header Injection - HTTP Request Smuggling - Cache Poisoning - Zip Bomb - Billion Laughs - JWT attacks - OAuth attacks - CSRF bypass - CSP bypass - Clickjacking - Timing attacks - Unicode normalization - Path traversal - Prototype pollution (si hay JS) - Dependency confusion --- # Lo que más me preocupa El plan está muy orientado a **construir una aplicación**, cuando un gateway de pagos debe diseñarse primero como un **sistema transaccional**. Eso implica que el centro del proyecto no debería ser Laravel, Telegram o las interfaces, sino un núcleo de dominio compuesto por: - **Ledger** (contabilidad de doble entrada o, como mínimo, libro mayor inmutable). - **Máquinas de estado** para pagos, reembolsos y retiros. - **Value Objects** (`Money`, `Currency`, `Fee`, `Commission`, `PaymentReference`). - **Servicios de autorización** separados de la autenticación. - **Idempotencia** en todas las operaciones que puedan repetirse. - **Auditoría completa** con trazabilidad de extremo a extremo. Si ese núcleo queda bien diseñado, el resto del sistema (Laravel, Telegram, paneles de administración y APIs) se convierte en una capa de presentación relativamente sencilla. Si no, el proyecto corre el riesgo de acumular lógica de negocio dispersa y difícil de asegurar. ## Recomendación principal Antes de comenzar el desarrollo, incorporaría una **17.ª área completa dedicada a Seguridad y Arquitectura del Dominio**, con entre **40 y 60 tareas atómicas**. Esa área debería completarse antes de implementar el resto, porque muchas de sus decisiones (ledger, autorización, estados, idempotencia, auditoría y observabilidad) condicionarán todas las demás áreas del proyecto."}
++{"time":"2026-08-05T13:59:08.292Z","line":"replace","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","label":"default: 5m -> Hice una primera revisión de la planificación (242 documentos, 213 tareas atómicas distribuidas en 16 áreas). La estructura está bien organizada y es muy superior a la de muchos proyectos que he revisado, pero, siendo extremadamente crítico, veo varios problemas importantes de arquitectura, seguridad y planificación. # Valoración general **Planificación:** 8,5/10 **Seguridad:** 5,5/10 **Escalabilidad:** 7/10 **Mantenibilidad:** 9/10 Lo que más me preocupa no es el código (todavía no existe), sino las **omisiones**. Hay muchas tareas de implementación, UI y documentación, pero faltan componentes fundamentales para un sistema de pagos. --- # Problema 1 (CRÍTICO) ## No existe un modelo de amenazas No encontré ninguna tarea equivalente a: - Threat Modeling - STRIDE - Attack Surface - Trust Boundaries - Data Flow Diagram Esto debería hacerse **antes** de escribir una línea de código. De lo contrario es muy fácil terminar con: - endpoints inseguros - webhooks vulnerables - tokens filtrados - escalamiento de privilegios Yo agregaría una épica completa. Ejemplo: ``` SEC-001 Threat Modeling SEC-002 Trust Boundaries SEC-003 DFD SEC-004 STRIDE SEC-005 Riesgos SEC-006 Mitigaciones SEC-007 Revisión ``` --- # Problema 2 (CRÍTICO) ## No existe una arquitectura de autorización Veo autenticación. No veo autorización. Son cosas distintas. Un sistema de pagos necesita reglas como: ``` Creator ↓ Project ↓ Invoice ↓ Payment ↓ Refund ↓ Webhook ``` Cada operación necesita políticas. Laravel Policies o Authorization Services. No aparecen en el plan. --- # Problema 3 (CRÍTICO) ## No hay diseño del dominio financiero No veo una planificación del dominio. Por ejemplo: ``` Money Currency Invoice Balance Ledger Withdrawal Refund Settlement Commission Fee Transfer ``` Todo eso debería existir como entidades del dominio. Nunca mezclar dinero con modelos Laravel genéricos. --- # Problema 4 (CRÍTICO) ## No aparece un Ledger Esto probablemente sea el problema más grave. Nunca confiar únicamente en: ``` payments ``` Necesitás algo parecido a: ``` ledger_entries balance_transactions account_movements ``` Cada movimiento: ``` +100 -50 +2 comisión -1 devolución etc ``` Nunca modificar balances directamente. Siempre reconstruibles. --- # Problema 5 ## No aparece idempotencia No encontré tareas sobre: ``` Idempotency-Key Duplicate Requests Retry Webhook replay ``` Un gateway recibe: ``` POST POST POST POST ``` Si no existe idempotencia: podés cobrar cuatro veces. --- # Problema 6 ## Falta Event Sourcing parcial No hace falta Event Sourcing completo. Pero sí eventos como: ``` InvoiceCreated PaymentSucceeded PaymentFailed RefundCreated RefundCompleted WebhookReceived WithdrawalApproved ``` Eso facilita muchísimo auditoría. --- # Problema 7 ## Estados insuficientemente definidos Todo pago debería tener una máquina de estados. Ejemplo: ``` Created Pending WaitingConfirmation Paid Cancelled Expired RefundRequested Refunded Disputed Chargeback Frozen ``` No vi una tarea específica sobre state machines. --- # Problema 8 ## Telegram Veo bastante Telegram. Pero no veo planificación sobre: - replay attacks - firma webhook - timestamp - nonce - expiración - rate limit por usuario - flood control - validación origen --- # Problema 9 ## Webhooks No encontré una épica específica. Un gateway necesita muchísimo trabajo aquí. Ejemplo: ``` Webhook Verification Retry Backoff Replay detection Dead Letter Queue Delivery Log Signing Rotation Keys ``` --- # Problema 10 ## Secret Management No aparece: - rotación de secretos - API Keys - Encryption Keys - Key Versioning --- # Problema 11 ## Auditoría Necesitás muchísimo más. No solamente logs. Algo parecido a: ``` Audit Log Actor IP Headers Payload Hash Response Hash Changes Timestamp Correlation ID ``` --- # Problema 12 ## Correlation IDs No aparecen. Todos los servicios deberían propagar ``` X-Correlation-ID ``` --- # Problema 13 ## Observabilidad No encontré tareas sobre OpenTelemetry Tracing Metrics Prometheus Grafana Alerting --- # Problema 14 ## Rate Limiting No basta con Laravel. Necesitás distintos límites. ``` login telegram payment invoice withdraw admin api public webhook ``` --- # Problema 15 ## RBAC demasiado simple Vi ``` user creator staff admin ``` Eso no escala. Conviene combinar RBAC Permissions Policies Scopes --- # Problema 16 ## No veo ABAC Hay situaciones donde no alcanza un rol. Ejemplo ``` creator ↓ solo sus propios pagos ``` Eso requiere atributos. --- # Problema 17 ## Concurrencia No encontré tareas sobre ``` SELECT FOR UPDATE Optimistic Lock Version Columns Deadlock Retry Distributed Lock Atomic Updates ``` En pagos esto es obligatorio. --- # Problema 18 ## Dinero No veo una decisión de arquitectura sobre: ``` decimal integer cents Money Value Object ``` Nunca float. --- # Problema 19 ## Multi-moneda Aunque hoy exista una sola. Conviene planificar desde el inicio. --- # Problema 20 ## Cron No veo procesos como: ``` expire invoices retry webhooks clean tokens retry jobs reconciliation orphan payments ``` --- # Problema 21 ## Seguridad de sesión No aparecen tareas sobre: - Session fixation - Token Rotation - Refresh Tokens - Device Management - Session Revocation --- # Problema 22 ## Backups No encontré: - Disaster Recovery - Restore Test - Backup Validation - PITR --- # Problema 23 ## Reconciliación Un gateway necesita reconciliar. ``` Sistema ↓ Proveedor ↓ Banco ↓ Ledger ``` No vi planificación. --- # Problema 24 ## Tests Hay bastantes tareas. Pero faltan suites específicas. Yo agregaría: - Chaos Testing - Fault Injection - Race Condition Testing - Concurrency Testing - Replay Testing - Fuzzing - Mutation Testing - Property Based Testing --- # Problema 25 ## Seguridad ofensiva Hay pruebas de seguridad. Pero faltan tareas específicas para verificar: - SSRF - XXE - IDOR - Mass Assignment - Host Header Injection - HTTP Request Smuggling - Cache Poisoning - Zip Bomb - Billion Laughs - JWT attacks - OAuth attacks - CSRF bypass - CSP bypass - Clickjacking - Timing attacks - Unicode normalization - Path traversal - Prototype pollution (si hay JS) - Dependency confusion --- # Lo que más me preocupa El plan está muy orientado a **construir una aplicación**, cuando un gateway de pagos debe diseñarse primero como un **sistema transaccional**. Eso implica que el centro del proyecto no debería ser Laravel, Telegram o las interfaces, sino un núcleo de dominio compuesto por: - **Ledger** (contabilidad de doble entrada o, como mínimo, libro mayor inmutable). - **Máquinas de estado** para pagos, reembolsos y retiros. - **Value Objects** (`Money`, `Currency`, `Fee`, `Commission`, `PaymentReference`). - **Servicios de autorización** separados de la autenticación. - **Idempotencia** en todas las operaciones que puedan repetirse. - **Auditoría completa** con trazabilidad de extremo a extremo. Si ese núcleo queda bien diseñado, el resto del sistema (Laravel, Telegram, paneles de administración y APIs) se convierte en una capa de presentación relativamente sencilla. Si no, el proyecto corre el riesgo de acumular lógica de negocio dispersa y difícil de asegurar. ## Recomendación principal Antes de comenzar el desarrollo, incorporaría una **17.ª área completa dedicada a Seguridad y Arquitectura del Dominio**, con entre **40 y 60 tareas atómicas**. Esa área debería completarse antes de implementar el resto, porque muchas de sus decisiones (ledger, autorización, estados, idempotencia, auditoría y observabilidad) condicionarán todas las demás áreas del proyecto."}
++{"time":"2026-08-05T13:59:08.536Z","line":"run","sessionID":"ses_02ef3dd11ffeti22JzapV8Z1Ix","job":"default","runCount":1}
++{"time":"2026-08-05T13:59:58.949Z","line":"add","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","label":"default: every idle -> Hice una primera revisión de la planificación (242 documentos, 213 tareas atómicas distribuidas en 16 áreas). La estructura está bien organizada y es muy superior a la de muchos proyectos que he revisado, pero, siendo extremadamente crítico, veo varios problemas importantes de arquitectura, seguridad y planificación. # Valoración general **Planificación:** 8,5/10 **Seguridad:** 5,5/10 **Escalabilidad:** 7/10 **Mantenibilidad:** 9/10 Lo que más me preocupa no es el código (todavía no existe), sino las **omisiones**. Hay muchas tareas de implementación, UI y documentación, pero faltan componentes fundamentales para un sistema de pagos. --- # Problema 1 (CRÍTICO) ## No existe un modelo de amenazas No encontré ninguna tarea equivalente a: - Threat Modeling - STRIDE - Attack Surface - Trust Boundaries - Data Flow Diagram Esto debería hacerse **antes** de escribir una línea de código. De lo contrario es muy fácil terminar con: - endpoints inseguros - webhooks vulnerables - tokens filtrados - escalamiento de privilegios Yo agregaría una épica completa. Ejemplo: ``` SEC-001 Threat Modeling SEC-002 Trust Boundaries SEC-003 DFD SEC-004 STRIDE SEC-005 Riesgos SEC-006 Mitigaciones SEC-007 Revisión ``` --- # Problema 2 (CRÍTICO) ## No existe una arquitectura de autorización Veo autenticación. No veo autorización. Son cosas distintas. Un sistema de pagos necesita reglas como: ``` Creator ↓ Project ↓ Invoice ↓ Payment ↓ Refund ↓ Webhook ``` Cada operación necesita políticas. Laravel Policies o Authorization Services. No aparecen en el plan. --- # Problema 3 (CRÍTICO) ## No hay diseño del dominio financiero No veo una planificación del dominio. Por ejemplo: ``` Money Currency Invoice Balance Ledger Withdrawal Refund Settlement Commission Fee Transfer ``` Todo eso debería existir como entidades del dominio. Nunca mezclar dinero con modelos Laravel genéricos. --- # Problema 4 (CRÍTICO) ## No aparece un Ledger Esto probablemente sea el problema más grave. Nunca confiar únicamente en: ``` payments ``` Necesitás algo parecido a: ``` ledger_entries balance_transactions account_movements ``` Cada movimiento: ``` +100 -50 +2 comisión -1 devolución etc ``` Nunca modificar balances directamente. Siempre reconstruibles. --- # Problema 5 ## No aparece idempotencia No encontré tareas sobre: ``` Idempotency-Key Duplicate Requests Retry Webhook replay ``` Un gateway recibe: ``` POST POST POST POST ``` Si no existe idempotencia: podés cobrar cuatro veces. --- # Problema 6 ## Falta Event Sourcing parcial No hace falta Event Sourcing completo. Pero sí eventos como: ``` InvoiceCreated PaymentSucceeded PaymentFailed RefundCreated RefundCompleted WebhookReceived WithdrawalApproved ``` Eso facilita muchísimo auditoría. --- # Problema 7 ## Estados insuficientemente definidos Todo pago debería tener una máquina de estados. Ejemplo: ``` Created Pending WaitingConfirmation Paid Cancelled Expired RefundRequested Refunded Disputed Chargeback Frozen ``` No vi una tarea específica sobre state machines. --- # Problema 8 ## Telegram Veo bastante Telegram. Pero no veo planificación sobre: - replay attacks - firma webhook - timestamp - nonce - expiración - rate limit por usuario - flood control - validación origen --- # Problema 9 ## Webhooks No encontré una épica específica. Un gateway necesita muchísimo trabajo aquí. Ejemplo: ``` Webhook Verification Retry Backoff Replay detection Dead Letter Queue Delivery Log Signing Rotation Keys ``` --- # Problema 10 ## Secret Management No aparece: - rotación de secretos - API Keys - Encryption Keys - Key Versioning --- # Problema 11 ## Auditoría Necesitás muchísimo más. No solamente logs. Algo parecido a: ``` Audit Log Actor IP Headers Payload Hash Response Hash Changes Timestamp Correlation ID ``` --- # Problema 12 ## Correlation IDs No aparecen. Todos los servicios deberían propagar ``` X-Correlation-ID ``` --- # Problema 13 ## Observabilidad No encontré tareas sobre OpenTelemetry Tracing Metrics Prometheus Grafana Alerting --- # Problema 14 ## Rate Limiting No basta con Laravel. Necesitás distintos límites. ``` login telegram payment invoice withdraw admin api public webhook ``` --- # Problema 15 ## RBAC demasiado simple Vi ``` user creator staff admin ``` Eso no escala. Conviene combinar RBAC Permissions Policies Scopes --- # Problema 16 ## No veo ABAC Hay situaciones donde no alcanza un rol. Ejemplo ``` creator ↓ solo sus propios pagos ``` Eso requiere atributos. --- # Problema 17 ## Concurrencia No encontré tareas sobre ``` SELECT FOR UPDATE Optimistic Lock Version Columns Deadlock Retry Distributed Lock Atomic Updates ``` En pagos esto es obligatorio. --- # Problema 18 ## Dinero No veo una decisión de arquitectura sobre: ``` decimal integer cents Money Value Object ``` Nunca float. --- # Problema 19 ## Multi-moneda Aunque hoy exista una sola. Conviene planificar desde el inicio. --- # Problema 20 ## Cron No veo procesos como: ``` expire invoices retry webhooks clean tokens retry jobs reconciliation orphan payments ``` --- # Problema 21 ## Seguridad de sesión No aparecen tareas sobre: - Session fixation - Token Rotation - Refresh Tokens - Device Management - Session Revocation --- # Problema 22 ## Backups No encontré: - Disaster Recovery - Restore Test - Backup Validation - PITR --- # Problema 23 ## Reconciliación Un gateway necesita reconciliar. ``` Sistema ↓ Proveedor ↓ Banco ↓ Ledger ``` No vi planificación. --- # Problema 24 ## Tests Hay bastantes tareas. Pero faltan suites específicas. Yo agregaría: - Chaos Testing - Fault Injection - Race Condition Testing - Concurrency Testing - Replay Testing - Fuzzing - Mutation Testing - Property Based Testing --- # Problema 25 ## Seguridad ofensiva Hay pruebas de seguridad. Pero faltan tareas específicas para verificar: - SSRF - XXE - IDOR - Mass Assignment - Host Header Injection - HTTP Request Smuggling - Cache Poisoning - Zip Bomb - Billion Laughs - JWT attacks - OAuth attacks - CSRF bypass - CSP bypass - Clickjacking - Timing attacks - Unicode normalization - Path traversal - Prototype pollution (si hay JS) - Dependency confusion --- # Lo que más me preocupa El plan está muy orientado a **construir una aplicación**, cuando un gateway de pagos debe diseñarse primero como un **sistema transaccional**. Eso implica que el centro del proyecto no debería ser Laravel, Telegram o las interfaces, sino un núcleo de dominio compuesto por: - **Ledger** (contabilidad de doble entrada o, como mínimo, libro mayor inmutable). - **Máquinas de estado** para pagos, reembolsos y retiros. - **Value Objects** (`Money`, `Currency`, `Fee`, `Commission`, `PaymentReference`). - **Servicios de autorización** separados de la autenticación. - **Idempotencia** en todas las operaciones que puedan repetirse. - **Auditoría completa** con trazabilidad de extremo a extremo. Si ese núcleo queda bien diseñado, el resto del sistema (Laravel, Telegram, paneles de administración y APIs) se convierte en una capa de presentación relativamente sencilla. Si no, el proyecto corre el riesgo de acumular lógica de negocio dispersa y difícil de asegurar. ## Recomendación principal Antes de comenzar el desarrollo, incorporaría una **17.ª área completa dedicada a Seguridad y Arquitectura del Dominio**, con entre **40 y 60 tareas atómicas**. Esa área debería completarse antes de implementar el resto, porque muchas de sus decisiones (ledger, autorización, estados, idempotencia, auditoría y observabilidad) condicionarán todas las demás áreas del proyecto."}
++{"time":"2026-08-05T14:00:06.555Z","line":"run","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","runCount":1}
++{"time":"2026-08-05T14:00:52.155Z","line":"active-stale-recovery","sessionID":"ses_02dc6b1d7ffe8WfS1et91aIaoV","job":"default","startedAt":1785938406561}
+diff --git a/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json b/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+index 3a140fc..f507810 100644
+--- a/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
++++ b/.opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+@@ -1,53 +1,4 @@
+ {
+   "version": 4,
+-  "jobs": [
+-    {
+-      "id": "msftuyla-13ecca",
+-      "name": "default",
+-      "action": "procede con el desarrollo siguiendo el kanban. Todo el desarrollo debe estar dentro de public/. Mientras desarrollas deberás ir haciendo actualizaciones al kanban para marcar las tareas que se mueven de columna, si tenés que agregar tareas. No te olvides de ir actualizando la documentación. También tenés que mantener el repositorio bien organizado y con comits con cada implementación grande. De momento trabajamos en la rama \"master\". El objetivo es llevar a cabo todas las tareas y sus pruebas hasta llegar a la fase de pruebas Alfa. Asegurate de que tu principal objetivo sea la seguridad del sitio y la experiencia de usuario, amigable, masculina, privacidad, de fácil uso.",
+-      "intervalMs": 300000,
+-      "immediate": true,
+-      "maxRuns": 0,
+-      "maxRuntimeMs": 0,
+-      "maxFailures": 0,
+-      "timeoutMs": 0,
+-      "includeFiles": [],
+-      "watchPaths": [],
+-      "compactEveryRuns": 0,
+-      "compactEveryMs": 0,
+-      "branchDone": false,
+-      "goalAcceptance": [],
+-      "goalChecks": [],
+-      "goalCompleteWhenChecksPass": false,
+-      "goalSummary": "",
+-      "goalEvidence": "",
+-      "goalBlockedReason": "",
+-      "goalProgress": [],
+-      "noProgressCount": 0,
+-      "lastProgressAt": 0,
+-      "noOverlap": true,
+-      "safe": true,
+-      "quiet": false,
+-      "askNever": true,
+-      "pauseOnVerifyFail": false,
+-      "gitCheckpoint": false,
+-      "checkpointOnly": true,
+-      "dryRun": false,
+-      "multi": false,
+-      "batch": 0,
+-      "runCount": 34,
+-      "failureCount": 0,
+-      "lastRunAt": 1785937270745,
+-      "lastCompactAt": 0,
+-      "lastCompactRunCount": 0,
+-      "watchSnapshot": {},
+-      "watchTriggered": false,
+-      "createdAt": "2026-08-05T08:31:01.535Z",
+-      "enabled": true,
+-      "paused": false,
+-      "agent": "build",
+-      "activeRecoveryMs": 90000,
+-      "lastFinishedAt": 1785936991931
+-    }
+-  ]
++  "jobs": []
+ }
+\ No newline at end of file
+diff --git a/docu/kanban/done.md b/docu/kanban/done.md
+index d9b6d6b..0382129 100644
+--- a/docu/kanban/done.md
++++ b/docu/kanban/done.md
+@@ -123,6 +123,20 @@ children:
+   - "[[DOC-015]]"
+   - "[[DOC-016]]"
+   - "[[FUN-007]]"
++  - "[[FUN-008]]"
++  - "[[FUN-009]]"
++  - "[[INS-010]]"
++  - "[[INS-011]]"
++  - "[[INS-012]]"
++  - "[[KAN-001]]"
++  - "[[KAN-002]]"
++  - "[[KAN-003]]"
++  - "[[KAN-004]]"
++  - "[[KAN-005]]"
++  - "[[KAN-006]]"
++  - "[[KAN-007]]"
++  - "[[KAN-008]]"
++  - "[[KAN-009]]"
+ status: "done"
+ created: "2026-08-04"
+ updated: "2026-08-05"
+diff --git a/docu/kanban/in-progress.md b/docu/kanban/in-progress.md
+index 98babdb..2f04c35 100644
+--- a/docu/kanban/in-progress.md
++++ b/docu/kanban/in-progress.md
+@@ -3,7 +3,8 @@ tags:
+   - "kanban/in-progress"
+   - "type/container"
+ parent: "null"
+-children: []
++children:
++  - "[[PUB-001]]"
+ status: "in-progress"
+ created: "2026-08-04"
+ updated: "2026-08-05"
+diff --git a/docu/kanban/tasks/FUN-008.md b/docu/kanban/tasks/FUN-008.md
+index 09f8f32..fd23ef6 100644
+--- a/docu/kanban/tasks/FUN-008.md
++++ b/docu/kanban/tasks/FUN-008.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/FUN
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/FUN"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -14,10 +14,10 @@ blocks:
+   - "[[INS-005]]"
+   - "[[CSS-034]]"
+   - "[[TST-F-001]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[FUN-008]] Configurar .env.example Portable + Config Multi-dominio
+diff --git a/docu/kanban/tasks/FUN-009.md b/docu/kanban/tasks/FUN-009.md
+index ced1a3d..511f9c5 100644
+--- a/docu/kanban/tasks/FUN-009.md
++++ b/docu/kanban/tasks/FUN-009.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/FUN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/FUN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -14,10 +14,10 @@ blocks:
+   - "[[ADM-001]]"
+   - "[[CRM-001]]"
+   - "[[TST-F-001]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[FUN-009]] BaseService, BaseController, ApiResponse, Exception Handler Global
+diff --git a/docu/kanban/tasks/INS-010.md b/docu/kanban/tasks/INS-010.md
+index 7df602c..e6e3b66 100644
+--- a/docu/kanban/tasks/INS-010.md
++++ b/docu/kanban/tasks/INS-010.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/INS
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/INS"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[INS-009]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[INS-010]] Seguridad Instalador: Anti-Reinstall, Honeypot, CSP, HSTS
+diff --git a/docu/kanban/tasks/INS-011.md b/docu/kanban/tasks/INS-011.md
+index d9ad081..c326b3a 100644
+--- a/docu/kanban/tasks/INS-011.md
++++ b/docu/kanban/tasks/INS-011.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/INS
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/INS"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -12,10 +12,10 @@ blocks:
+   - "[[INS-008]]"
+   - "[[INS-011]]"
+   - "[[INS-012]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[INS-008]] Paso 2.5: Configuración Pasarelas de Pago (MercadoPago, Stripe, Transferencias, Test Mode)
+diff --git a/docu/kanban/tasks/INS-012.md b/docu/kanban/tasks/INS-012.md
+index e33a2c0..241c5c3 100644
+--- a/docu/kanban/tasks/INS-012.md
++++ b/docu/kanban/tasks/INS-012.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/INS
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/INS"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -11,10 +11,10 @@ depends_on:
+   - "[[INS-010]]"
+   - "[[INS-011]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[INS-012]] Paso 2.6: Configuración Fiscal Argentina (IVA, Ganancias, IIBB, AFIP CAE, Factura A/B/C)
+diff --git a/docu/kanban/tasks/KAN-001.md b/docu/kanban/tasks/KAN-001.md
+index 9c67e16..3641eed 100644
+--- a/docu/kanban/tasks/KAN-001.md
++++ b/docu/kanban/tasks/KAN-001.md
+@@ -1,19 +1,19 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[FUN-001]]"
+ blocks:
+   - "[[KAN-002]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-001]] Setup Inicial: Crear 5 Columnas + Templates + Convención Frontmatter
+diff --git a/docu/kanban/tasks/KAN-002.md b/docu/kanban/tasks/KAN-002.md
+index 27fa6a0..5caf65f 100644
+--- a/docu/kanban/tasks/KAN-002.md
++++ b/docu/kanban/tasks/KAN-002.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P0
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -16,10 +16,10 @@ blocks:
+   - "[[KAN-007]]"
+   - "[[KAN-008]]"
+   - "[[KAN-009]]"
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-002]] Poblar todo.md con Jerarquía Completa (Esta Planificación)
+diff --git a/docu/kanban/tasks/KAN-003.md b/docu/kanban/tasks/KAN-003.md
+index 5a41821..6d3e295 100644
+--- a/docu/kanban/tasks/KAN-003.md
++++ b/docu/kanban/tasks/KAN-003.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-002]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-003]] Daily Standup Sync: Mover Tareas, Actualizar Status, Blockers
+diff --git a/docu/kanban/tasks/KAN-004.md b/docu/kanban/tasks/KAN-004.md
+index d7cfc3c..158ede1 100644
+--- a/docu/kanban/tasks/KAN-004.md
++++ b/docu/kanban/tasks/KAN-004.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-002]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-004]] Weekly Refinement: Groom Backlog, Estimar, Dividir Tareas >8pts
+diff --git a/docu/kanban/tasks/KAN-005.md b/docu/kanban/tasks/KAN-005.md
+index b18c223..d38a00c 100644
+--- a/docu/kanban/tasks/KAN-005.md
++++ b/docu/kanban/tasks/KAN-005.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-002]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-005]] Sprint Planning (si aplica): Seleccionar, Commit, Capacity
+diff --git a/docu/kanban/tasks/KAN-006.md b/docu/kanban/tasks/KAN-006.md
+index 1fbf2f3..c3ae9d3 100644
+--- a/docu/kanban/tasks/KAN-006.md
++++ b/docu/kanban/tasks/KAN-006.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-004]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-006]] Retrospectiva: Métricas (Lead Time, Cycle Time, Throughput, WIP)
+diff --git a/docu/kanban/tasks/KAN-007.md b/docu/kanban/tasks/KAN-007.md
+index 721326d..9d76c4d 100644
+--- a/docu/kanban/tasks/KAN-007.md
++++ b/docu/kanban/tasks/KAN-007.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-004]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-007]] Métricas Kanban: CFD, Aging WIP, Blocked Time, Rework Rate
+diff --git a/docu/kanban/tasks/KAN-008.md b/docu/kanban/tasks/KAN-008.md
+index 1337d45..ed58687 100644
+--- a/docu/kanban/tasks/KAN-008.md
++++ b/docu/kanban/tasks/KAN-008.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-006]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-008]] Archive Done: Mover a done.md Semanal, Limpiar In-Progress/Review
+diff --git a/docu/kanban/tasks/KAN-009.md b/docu/kanban/tasks/KAN-009.md
+index 3f8d459..6e80015 100644
+--- a/docu/kanban/tasks/KAN-009.md
++++ b/docu/kanban/tasks/KAN-009.md
+@@ -1,18 +1,18 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/KAN
+-  - priority/P1
++  - "kanban/done"
++  - "type/task"
++  - "domain/KAN"
++  - "priority/P1"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+   - "[[KAN-008]]"
+ blocks: []
+-status: todo
++status: "done"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[KAN-009]] Automation: Git Hooks (Commit Msg → Mover Tarea), GitHub Actions (PR → Review)
+diff --git a/docu/kanban/tasks/PUB-001.md b/docu/kanban/tasks/PUB-001.md
+index d33462d..89f21d6 100644
+--- a/docu/kanban/tasks/PUB-001.md
++++ b/docu/kanban/tasks/PUB-001.md
+@@ -1,9 +1,9 @@
+ ---
+ tags:
+-  - kanban/todo
+-  - type/task
+-  - domain/PUB
+-  - priority/P0
++  - "kanban/in-progress"
++  - "type/task"
++  - "domain/PUB"
++  - "priority/P0"
+ parent: "[[desarrollo]]"
+ children: []
+ depends_on:
+@@ -21,10 +21,10 @@ blocks:
+   - "[[PUB-004]]"
+   - "[[CLI-001]]"
+   - "[[CRE-001]]"
+-status: todo
++status: "in-progress"
+ assignee: "@dev"
+-created: 2026-08-04
+-updated: 2026-08-04
++created: "2026-08-04"
++updated: "2026-08-05"
+ ---
+ 
+ # [[PUB-001]] Landing Page SSR: Hero, Features, Social Proof, Pricing, CTA, Footer
+

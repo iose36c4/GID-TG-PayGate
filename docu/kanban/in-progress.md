@@ -4,11 +4,10 @@ tags:
   - "type/container"
 parent: "null"
 children:
-  - "[[PUB-001]]"
   - "[[UI-003]]"
 status: "in-progress"
 created: "2026-08-04"
-updated: "2026-08-05"
+updated: "2026-08-06"
 ---
 
 # En Progreso

@@ -2,7 +2,7 @@
   "collapse-filter": false,
   "search": "",
   "showTags": true,
-  "showAttachments": false,
+  "showAttachments": true,
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
@@ -22,10 +22,10 @@
       }
     },
     {
-      "query": "path:/",
+      "query": "path:public  ",
       "color": {
         "a": 1,
-        "rgb": 16711680
+        "rgb": 65331
       }
     }
   ],
@@ -39,6 +39,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
-  "scale": 0.0889892578125,
-  "close": false
+  "scale": 0.0078125,
+  "close": true
 }

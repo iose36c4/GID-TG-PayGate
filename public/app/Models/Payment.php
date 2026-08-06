@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use App\Domains\Financiero\Entities\PaymentState;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use LogicException;
 
 class Payment extends Model
 {
     protected $fillable = [
-        'subscription_id', 'user_id', 'channel_pago_id',
+        'subscription_id', 'user_id', 'channel_pago_id', 'external_reference',
         'amount', 'net_amount', 'currency',
         'platform_fee', 'gateway_fee', 'fixed_fee',
         'gateway', 'gateway_payment_id', 'gateway_status',
@@ -47,35 +50,70 @@ class Payment extends Model
         return $this->hasOne(Invoice::class);
     }
 
+    public function state(): PaymentState
+    {
+        return PaymentState::from($this->status);
+    }
+
+    public function transitionTo(PaymentState $to): void
+    {
+        $from = $this->state();
+
+        if (! $from->canTransitionTo($to)) {
+            throw new LogicException(
+                sprintf('Invalid payment state transition: %s → %s', $from->value, $to->value),
+            );
+        }
+
+        $attributes = ['status' => $to->value];
+
+        if ($to->isPaid()) {
+            $attributes['paid_at'] = now();
+        }
+
+        $this->update($attributes);
+    }
+
     public function isCompleted(): bool
     {
-        return $this->status === 'completed';
+        return $this->state()->isPaid();
     }
 
     public function isPending(): bool
     {
-        return in_array($this->status, ['pending', 'processing']);
+        return in_array($this->state(), [
+            PaymentState::Created,
+            PaymentState::PendingConfirmation,
+            PaymentState::WaitingConfirmation,
+        ], true);
     }
 
     public function isFailed(): bool
     {
-        return $this->status === 'failed';
+        return $this->state() === PaymentState::Failed;
     }
 
     public function markCompleted(): void
     {
-        $this->update([
-            'status' => 'completed',
-            'paid_at' => now(),
-        ]);
+        $this->transitionTo(PaymentState::Paid);
     }
 
     public function markFailed(string $reason): void
     {
         $this->update([
-            'status' => 'failed',
+            'status' => PaymentState::Failed->value,
             'failed_at' => now(),
             'failure_reason' => $reason,
         ]);
+    }
+
+    public function markExpired(): void
+    {
+        $this->transitionTo(PaymentState::Expired);
+    }
+
+    public function refund(): void
+    {
+        $this->transitionTo(PaymentState::Refunded);
     }
 }

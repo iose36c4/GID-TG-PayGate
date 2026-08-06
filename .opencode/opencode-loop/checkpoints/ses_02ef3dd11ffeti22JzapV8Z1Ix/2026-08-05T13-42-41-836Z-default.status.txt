@@ -1,0 +1,2 @@
+ M .opencode/opencode-loop/loop.log
+ M .opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json

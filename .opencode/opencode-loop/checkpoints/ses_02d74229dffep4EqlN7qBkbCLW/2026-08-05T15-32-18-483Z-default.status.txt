@@ -1,0 +1,27 @@
+ M .obsidian/graph.json
+ M .obsidian/workspace.json
+ M .opencode/opencode-loop/loop.log
+ M .opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+ M public/app/Models/Invoice.php
+ M public/app/Models/Payment.php
+ M public/app/Models/Subscription.php
+ M public/database/seeders/DatabaseSeeder.php
+?? .opencode/opencode-loop/checkpoints/ses_02da40212ffeYQO9RJNkaMwiPq/
+?? .opencode/opencode-loop/checkpoints/ses_02dc6b1d7ffe8WfS1et91aIaoV/
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.status.txt
+?? .opencode/opencode-loop/ses_02d74229dffep4EqlN7qBkbCLW.json
+?? .opencode/opencode-loop/ses_02da40212ffeYQO9RJNkaMwiPq.json
+?? .opencode/opencode-loop/ses_02dc6b1d7ffe8WfS1et91aIaoV.json
+?? docu/kanban.zip
+?? public/app/Domains/Financiero/
+?? public/app/Models/Account.php
+?? public/app/Models/LedgerEntry.php
+?? public/database/migrations/2026_08_05_110000_create_ledger_tables.php
+?? public/database/migrations/2026_08_05_110100_extend_financial_tables.php
+?? public/database/migrations/2026_08_05_110200_relax_payment_status.php
+?? public/database/seeders/LedgerAccountSeeder.php

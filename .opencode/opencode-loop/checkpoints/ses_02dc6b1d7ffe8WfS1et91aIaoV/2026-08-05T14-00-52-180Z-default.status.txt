@@ -1,0 +1,29 @@
+ M .obsidian/workspace.json
+ M .opencode/opencode-loop/loop.log
+ M .opencode/opencode-loop/ses_02ef3dd11ffeti22JzapV8Z1Ix.json
+ M docu/kanban/done.md
+ M docu/kanban/in-progress.md
+ M docu/kanban/tasks/FUN-008.md
+ M docu/kanban/tasks/FUN-009.md
+ M docu/kanban/tasks/INS-010.md
+ M docu/kanban/tasks/INS-011.md
+ M docu/kanban/tasks/INS-012.md
+ M docu/kanban/tasks/KAN-001.md
+ M docu/kanban/tasks/KAN-002.md
+ M docu/kanban/tasks/KAN-003.md
+ M docu/kanban/tasks/KAN-004.md
+ M docu/kanban/tasks/KAN-005.md
+ M docu/kanban/tasks/KAN-006.md
+ M docu/kanban/tasks/KAN-007.md
+ M docu/kanban/tasks/KAN-008.md
+ M docu/kanban/tasks/KAN-009.md
+ M docu/kanban/tasks/PUB-001.md
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-42-41-836Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-47-41-987Z-default.status.txt
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.patch
+?? .opencode/opencode-loop/checkpoints/ses_02ef3dd11ffeti22JzapV8Z1Ix/2026-08-05T13-59-24-710Z-default.status.txt
+?? .opencode/opencode-loop/ses_02dc6b1d7ffe8WfS1et91aIaoV.json
+?? docu/kanban.zip
+?? public/resources/views/layouts/public.blade.php
